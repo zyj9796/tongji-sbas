@@ -1,0 +1,20 @@
+{
+  "projection_geojson": "work/projection/20200708_clean_equal_height_roof_projection_sar_full_area_layer_constrained.geojson",
+  "surface": "roof",
+  "reference_date": "20200708",
+  "shape_rows_cols": [
+    630,
+    900
+  ],
+  "projected_uid_count": 683,
+  "uid_mask_pixels": 136733,
+  "island_count": 593,
+  "island_pixels": 127584,
+  "outputs": {
+    "uid_mask": "work/masks/building_fid_mask_clean_equal_height_roof_only_full_area_128.npy",
+    "island_label": "work/masks/island_label_clean_equal_height_roof_only_full_area_128.npy",
+    "islands_csv": "work/masks/islands_clean_equal_height_roof_only_full_area_128.csv",
+    "uid_preview": "work/masks/building_fid_mask_clean_equal_height_roof_only_full_area_128.png",
+    "island_preview": "work/masks/island_label_clean_equal_height_roof_only_full_area_128.png"
+  }
+}

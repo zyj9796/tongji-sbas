@@ -1,0 +1,34 @@
+# Python/runtime
+.venv/
+.ocr_env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local caches and temporary outputs
+tmp/
+cache/
+.agents/
+.codex/
+
+# Raw or bulky data kept outside Git
+data/tongji_rslc/
+data/aaa.zip
+文献和原始代码/
+
+# Heavy/rebuildable processing products
+work/gamma_sbas/
+work/gamma_sbas_triangular_baseline/
+work/intf_quicklooks/
+work/mli/*.npy
+work/mli/*.png
+work/masks/*.npy
+work/masks/*.png
+
+# Generated visual diagnostics
+results/pic_all/
+results/diagnostics/
+
+# Local logs
+*.log
+*.out

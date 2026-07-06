@@ -1,0 +1,24 @@
+{
+  "old": "results/geodata/tongji_building_height_cleanid_split_paper_lit_coh075_DA040_minp12_rmse125_bspan120_topdown_grubbs_insar_only.geojson",
+  "new": "results/geodata/tongji_building_height_cleanid_redshift_audited_paper_lit_coh075_DA040_minp12_rmse125_bspan120_topdown_grubbs_insar_only.geojson",
+  "label_old": "clean_id拆岛",
+  "label_new": "审计投影修正",
+  "old_count": 239,
+  "new_count": 239,
+  "common_count": 239,
+  "new_only_count": 0,
+  "lost_count": 0,
+  "changed_gt_threshold_count": 11,
+  "changed_gt_large_threshold_count": 9,
+  "delta_threshold_m": 2.0,
+  "large_delta_threshold_m": 5.0,
+  "delta_median_m": 0.0,
+  "delta_p05_m": 0.0,
+  "delta_p95_m": 0.6273208141326866,
+  "height_field_use": "not_used",
+  "outputs": {
+    "png": "results/pic_all/png/current_strict_clean_equal_height_full/206_cleanid_split_vs_redshift_audited_topdown_height_change.png",
+    "svg": "results/pic_all/svg/current_strict_clean_equal_height_full/206_cleanid_split_vs_redshift_audited_topdown_height_change.svg",
+    "json": "results/metadata/cleanid_split_vs_redshift_audited_topdown_height_change_summary.json"
+  }
+}

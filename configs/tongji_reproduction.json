@@ -1,0 +1,42 @@
+{
+  "project": "tongji_building_height_reproduction",
+  "paths": {
+    "rslc_dir": "data/tongji_rslc",
+    "buildings_shp": "data/shp/tongji_clip_rslc_extent.shp",
+    "buildings_geojson": "data/shp/tongji_clip_rslc_extent.geojson",
+    "dsm_tif": "data/dsm/tongji_real_dsm_1m_rslc_extent.tif",
+    "work_dir": "work",
+    "results_dir": "results"
+  },
+  "reference": {
+    "date": "20200708",
+    "projection_repo": "https://github.com/aaaroger/touying_roof_workflow"
+  },
+  "insar": {
+    "min_abs_bperp_m": 30.0,
+    "max_abs_bperp_m": 250.0,
+    "max_temporal_baseline_days": 44,
+    "min_interferograms_per_building": 12,
+    "mean_coherence_threshold": 0.75,
+    "amplitude_dispersion_threshold": 0.4
+  },
+  "mask": {
+    "morphology_opening_kernel": 3,
+    "connectivity": 8,
+    "dbscan_eps_pixels": 2.5,
+    "dbscan_min_samples": 20
+  },
+  "projection": {
+    "local_max_shift_pixels": 10,
+    "local_coarse_step_pixels": 2,
+    "sar_x_axis": "range column",
+    "sar_y_axis": "azimuth row"
+  },
+  "height_aggregation": {
+    "outlier_rule": "iqr",
+    "iqr_multiplier": 1.5,
+    "center_statistic": "median",
+    "prior_height_field": "height",
+    "floor_field": "Floor"
+  }
+}

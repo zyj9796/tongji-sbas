@@ -1,0 +1,12 @@
+{
+  "clean_buildings": "data/shp/clean_equal_height/tongji_clip_rslc_extent_equal_height_clean.geojson",
+  "source_projection": "tmp/touying_roof_workflow/results/blue_aligned/20200708_full_area_projection_sar_col_row_brightness_optimized.geojson",
+  "clean_polygons": 1028,
+  "projected_clean_roofs": 1026,
+  "missing_source_uid_count": 0,
+  "missing_roof_fid_count": 3,
+  "outputs": {
+    "projection_geojson": "work/projection/20200708_clean_equal_height_roof_projection_sar.geojson",
+    "fid_uid_map": "results/tables/clean_equal_height_fid_uid_map.csv"
+  }
+}

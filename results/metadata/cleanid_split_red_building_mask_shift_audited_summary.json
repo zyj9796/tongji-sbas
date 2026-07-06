@@ -1,0 +1,47 @@
+{
+  "method": "Conservative local SAR-amplitude/edge shift search for QC-review clean_id masks only. No shapefile height attribute is used.",
+  "input_uid_mask": "work/masks/building_fid_mask_clean_equal_height_roof_only_full_area_128.npy",
+  "input_amplitude": "work/mli/mean_crop_bmp_amplitude.npy",
+  "input_red_manifest": "results/diagnostics/cleanid_split_red_buildings/diagnostic_manifest.csv",
+  "red_buildings": 81,
+  "accepted_shifts": 16,
+  "rejected_shifts": 65,
+  "max_shift_pixels": 8,
+  "min_score_gain": 0.035,
+  "min_contrast_gain": 0.012,
+  "min_edge_gain": 0.012,
+  "max_overlap_frac": 0.18,
+  "min_kept_frac": 0.78,
+  "accept_clean_ids_file": "work/projection/cleanid_redshift_audited_accept_clean_ids.csv",
+  "accept_clean_ids_count": 16,
+  "changed_pixels": 3082,
+  "accepted_clean_ids": [
+    95,
+    189,
+    193,
+    232,
+    349,
+    447,
+    467,
+    555,
+    662,
+    786,
+    824,
+    843,
+    881,
+    927,
+    941,
+    1012
+  ],
+  "reject_reason_counts": {
+    "accepted": 16,
+    "best_is_original": 35,
+    "not_in_audited_accept_list": 15,
+    "score_gain_too_small": 15
+  },
+  "outputs": {
+    "mask": "work/masks/building_fid_mask_clean_equal_height_roof_only_full_area_128_cleanid_redshift_audited.npy",
+    "csv": "work/projection/cleanid_split_red_building_mask_shift_metrics_audited.csv",
+    "preview": "work/masks/building_fid_mask_clean_equal_height_roof_only_full_area_128_cleanid_redshift_audited_preview.png"
+  }
+}

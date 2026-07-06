@@ -1,0 +1,17 @@
+clean_id,old_likely_top_reliability,new_likely_top_reliability,old_grubbs_top_removed_count,new_grubbs_top_removed_count
+95,review,high,4.0,0.0
+189,review,high,4.0,0.0
+193,review,high,4.0,0.0
+232,medium,medium,2.0,1.0
+349,medium,high,1.0,0.0
+447,review,medium,3.0,2.0
+467,medium,high,1.0,0.0
+555,review,review,6.0,4.0
+662,medium,medium,2.0,1.0
+786,review,high,3.0,0.0
+824,review,review,6.0,4.0
+843,review,review,7.0,5.0
+881,medium,high,1.0,0.0
+927,medium,high,2.0,0.0
+941,medium,high,1.0,0.0
+1012,medium,high,1.0,0.0

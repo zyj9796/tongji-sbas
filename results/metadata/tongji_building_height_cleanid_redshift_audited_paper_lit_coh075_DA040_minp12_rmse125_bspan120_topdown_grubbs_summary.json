@@ -1,0 +1,34 @@
+{
+  "input": "results/geodata/tongji_building_height_cleanid_redshift_audited_paper_lit_coh075_DA040_minp12_rmse125_bspan120_topstats_insar_only.geojson",
+  "method": "Hypothesis-guided top-height estimate. stable_quantile uses max when Grubbs accepts it, then stable p95/p90. descending_grubbs starts from 100% and uses the highest value retained after iterative Grubbs testing. descending_grubbs_p95_floor protects against over-removal by keeping the result no lower than p95 and marking many-removal cases for review. top_down_grubbs starts from the maximum and iteratively removes only statistically rejected high outliers, with no quantile fallback.",
+  "selection_mode": "top_down_grubbs",
+  "tail_gap_m": 8.0,
+  "tail_ratio": 0.75,
+  "buildings_total": 1028,
+  "buildings_with_likely_top_height": 239,
+  "method_counts": {
+    "max_accept_grubbs": 168,
+    "max_reject_use_top_down_grubbs": 42,
+    "max_reject_use_top_down_grubbs_many_removed": 29,
+    "no_strict_insar_solution": 789
+  },
+  "reliability_counts": {
+    "high": 168,
+    "medium": 42,
+    "no_solution": 789,
+    "review": 29
+  },
+  "height_likely_top_m_median": 22.54842758178711,
+  "height_likely_top_m_p05": 3.697545385360718,
+  "height_likely_top_m_p95": 48.991732025146476,
+  "height_field_use": "not_read_for_comparison_or_quality_control",
+  "diagnostic_mae_to_height_m": null,
+  "diagnostic_bias_to_height_m": null,
+  "diagnostic_rmse_to_height_m": null,
+  "outputs": {
+    "geojson": "results/geodata/tongji_building_height_cleanid_redshift_audited_paper_lit_coh075_DA040_minp12_rmse125_bspan120_topdown_grubbs_insar_only.geojson",
+    "csv": "results/tables/tongji_building_height_cleanid_redshift_audited_paper_lit_coh075_DA040_minp12_rmse125_bspan120_topdown_grubbs_insar_only.csv",
+    "png": "results/pic_all/png/current_strict_clean_equal_height_full/205_cleanid_redshift_audited_建筑顶面高度_最高点向下Grubbs检验.png",
+    "svg": "results/pic_all/svg/current_strict_clean_equal_height_full/205_cleanid_redshift_audited_建筑顶面高度_最高点向下Grubbs检验.svg"
+  }
+}

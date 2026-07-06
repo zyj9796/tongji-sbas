@@ -1,0 +1,19 @@
+{
+  "input": "data/shp/tongji_clip_rslc_extent.shp",
+  "height_field": "height",
+  "projected_crs_for_topology": "EPSG:32651",
+  "min_shared_boundary_m": 0.2,
+  "original_polygons": 1320,
+  "cleaned_polygons": 1028,
+  "merged_away_polygons": 292,
+  "groups_with_multiple_sources": 242,
+  "equal_height_shared_edges_removed": 299,
+  "outputs": {
+    "shp": "data/shp/clean_equal_height/tongji_clip_rslc_extent_equal_height_clean.shp",
+    "geojson": "data/shp/clean_equal_height/tongji_clip_rslc_extent_equal_height_clean.geojson",
+    "gpkg": "data/shp/clean_equal_height/tongji_clip_rslc_extent_equal_height_clean.gpkg",
+    "shared_edges_csv": "data/shp/clean_equal_height/equal_height_shared_edges_removed.csv",
+    "figure_png": "results/pic_all/projection_and_masks/103_equal_height_vector_cleanup.png",
+    "figure_svg": "results/pic_all/projection_and_masks/103_equal_height_vector_cleanup.svg"
+  }
+}

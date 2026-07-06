@@ -1,0 +1,20 @@
+{
+  "method": "Split existing roof mask by clean_id first, then by connected components inside each clean_id. This prevents one island from containing multiple clean building IDs.",
+  "input_uid_mask": "work/masks/building_fid_mask_clean_equal_height_roof_only_full_area_128_cleanid_redshift_audited.npy",
+  "input_old_island_label": "work/masks/island_label_clean_equal_height_roof_only_full_area_128.npy",
+  "min_pixels": 20,
+  "connectivity": 8,
+  "old_islands": 593,
+  "old_multi_clean_id_islands": 115,
+  "new_islands": 662,
+  "new_multi_clean_id_islands": 0,
+  "new_islands_from_old_multi_clean_id_islands": 253,
+  "uid_mask_pixels": 136727,
+  "new_island_pixels": 136202,
+  "dropped_small_component_pixels": 525,
+  "outputs": {
+    "island_label": "work/masks/island_label_clean_equal_height_roof_only_full_area_128_cleanid_redshift_audited_split.npy",
+    "islands_csv": "work/masks/islands_clean_equal_height_roof_only_full_area_128_cleanid_redshift_audited_split.csv",
+    "preview": "work/masks/island_label_clean_equal_height_roof_only_full_area_128_cleanid_redshift_audited_split.png"
+  }
+}

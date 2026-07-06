@@ -1,0 +1,7 @@
+{
+  "input_buildings": "results/geodata/tongji_building_height_cleanid_redshift_audited_paper_lit_coh075_DA040_minp12_rmse125_bspan120_topdown_grubbs_insar_only.geojson",
+  "review_buildings_plotted": 71,
+  "out_dir": "results/diagnostics/cleanid_redshift_audited_red_buildings",
+  "manifest": "results/diagnostics/cleanid_redshift_audited_red_buildings/diagnostic_manifest.csv",
+  "note": "Rejected top height is the original maximum when top-down Grubbs removed at least one upper outlier; individual removed lower-order top values are summarized by grubbs_top_removed_count."
+}
