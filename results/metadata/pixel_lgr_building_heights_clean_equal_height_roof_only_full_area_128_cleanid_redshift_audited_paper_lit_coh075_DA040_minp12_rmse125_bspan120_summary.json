@@ -22,7 +22,7 @@
   "island_id_file": "",
   "output_islands": "work/height/island_pixel_lgr_heights_clean_equal_height_roof_only_full_area_128_cleanid_redshift_audited_paper_lit_coh075_DA040_minp12_rmse125_bspan120.csv",
   "output_points": "work/height/height_points_clean_equal_height_roof_only_full_area_128_cleanid_redshift_audited_paper_lit_coh075_DA040_minp12_rmse125_bspan120.csv",
-  "figure": "results/pic_all/png/current_strict_clean_equal_height_full/202_cleanid_redshift_audited_lgr_island_qc_coh075_DA040_rmse125.png",
-  "figure_svg": "results/pic_all/svg/current_strict_clean_equal_height_full/202_cleanid_redshift_audited_lgr_island_qc_coh075_DA040_rmse125.svg",
+  "figure": null,
+  "figure_svg": null,
   "method": "Pixel-wise LGR DEM-error inversion; building height = robust median(reference DSM/HGT in RDC + signed DEM-error residual - ground DEM). Current ground DEM assumption is constant 4 m; building height points are grouped by Touying FID mask within each island before WGS84 aggregation."
 }

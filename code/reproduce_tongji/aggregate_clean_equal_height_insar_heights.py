@@ -192,7 +192,7 @@ def add_qc(gdf: gpd.GeoDataFrame, prior_gap_review: bool, omit_height_field: boo
     return gdf
 
 
-def plot_height_map(gdf: gpd.GeoDataFrame, out_png: Path, out_svg: Path, title: str) -> None:
+def plot_height_map(gdf: gpd.GeoDataFrame, out_png: Path | None, out_svg: Path | None, title: str) -> None:
     fig, ax = plt.subplots(figsize=(12, 10), dpi=260)
     base = gdf.copy()
     ok = base[base["has_insar_height"]].copy()
@@ -253,14 +253,16 @@ def plot_height_map(gdf: gpd.GeoDataFrame, out_png: Path, out_svg: Path, title: 
         bbox={"facecolor": "white", "edgecolor": "#c8cdd2", "linewidth": 0.6, "alpha": 0.86, "pad": 4},
     )
     fig.tight_layout()
-    out_png.parent.mkdir(parents=True, exist_ok=True)
-    out_svg.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(out_png)
-    fig.savefig(out_svg)
+    if out_png is not None:
+        out_png.parent.mkdir(parents=True, exist_ok=True)
+        fig.savefig(out_png)
+    if out_svg is not None:
+        out_svg.parent.mkdir(parents=True, exist_ok=True)
+        fig.savefig(out_svg)
     plt.close(fig)
 
 
-def plot_diagnostics(gdf: gpd.GeoDataFrame, out_png: Path, out_svg: Path) -> None:
+def plot_diagnostics(gdf: gpd.GeoDataFrame, out_png: Path | None, out_svg: Path | None) -> None:
     base = gdf.copy()
     plot = base.to_crs(3857) if base.crs and base.crs.to_epsg() == 4326 else base
     plot = plot.copy()
@@ -314,10 +316,12 @@ def plot_diagnostics(gdf: gpd.GeoDataFrame, out_png: Path, out_svg: Path) -> Non
     for ax in axes:
         ax.set_axis_off()
     fig.tight_layout()
-    out_png.parent.mkdir(parents=True, exist_ok=True)
-    out_svg.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(out_png)
-    fig.savefig(out_svg)
+    if out_png is not None:
+        out_png.parent.mkdir(parents=True, exist_ok=True)
+        fig.savefig(out_png)
+    if out_svg is not None:
+        out_svg.parent.mkdir(parents=True, exist_ok=True)
+        fig.savefig(out_svg)
     plt.close(fig)
 
 
@@ -350,11 +354,16 @@ def main() -> None:
 
     plot_height_map(
         out,
-        Path(args.height_map_png),
-        Path(args.height_map_svg),
+        Path(args.height_map_png) if args.height_map_png else None,
+        Path(args.height_map_svg) if args.height_map_svg else None,
         "Clean equal-height vectors: roof-only strict InSAR building height",
     )
-    plot_diagnostics(out, Path(args.diagnostic_png), Path(args.diagnostic_svg))
+    if args.diagnostic_png or args.diagnostic_svg:
+        plot_diagnostics(
+            out,
+            Path(args.diagnostic_png) if args.diagnostic_png else None,
+            Path(args.diagnostic_svg) if args.diagnostic_svg else None,
+        )
 
     ok = out[out["has_insar_height"]].copy()
     summary = {
@@ -404,10 +413,10 @@ def main() -> None:
         "outputs": {
             "csv": args.out_csv,
             "geojson": args.out_geojson,
-            "height_map_png": args.height_map_png,
-            "height_map_svg": args.height_map_svg,
-            "diagnostic_png": args.diagnostic_png,
-            "diagnostic_svg": args.diagnostic_svg,
+            "height_map_png": args.height_map_png or None,
+            "height_map_svg": args.height_map_svg or None,
+            "diagnostic_png": args.diagnostic_png or None,
+            "diagnostic_svg": args.diagnostic_svg or None,
         },
     }
     Path(args.summary).parent.mkdir(parents=True, exist_ok=True)

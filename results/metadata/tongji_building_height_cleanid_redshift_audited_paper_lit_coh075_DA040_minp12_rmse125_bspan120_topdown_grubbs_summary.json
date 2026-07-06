@@ -28,7 +28,7 @@
   "outputs": {
     "geojson": "results/geodata/tongji_building_height_cleanid_redshift_audited_paper_lit_coh075_DA040_minp12_rmse125_bspan120_topdown_grubbs_insar_only.geojson",
     "csv": "results/tables/tongji_building_height_cleanid_redshift_audited_paper_lit_coh075_DA040_minp12_rmse125_bspan120_topdown_grubbs_insar_only.csv",
-    "png": "results/pic_all/png/current_strict_clean_equal_height_full/205_cleanid_redshift_audited_建筑顶面高度_最高点向下Grubbs检验.png",
-    "svg": "results/pic_all/svg/current_strict_clean_equal_height_full/205_cleanid_redshift_audited_建筑顶面高度_最高点向下Grubbs检验.svg"
+    "png": null,
+    "svg": null
   }
 }

@@ -31,9 +31,9 @@
   "outputs": {
     "csv": "results/tables/tongji_building_height_cleanid_redshift_audited_paper_lit_coh075_DA040_minp12_rmse125_bspan120_topstats_insar_only.csv",
     "geojson": "results/geodata/tongji_building_height_cleanid_redshift_audited_paper_lit_coh075_DA040_minp12_rmse125_bspan120_topstats_insar_only.geojson",
-    "height_map_png": "results/pic_all/png/current_strict_clean_equal_height_full/203_cleanid_redshift_audited_building_topstats_height.png",
+    "height_map_png": null,
     "height_map_svg": "results/pic_all/svg/current_strict_clean_equal_height_full/203_cleanid_redshift_audited_building_topstats_height.svg",
-    "diagnostic_png": "results/pic_all/png/current_strict_clean_equal_height_full/204_cleanid_redshift_audited_building_internal_qc.png",
-    "diagnostic_svg": "results/pic_all/svg/current_strict_clean_equal_height_full/204_cleanid_redshift_audited_building_internal_qc.svg"
+    "diagnostic_png": null,
+    "diagnostic_svg": null
   }
 }

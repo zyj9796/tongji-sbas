@@ -68,15 +68,9 @@ Last updated: 2026-07-06
 - `results/tables/tongji_building_height_cleanid_redshift_audited_paper_lit_coh075_DA040_minp12_rmse125_bspan120_topdown_grubbs_insar_only.csv`
 - `results/metadata/tongji_building_height_cleanid_redshift_audited_paper_lit_coh075_DA040_minp12_rmse125_bspan120_topdown_grubbs_summary.json`
 
-关键图件：
+当前临时只输出一个关键图件：
 
-- `results/pic_all/png/projection_and_masks/103_equal_height_vector_cleanup.png`
-- `results/pic_all/png/projection_and_masks/108_clean_equal_height_roof_projection_mask_qc.png`
-- `results/pic_all/png/current_strict_clean_equal_height_full/202_cleanid_redshift_audited_lgr_island_qc_coh075_DA040_rmse125.png`
-- `results/pic_all/png/current_strict_clean_equal_height_full/203_cleanid_redshift_audited_building_topstats_height.png`
-- `results/pic_all/png/current_strict_clean_equal_height_full/204_cleanid_redshift_audited_building_internal_qc.png`
-- `results/pic_all/png/current_strict_clean_equal_height_full/205_cleanid_redshift_audited_建筑顶面高度_最高点向下Grubbs检验.png`
-- `results/pic_all/png/current_strict_clean_equal_height_full/206_cleanid_split_vs_redshift_audited_topdown_height_change.png`
+- `results/pic_all/svg/current_strict_clean_equal_height_full/203_cleanid_redshift_audited_building_topstats_height.svg`
 
 ## 4. 已完成的优化
 

@@ -103,7 +103,7 @@ def setup_chinese_font() -> FontProperties:
     return prop
 
 
-def plot_outputs(gdf: gpd.GeoDataFrame, out_png: Path, out_svg: Path, chinese_labels: bool = False) -> None:
+def plot_outputs(gdf: gpd.GeoDataFrame, out_png: Path | None, out_svg: Path | None, chinese_labels: bool = False) -> None:
     font = setup_chinese_font() if chinese_labels and Path(FONT_PATH).exists() else None
     solved = gdf[gdf["has_likely_top_height"]].copy()
     nodata = gdf[~gdf["has_likely_top_height"]].copy()
@@ -167,10 +167,12 @@ def plot_outputs(gdf: gpd.GeoDataFrame, out_png: Path, out_svg: Path, chinese_la
         axes[1].legend(handles=handles, loc="lower left", fontsize=8, frameon=True, framealpha=0.9)
         fig.suptitle("Most likely building top height from max-value hypothesis testing", fontsize=14)
     fig.tight_layout(rect=(0, 0, 1, 0.965))
-    out_png.parent.mkdir(parents=True, exist_ok=True)
-    out_svg.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(out_png)
-    fig.savefig(out_svg)
+    if out_png is not None:
+        out_png.parent.mkdir(parents=True, exist_ok=True)
+        fig.savefig(out_png)
+    if out_svg is not None:
+        out_svg.parent.mkdir(parents=True, exist_ok=True)
+        fig.savefig(out_svg)
     plt.close(fig)
 
 
@@ -236,7 +238,13 @@ def main() -> None:
     out_csv.parent.mkdir(parents=True, exist_ok=True)
     gdf.to_file(out_geojson, driver="GeoJSON")
     pd.DataFrame(gdf.drop(columns="geometry")).to_csv(out_csv, index=False)
-    plot_outputs(gdf, Path(args.out_png), Path(args.out_svg), chinese_labels=args.chinese_labels)
+    if args.out_png or args.out_svg:
+        plot_outputs(
+            gdf,
+            Path(args.out_png) if args.out_png else None,
+            Path(args.out_svg) if args.out_svg else None,
+            chinese_labels=args.chinese_labels,
+        )
 
     solved = gdf[gdf["has_likely_top_height"]].copy()
     err = solved["likely_top_minus_height_diag_m"].dropna()
@@ -260,8 +268,8 @@ def main() -> None:
         "outputs": {
             "geojson": args.out_geojson,
             "csv": args.out_csv,
-            "png": args.out_png,
-            "svg": args.out_svg,
+            "png": args.out_png or None,
+            "svg": args.out_svg or None,
         },
     }
     Path(args.summary).parent.mkdir(parents=True, exist_ok=True)

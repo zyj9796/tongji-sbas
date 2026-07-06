@@ -25,8 +25,12 @@ work/mli/*.png
 work/masks/*.npy
 work/masks/*.png
 
-# Generated visual diagnostics
-results/pic_all/
+# Generated visual diagnostics. Keep only the temporary single requested SVG.
+results/pic_all/**
+!results/pic_all/
+!results/pic_all/svg/
+!results/pic_all/svg/current_strict_clean_equal_height_full/
+!results/pic_all/svg/current_strict_clean_equal_height_full/203_cleanid_redshift_audited_building_topstats_height.svg
 results/diagnostics/
 
 # Local logs

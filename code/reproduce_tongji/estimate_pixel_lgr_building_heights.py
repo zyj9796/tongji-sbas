@@ -67,7 +67,7 @@ def solve_pixels(
     return dem, rate, rmse, n_valid, bperp_span
 
 
-def plot_qc(df: pd.DataFrame, label: np.ndarray, islands_info: pd.DataFrame, out: Path, out_svg: Path | None = None) -> None:
+def plot_qc(df: pd.DataFrame, label: np.ndarray, islands_info: pd.DataFrame, out: Path | None = None, out_svg: Path | None = None) -> None:
     status = np.zeros_like(label, dtype=np.uint8)
     island_ids = set(islands_info["island_id"].dropna().astype(int).tolist())
     processed_ids = set(df["island_id"].dropna().astype(int).tolist()) if not df.empty else set()
@@ -128,8 +128,9 @@ def plot_qc(df: pd.DataFrame, label: np.ndarray, islands_info: pd.DataFrame, out
         wrap=True,
     )
     fig.tight_layout()
-    out.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(out)
+    if out is not None:
+        out.parent.mkdir(parents=True, exist_ok=True)
+        fig.savefig(out)
     if out_svg is not None:
         out_svg.parent.mkdir(parents=True, exist_ok=True)
         fig.savefig(out_svg)
@@ -562,7 +563,14 @@ def main() -> None:
     Path(args.output_points).parent.mkdir(parents=True, exist_ok=True)
     out.to_csv(args.output_islands, index=False)
     pts.to_csv(args.output_points, index=False)
-    plot_qc(out, label, islands_info, Path(args.figure), Path(args.figure_svg) if args.figure_svg else None)
+    if args.figure or args.figure_svg:
+        plot_qc(
+            out,
+            label,
+            islands_info,
+            Path(args.figure) if args.figure else None,
+            Path(args.figure_svg) if args.figure_svg else None,
+        )
     summary = {
         "islands_total": int(len(islands_info)),
         "islands_processed": int(len(out)),
@@ -587,8 +595,8 @@ def main() -> None:
         "island_id_file": args.island_id_file,
         "output_islands": args.output_islands,
         "output_points": args.output_points,
-        "figure": args.figure,
-        "figure_svg": args.figure_svg,
+        "figure": args.figure or None,
+        "figure_svg": args.figure_svg or None,
         "method": "Pixel-wise LGR DEM-error inversion; building height = robust median(reference DSM/HGT in RDC + signed DEM-error residual - ground DEM). Current ground DEM assumption is constant 4 m; building height points are grouped by Touying FID mask within each island before WGS84 aggregation.",
     }
     Path(args.summary).parent.mkdir(parents=True, exist_ok=True)

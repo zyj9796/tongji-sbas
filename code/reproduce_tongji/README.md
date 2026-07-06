@@ -123,8 +123,8 @@ env MPLCONFIGDIR=/tmp/matplotlib-tongji \
   --output-islands work/height/island_pixel_lgr_heights_clean_equal_height_roof_only_full_area_128_cleanid_redshift_audited_paper_lit_coh075_DA040_minp12_rmse125_bspan120.csv \
   --output-points work/height/height_points_clean_equal_height_roof_only_full_area_128_cleanid_redshift_audited_paper_lit_coh075_DA040_minp12_rmse125_bspan120.csv \
   --summary results/metadata/pixel_lgr_building_heights_clean_equal_height_roof_only_full_area_128_cleanid_redshift_audited_paper_lit_coh075_DA040_minp12_rmse125_bspan120_summary.json \
-  --figure results/pic_all/png/current_strict_clean_equal_height_full/202_cleanid_redshift_audited_lgr_island_qc_coh075_DA040_rmse125.png \
-  --figure-svg results/pic_all/svg/current_strict_clean_equal_height_full/202_cleanid_redshift_audited_lgr_island_qc_coh075_DA040_rmse125.svg
+  --figure "" \
+  --figure-svg ""
 ```
 
 Aggregate to clean building vectors and build the final top-down Grubbs product:
@@ -136,10 +136,10 @@ Aggregate to clean building vectors and build the final top-down Grubbs product:
   --out-geojson results/geodata/tongji_building_height_cleanid_redshift_audited_paper_lit_coh075_DA040_minp12_rmse125_bspan120_topstats_insar_only.geojson \
   --out-csv results/tables/tongji_building_height_cleanid_redshift_audited_paper_lit_coh075_DA040_minp12_rmse125_bspan120_topstats_insar_only.csv \
   --summary results/metadata/tongji_building_height_cleanid_redshift_audited_paper_lit_coh075_DA040_minp12_rmse125_bspan120_topstats_summary.json \
-  --height-map-png results/pic_all/png/current_strict_clean_equal_height_full/203_cleanid_redshift_audited_building_topstats_height.png \
+  --height-map-png "" \
   --height-map-svg results/pic_all/svg/current_strict_clean_equal_height_full/203_cleanid_redshift_audited_building_topstats_height.svg \
-  --diagnostic-png results/pic_all/png/current_strict_clean_equal_height_full/204_cleanid_redshift_audited_building_internal_qc.png \
-  --diagnostic-svg results/pic_all/svg/current_strict_clean_equal_height_full/204_cleanid_redshift_audited_building_internal_qc.svg \
+  --diagnostic-png "" \
+  --diagnostic-svg "" \
   --omit-height-field
 
 .venv/bin/python code/reproduce_tongji/build_likely_top_height_from_tests.py \
@@ -147,8 +147,8 @@ Aggregate to clean building vectors and build the final top-down Grubbs product:
   --selection-mode top_down_grubbs \
   --out-geojson results/geodata/tongji_building_height_cleanid_redshift_audited_paper_lit_coh075_DA040_minp12_rmse125_bspan120_topdown_grubbs_insar_only.geojson \
   --out-csv results/tables/tongji_building_height_cleanid_redshift_audited_paper_lit_coh075_DA040_minp12_rmse125_bspan120_topdown_grubbs_insar_only.csv \
-  --out-png results/pic_all/png/current_strict_clean_equal_height_full/205_cleanid_redshift_audited_建筑顶面高度_最高点向下Grubbs检验.png \
-  --out-svg results/pic_all/svg/current_strict_clean_equal_height_full/205_cleanid_redshift_audited_建筑顶面高度_最高点向下Grubbs检验.svg \
+  --out-png "" \
+  --out-svg "" \
   --summary results/metadata/tongji_building_height_cleanid_redshift_audited_paper_lit_coh075_DA040_minp12_rmse125_bspan120_topdown_grubbs_summary.json \
   --omit-height-field \
   --chinese-labels
@@ -171,34 +171,8 @@ Aggregate to clean building vectors and build the final top-down Grubbs product:
 
 ## Figures
 
-- Equal-height cleanup:
-  `results/pic_all/png/projection_and_masks/103_equal_height_vector_cleanup.png`
-  and
-  `results/pic_all/svg/projection_and_masks/103_equal_height_vector_cleanup.svg`
-- Projection/mask QC:
-  `results/pic_all/png/projection_and_masks/108_clean_equal_height_roof_projection_mask_qc.png`
-  and
-  `results/pic_all/svg/projection_and_masks/108_clean_equal_height_roof_projection_mask_qc.svg`
 - Audited redshift final figures:
-  `results/pic_all/png/current_strict_clean_equal_height_full/202_cleanid_redshift_audited_lgr_island_qc_coh075_DA040_rmse125.png`
-  and
-  `results/pic_all/svg/current_strict_clean_equal_height_full/202_cleanid_redshift_audited_lgr_island_qc_coh075_DA040_rmse125.svg`
-  and
-  `results/pic_all/png/current_strict_clean_equal_height_full/203_cleanid_redshift_audited_building_topstats_height.png`
-  and
   `results/pic_all/svg/current_strict_clean_equal_height_full/203_cleanid_redshift_audited_building_topstats_height.svg`
-  and
-  `results/pic_all/png/current_strict_clean_equal_height_full/204_cleanid_redshift_audited_building_internal_qc.png`
-  and
-  `results/pic_all/svg/current_strict_clean_equal_height_full/204_cleanid_redshift_audited_building_internal_qc.svg`
-  and
-  `results/pic_all/png/current_strict_clean_equal_height_full/205_cleanid_redshift_audited_建筑顶面高度_最高点向下Grubbs检验.png`
-  and
-  `results/pic_all/svg/current_strict_clean_equal_height_full/205_cleanid_redshift_audited_建筑顶面高度_最高点向下Grubbs检验.svg`
-  and
-  `results/pic_all/png/current_strict_clean_equal_height_full/206_cleanid_split_vs_redshift_audited_topdown_height_change.png`
-  and
-  `results/pic_all/svg/current_strict_clean_equal_height_full/206_cleanid_split_vs_redshift_audited_topdown_height_change.svg`
 
 ## Current Status
 
