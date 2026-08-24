@@ -1,0 +1,31 @@
+{
+  "policy": "height-prior-independent graph robustness, then coherence/time/baseline tie-break",
+  "candidate_pairs": 74,
+  "seed_pairs": 37,
+  "target_pairs": 60,
+  "selected_pairs": 60,
+  "seed_graph": {
+    "nodes": 22,
+    "edges": 37,
+    "connected": true,
+    "components": 1,
+    "edge_connectivity": 1,
+    "bridges": 7,
+    "degree_min": 1,
+    "degree_median": 3.0,
+    "degree_max": 5
+  },
+  "selected_graph": {
+    "nodes": 22,
+    "edges": 60,
+    "connected": true,
+    "components": 1,
+    "edge_connectivity": 3,
+    "bridges": 0,
+    "degree_min": 3,
+    "degree_median": 5.0,
+    "degree_max": 9
+  },
+  "new_pairs": 23,
+  "output": "work/baselines/tongji_redundant_22_network60.csv"
+}

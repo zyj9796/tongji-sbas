@@ -1,0 +1,24 @@
+{
+  "method": "median of frozen equal-weight GAMMA 48-pair and graph-robust 36-pair solutions",
+  "stability_gate_m": 4.0,
+  "gate_origin": "rounded frozen-pilot |median difference| + 3 x robust MAD = 3.83 m",
+  "uses_prior_for_gate_or_height": false,
+  "prior_filled_buildings": 0,
+  "network48_solved": 238,
+  "network36_solved": 237,
+  "common_solved": 232,
+  "accepted_buildings": 230,
+  "unsolved_buildings": 798,
+  "height_median_m": 16.67042151093483,
+  "height_p05_p95_m": [
+    5.928888000547886,
+    47.65741840600967
+  ],
+  "height_maximum_m": 86.5387627184391,
+  "network_difference_median_m": -0.3771172761917132,
+  "network_absolute_difference_p95_m": 2.362938074767587,
+  "artifacts": {
+    "csv": "results/tables/tongji_building_height_network_consensus_gamma100.csv",
+    "geojson": "results/geodata/tongji_building_height_network_consensus_gamma100.geojson"
+  }
+}

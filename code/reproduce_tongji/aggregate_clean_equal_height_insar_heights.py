@@ -22,6 +22,15 @@ import pandas as pd
 from matplotlib.colors import ListedColormap, Normalize
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 
+matplotlib.rcParams.update(
+    {
+        "font.family": "sans-serif",
+        "font.sans-serif": ["Noto Sans CJK SC", "Droid Sans Fallback", "DejaVu Sans"],
+        "axes.unicode_minus": False,
+        "svg.fonttype": "none",
+    }
+)
+
 
 def robust_median(values: pd.Series | np.ndarray) -> float:
     arr = np.asarray(values, dtype=float)
@@ -148,6 +157,7 @@ def aggregate_points(points: pd.DataFrame, height_statistic: str) -> pd.DataFram
                 "roof_elevation_p95_m": robust_median(grp["roof_elevation_p95_m"]),
                 "reference_elevation_median_m": robust_median(grp["reference_elevation_median_m"]),
                 "pixel_count_used": int(grp["pixel_count_used"].sum()),
+                "effective_pixel_count": robust_median(grp["effective_pixel_count"]) if "effective_pixel_count" in grp else np.nan,
                 "point_count": int(len(grp)),
                 "island_count": int(grp["island_id"].nunique()),
                 "max_island_uid_count": int(grp["island_uid_count"].max()),
@@ -164,7 +174,7 @@ def aggregate_points(points: pd.DataFrame, height_statistic: str) -> pd.DataFram
     return pd.DataFrame(rows)
 
 
-def add_qc(gdf: gpd.GeoDataFrame, prior_gap_review: bool, omit_height_field: bool = False) -> gpd.GeoDataFrame:
+def add_qc(gdf: gpd.GeoDataFrame, prior_gap_review: bool, omit_height_field: bool = False, height_statistic: str = "p90") -> gpd.GeoDataFrame:
     gdf = gdf.copy()
     gdf["has_insar_height"] = np.isfinite(gdf["height_insar_m"])
     if omit_height_field:
@@ -177,7 +187,7 @@ def add_qc(gdf: gpd.GeoDataFrame, prior_gap_review: bool, omit_height_field: boo
     gdf["review_negative_height"] = gdf["height_insar_m"] < 0
     gdf["review_extreme_height"] = gdf["height_insar_m"] > 120
     max_reliable = gdf["max_height_reliable"] if "max_height_reliable" in gdf.columns else pd.Series(True, index=gdf.index)
-    gdf["review_unreliable_max_height"] = max_reliable.fillna(True).astype(bool).eq(False)
+    gdf["review_unreliable_max_height"] = max_reliable.fillna(True).astype(bool).eq(False) if height_statistic in {"max", "grubbs_top"} else False
     gdf["review_large_prior_gap"] = False if omit_height_field else (gdf["prior_gap_m"].abs() > 40)
     review_cols = [
         "review_multi_clean_id_island",
@@ -216,7 +226,7 @@ def plot_height_map(gdf: gpd.GeoDataFrame, out_png: Path | None, out_svg: Path |
         sm = plt.cm.ScalarMappable(norm=norm, cmap="viridis")
         sm.set_array([])
         cbar = fig.colorbar(sm, cax=cax)
-        cbar.set_label("InSAR building height (m)")
+        cbar.set_label("InSAR建筑高度（m）")
     review = base[base["qc_review"] & base["has_insar_height"]]
     if not review.empty:
         review.boundary.plot(ax=ax, color="#d73027", linewidth=0.9)
@@ -245,8 +255,8 @@ def plot_height_map(gdf: gpd.GeoDataFrame, out_png: Path | None, out_svg: Path |
     ax.text(
         0.01,
         0.01,
-        "Legend: colored buildings = strict InSAR height; gray buildings = no strict InSAR solution;\n"
-        "red outline = QC review / needs manual check; labels are height in m; no shp-height filling.",
+        "彩色建筑：严格InSAR高度；灰色建筑：无严格InSAR解；\n"
+        "红色轮廓：需要复核；标注单位为m；不使用矢量height填充。",
         transform=ax.transAxes,
         fontsize=8,
         color="#333333",
@@ -345,7 +355,7 @@ def main() -> None:
     points = pd.read_csv(args.points) if Path(args.points).exists() else pd.DataFrame()
     agg = aggregate_points(points, args.height_statistic)
     out = buildings.merge(agg, on="clean_id", how="left")
-    out = add_qc(out, args.prior_gap_review, omit_height_field=args.omit_height_field)
+    out = add_qc(out, args.prior_gap_review, omit_height_field=args.omit_height_field, height_statistic=args.height_statistic)
 
     Path(args.out_csv).parent.mkdir(parents=True, exist_ok=True)
     Path(args.out_geojson).parent.mkdir(parents=True, exist_ok=True)
@@ -356,7 +366,7 @@ def main() -> None:
         out,
         Path(args.height_map_png) if args.height_map_png else None,
         Path(args.height_map_svg) if args.height_map_svg else None,
-        "Clean equal-height vectors: roof-only strict InSAR building height",
+        "屋顶核心区SBAS建筑高度（严格有解）",
     )
     if args.diagnostic_png or args.diagnostic_svg:
         plot_diagnostics(
@@ -367,7 +377,7 @@ def main() -> None:
 
     ok = out[out["has_insar_height"]].copy()
     summary = {
-        "method": "Clean equal-height vector roof-only projection; paper-like unwrap; SBAS/LGR DEM-residual inversion; building height = selected InSAR-only roof statistic from DSM_RDC + residual - 4 m bare DEM. No shp-height filling or fitting.",
+        "method": "GAMMA roof-only projection; SBAS/LGR DEM-residual inversion; building height = selected InSAR-only roof statistic from DSM_RDC + residual - 4 m bare DEM. The exact unwrap/reference method is inherited from the point product. No vector-height filling or fitting.",
         "height_statistic": args.height_statistic,
         "height_source_column": source_height_column(points, args.height_statistic) if not points.empty else "",
         "prior_gap_review_enabled": bool(args.prior_gap_review),

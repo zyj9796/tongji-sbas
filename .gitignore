@@ -10,20 +10,44 @@ tmp/
 cache/
 .agents/
 .codex/
+codex_resume
+*.baiduyun.uploading.cfg
 
 # Raw or bulky data kept outside Git
 data/tongji_rslc/
 data/aaa.zip
 文献和原始代码/
+zjc/**/*.pdf
+zjc/**/*.mat
+zjc/**/*.tif
+zjc/**/*.png
+zjc/**/*.bmp
+zjc/**/*.zip
+zjc/my_study/DEM_seg
+zjc/my_study/my_muilt_hight/
 
 # Heavy/rebuildable processing products
-work/gamma_sbas/
-work/gamma_sbas_triangular_baseline/
-work/intf_quicklooks/
-work/mli/*.npy
-work/mli/*.png
-work/masks/*.npy
-work/masks/*.png
+work/*
+!work/baselines/
+work/baselines/*
+!work/baselines/tongji_redundant_22_network48_qc.csv
+!work/gamma_native_ipta_paperquality_stability36/
+work/gamma_native_ipta_paperquality_stability36/*
+!work/gamma_native_ipta_paperquality_stability36/pairs_stability_subset.csv
+
+# Generated result tables/vectors. Version only the current formal product;
+# the complete historical experiment tree remains available locally.
+results/geodata/*
+!results/geodata/tongji_building_height_guarded_upper_roof_consensus_gamma100.geojson
+results/tables/*
+!results/tables/tongji_building_height_guarded_upper_roof_consensus_gamma100.csv
+results/projection_correction_20260707/
+results/logs/
+
+# Large generated diagnostics embedded beside prose documentation
+docs/*.csv
+docs/*.geojson
+docs/*.svg
 
 # Generated visual diagnostics. Keep only the temporary single requested SVG.
 results/pic_all/**

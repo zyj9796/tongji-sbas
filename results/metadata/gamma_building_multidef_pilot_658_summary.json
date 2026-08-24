@@ -1,0 +1,41 @@
+{
+  "method": "per-building SAR support + nearby stable ground -> GAMMA multi_def_pt -> GAMMA mb_pt -> local-ground subtraction -> upper-cluster/IQR aggregation",
+  "unwrap_engine": "multi_def_pt",
+  "prior_policy": "prior loaded only after InSAR-only solve and internal acceptance; comparison-only; never used for selection, unwrapping, inversion, QC, aggregation, or filling",
+  "pairs": 37,
+  "candidate_buildings": 1,
+  "processed_buildings": 1,
+  "gamma_solved_buildings": 1,
+  "accepted_buildings": 1,
+  "height_median_m": 4.3801575899124146,
+  "height_p05_p95_m": [
+    4.3801575899124146,
+    4.3801575899124146
+  ],
+  "phase_sigma_median_rad": 0.3579050153493881,
+  "failure_counts": {
+    "none": 1
+  },
+  "rejection_policy": {
+    "min_output_points": 4,
+    "max_median_phase_sigma": 1.2,
+    "max_roof_iqr_m": 80.0,
+    "physical_height_range_m": [
+      0.0,
+      180.0
+    ]
+  },
+  "prior_comparison_after_acceptance": {
+    "count": 1,
+    "median_difference_m": -16.619842410087585,
+    "mae_m": 16.619842410087585,
+    "correlation": null
+  },
+  "artifacts": {
+    "audit_csv": "work/gamma_building_multidef_pilot_658/building_audit_insar_only.csv",
+    "result_csv": "results/tables/gamma_building_multidef_pilot_658.csv",
+    "result_geojson": "results/geodata/gamma_building_multidef_pilot_658.geojson",
+    "gamma_log": "work/gamma_building_multidef_pilot_658/gamma_building_mcf.log",
+    "building_shards": "work/gamma_building_multidef_pilot_658/building_shards"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "method": "per-building SAR support + nearby stable ground -> geometry_wrapped_init -> GAMMA mb_pt -> local-ground subtraction -> IQR/median aggregation",
+  "unwrap_engine": "geometry_wrapped_init",
+  "global_punw": null,
+  "wrapped_height_audit": "results/tables/tongji_prior_roof_cycle_initialization_network48_qc_points.csv",
+  "initialization_height_offset_m": 50.0,
+  "product_class": "hybrid_GAMMA_SBASE_with_RD_cycle_initialization",
+  "prior_policy": "no value copied or filled; the external prior-derived R-D roof audit is used only to initialize 2pi phase cycles, then GAMMA mb_pt re-estimates height; comparison to the same prior is non-independent",
+  "pairs": 48,
+  "interferogram_dir": "work/gamma_native_ipta_sbas/interferograms",
+  "support_owner": null,
+  "support_min_mean_coherence": 0.75,
+  "closure_bad_count": null,
+  "max_closure_bad_triangles": -1,
+  "candidate_buildings": 36,
+  "processed_buildings": 36,
+  "gamma_solved_buildings": 34,
+  "accepted_buildings": 32,
+  "height_median_m": 71.69485942274332,
+  "height_p05_p95_m": [
+    59.16994588673115,
+    98.04879812430588
+  ],
+  "phase_sigma_median_rad": 0.19970784708857536,
+  "failure_counts": {
+    "none": 34,
+    "too_few_nearby_ground_points": 1,
+    "too few support points valid in every geometry_wrapped_init record": 1
+  },
+  "rejection_policy": {
+    "min_output_points": 4,
+    "max_median_phase_sigma": 0.75,
+    "max_roof_iqr_m": 8.0,
+    "physical_height_range_m": [
+      0.0,
+      180.0
+    ]
+  },
+  "prior_comparison_after_acceptance_non_independent": {
+    "count": 32,
+    "median_difference_m": 50.50618904829025,
+    "mae_m": 50.82562015380245,
+    "correlation": 0.9948175001023428
+  },
+  "artifacts": {
+    "audit_csv": "work/gamma_network48_ambiguity_offset_p50_sample36/building_audit_insar_only.csv",
+    "result_csv": "results/tables/gamma_network48_ambiguity_offset_p50_sample36.csv",
+    "result_geojson": "results/geodata/gamma_network48_ambiguity_offset_p50_sample36.geojson",
+    "gamma_log": "work/gamma_network48_ambiguity_offset_p50_sample36/gamma_building_mcf.log",
+    "building_shards": "work/gamma_network48_ambiguity_offset_p50_sample36/building_shards"
+  }
+}

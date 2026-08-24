@@ -18,10 +18,19 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from scipy.sparse import coo_matrix
+from scipy.sparse import coo_matrix, vstack
+from scipy.sparse.csgraph import connected_components
 from scipy.sparse.linalg import lsmr
 from scipy.spatial import Delaunay, cKDTree
 from skimage.restoration import unwrap_phase
+
+matplotlib.rcParams.update(
+    {
+        "font.family": "sans-serif",
+        "font.sans-serif": ["Noto Sans CJK SC", "Noto Sans CJK JP", "Source Han Sans SC", "DejaVu Sans"],
+        "svg.fonttype": "none",
+    }
+)
 
 from extract_gamma_differential_island_observations import read_fcomplex, read_float
 from inventory_data import parse_gamma_par
@@ -40,19 +49,37 @@ def design(bperp: np.ndarray, dt_days: np.ndarray, wavelength: float, range_m: f
     )
 
 
-def robust_bisquare_fit(x: np.ndarray, y: np.ndarray, max_iter: int = 30, tune: float = 4.685) -> tuple[np.ndarray, np.ndarray]:
+def bisquare_weights(residual: np.ndarray, tune: float = 4.685) -> np.ndarray:
+    """Return Tukey-Bisquare weights using the paper's 4.685 tuning constant."""
+    finite = np.isfinite(residual)
+    result = np.zeros_like(residual, dtype=np.float64)
+    if not np.any(finite):
+        return result
+    centre = float(np.nanmedian(residual[finite]))
+    mad = float(np.nanmedian(np.abs(residual[finite] - centre)))
+    scale = max(1.4826 * mad, 1.0e-6)
+    u = (residual - centre) / (tune * scale)
+    inside = finite & (np.abs(u) < 1.0)
+    result[inside] = (1.0 - u[inside] ** 2) ** 2
+    return result
+
+
+def robust_bisquare_fit(
+    x: np.ndarray,
+    y: np.ndarray,
+    max_iter: int = 30,
+    tune: float = 4.685,
+) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     keep = np.isfinite(y) & np.isfinite(x).all(axis=1)
     x = x[keep]
     y = y[keep]
     if len(y) < x.shape[1] + 1:
-        return np.full(x.shape[1], np.nan), np.full(len(keep), np.nan)
+        missing = np.full(len(keep), np.nan)
+        return np.full(x.shape[1], np.nan), missing, np.zeros(len(keep), dtype=np.float64)
     coef, *_ = np.linalg.lstsq(x, y, rcond=None)
     for _ in range(max_iter):
         resid = y - x @ coef
-        mad = np.median(np.abs(resid - np.median(resid)))
-        scale = max(1.4826 * mad, 1e-6)
-        u = resid / (tune * scale)
-        w = np.where(np.abs(u) < 1.0, (1.0 - u**2) ** 2, 0.0)
+        w = bisquare_weights(resid, tune=tune)
         if np.count_nonzero(w > 0) < x.shape[1] + 1:
             break
         xw = x * np.sqrt(w)[:, None]
@@ -64,7 +91,9 @@ def robust_bisquare_fit(x: np.ndarray, y: np.ndarray, max_iter: int = 30, tune: 
         coef = new_coef
     full_resid = np.full(len(keep), np.nan)
     full_resid[keep] = y - x @ coef
-    return coef, full_resid
+    full_weight = np.zeros(len(keep), dtype=np.float64)
+    full_weight[keep] = bisquare_weights(full_resid[keep], tune=tune)
+    return coef, full_resid, full_weight
 
 
 def local_arcs(coords: np.ndarray, n_knn: int) -> np.ndarray:
@@ -95,7 +124,22 @@ def local_arcs(coords: np.ndarray, n_knn: int) -> np.ndarray:
     return np.unique(np.asarray(arcs, dtype=np.int64), axis=0)
 
 
-def paper_like_unwrap(phase_patch: np.ndarray, valid_mask: np.ndarray, wavelength_m: float) -> tuple[np.ndarray, dict[str, float | int]]:
+def paper_like_unwrap(
+    phase_patch: np.ndarray,
+    valid_mask: np.ndarray,
+    wavelength_m: float,
+    coherence_patch: np.ndarray | None = None,
+    amplitude_dispersion_patch: np.ndarray | None = None,
+    use_quality_weights: bool = True,
+    preserve_wrapped_reference: bool = True,
+) -> tuple[np.ndarray, dict[str, float | int | str]]:
+    """Unwrap one vector-isolated island with the paper's local robust network.
+
+    Only valid island pixels become graph nodes.  Edge equations are weighted by
+    interferometric coherence, amplitude dispersion, and the local Bisquare
+    residual.  Each disconnected graph component retains one observed wrapped
+    phase as its datum instead of being reset to an arbitrary zero.
+    """
     rr, cc = np.nonzero(valid_mask & np.isfinite(phase_patch))
     n = len(rr)
     out = np.full_like(phase_patch, np.nan, dtype=np.float32)
@@ -105,6 +149,16 @@ def paper_like_unwrap(phase_patch: np.ndarray, valid_mask: np.ndarray, wavelengt
 
     coords = np.column_stack([cc.astype(np.float64), rr.astype(np.float64)])
     obs = phase_patch[rr, cc].astype(np.float64)
+    if coherence_patch is None:
+        node_coherence = np.ones(n, dtype=np.float64)
+    else:
+        node_coherence = np.clip(coherence_patch[rr, cc].astype(np.float64), 1.0e-3, 1.0)
+        node_coherence[~np.isfinite(node_coherence)] = 1.0e-3
+    if amplitude_dispersion_patch is None:
+        node_da = np.zeros(n, dtype=np.float64)
+    else:
+        node_da = amplitude_dispersion_patch[rr, cc].astype(np.float64)
+        node_da[~np.isfinite(node_da)] = 1.0
     tree = cKDTree(coords)
     k_nearest = min(9, n)
     _, clusters = tree.query(coords, k=k_nearest)
@@ -115,6 +169,7 @@ def paper_like_unwrap(phase_patch: np.ndarray, valid_mask: np.ndarray, wavelengt
     arc_to = []
     arc_obs = []
     arc_resid = []
+    arc_weight = []
     total_arcs = 0
     for cluster in clusters:
         cluster = np.asarray(cluster, dtype=np.int64)
@@ -132,17 +187,24 @@ def paper_like_unwrap(phase_patch: np.ndarray, valid_mask: np.ndarray, wavelengt
         t = arcs[:, 1]
         poly = np.column_stack([xr[t] - xr[f], yr[t] - yr[f], xr[t] * yr[t] - xr[f] * yr[f]])
         y = wrap_phase(cobs[t] - cobs[f])
-        coef, resid = robust_bisquare_fit(poly, y)
+        coef, resid, residual_weight = robust_bisquare_fit(poly, y)
         if not np.isfinite(coef).all():
             continue
         pred = poly @ coef
+        edge_coherence = np.sqrt(node_coherence[cluster[f]] * node_coherence[cluster[t]])
+        edge_da = 0.5 * (node_da[cluster[f]] + node_da[cluster[t]])
+        da_weight = np.exp(-np.square(edge_da / 0.40))
+        combined_weight = edge_coherence * da_weight * residual_weight
         keep = np.isfinite(resid) & (np.abs(resid) < threshold)
+        if use_quality_weights:
+            keep &= combined_weight > 1.0e-6
         if not np.any(keep):
             continue
         arc_from.extend(cluster[f[keep]].tolist())
         arc_to.extend(cluster[t[keep]].tolist())
         arc_obs.extend(pred[keep].tolist())
         arc_resid.extend(resid[keep].tolist())
+        arc_weight.extend((combined_weight[keep] if use_quality_weights else np.ones(np.sum(keep))).tolist())
 
     if not arc_obs:
         return out, {"points": int(n), "arcs": int(total_arcs), "kept_arcs": 0, "status": "no_arcs"}
@@ -150,6 +212,7 @@ def paper_like_unwrap(phase_patch: np.ndarray, valid_mask: np.ndarray, wavelengt
     arc_from_arr = np.asarray(arc_from, dtype=np.int64)
     arc_to_arr = np.asarray(arc_to, dtype=np.int64)
     b = np.asarray(arc_obs, dtype=np.float64)
+    edge_weight = np.clip(np.asarray(arc_weight, dtype=np.float64), 1.0e-6, 1.0)
     m = len(b)
     rows = np.arange(m)
     mat = coo_matrix(
@@ -162,16 +225,62 @@ def paper_like_unwrap(phase_patch: np.ndarray, valid_mask: np.ndarray, wavelengt
     active = np.flatnonzero(np.asarray(np.abs(mat).sum(axis=0)).ravel() > 0)
     if len(active) < 2:
         return out, {"points": int(n), "arcs": int(total_arcs), "kept_arcs": int(m), "status": "rank_fail"}
-    reduced = mat[:, active[1:]]
-    sol = lsmr(reduced, b, atol=1e-7, btol=1e-7, maxiter=500)[0]
-    full = np.full(n, np.nan, dtype=np.float64)
-    full[active] = np.r_[0.0, sol]
+    adjacency = coo_matrix(
+        (
+            np.r_[edge_weight, edge_weight],
+            (np.r_[arc_from_arr, arc_to_arr], np.r_[arc_to_arr, arc_from_arr]),
+        ),
+        shape=(n, n),
+    ).tocsr()
+    component_count, component_label = connected_components(adjacency, directed=False)
+
+    # Weighted edge equations plus one strong observed-phase datum per graph
+    # component.  The datum preserves the phase modulo 2pi; it does not invent
+    # an absolute integer cycle.
+    sqrt_weight = np.sqrt(edge_weight)
+    weighted_mat = mat.multiply(sqrt_weight[:, None])
+    weighted_rhs = b * sqrt_weight
+    anchor_nodes: list[int] = []
+    for component in range(component_count):
+        candidates = np.flatnonzero((component_label == component) & np.isin(np.arange(n), active))
+        if len(candidates):
+            quality = node_coherence[candidates] * np.exp(-np.square(node_da[candidates] / 0.40))
+            anchor_nodes.append(int(candidates[int(np.nanargmax(quality))]))
+    if not anchor_nodes:
+        return out, {"points": int(n), "arcs": int(total_arcs), "kept_arcs": int(m), "status": "no_anchor"}
+    anchor_scale = 1.0e3
+    anchor_rows = coo_matrix(
+        (
+            np.full(len(anchor_nodes), anchor_scale),
+            (np.arange(len(anchor_nodes)), np.asarray(anchor_nodes, dtype=np.int64)),
+        ),
+        shape=(len(anchor_nodes), n),
+    ).tocsr()
+    system = vstack([weighted_mat, anchor_rows], format="csr")
+    anchor_rhs = (
+        obs[np.asarray(anchor_nodes, dtype=np.int64)]
+        if preserve_wrapped_reference
+        else np.zeros(len(anchor_nodes), dtype=np.float64)
+    )
+    rhs = np.r_[weighted_rhs, anchor_scale * anchor_rhs]
+    full = lsmr(system, rhs, atol=1e-7, btol=1e-7, maxiter=1000)[0]
+    inactive = np.ones(n, dtype=bool)
+    inactive[active] = False
+    full[inactive] = np.nan
     out[rr, cc] = full.astype(np.float32)
     return out, {
         "points": int(n),
         "arcs": int(total_arcs),
         "kept_arcs": int(m),
         "status": "ok",
+        "components": int(len(anchor_nodes)),
+        "reference_policy": (
+            "one observed wrapped-phase datum per connected component"
+            if preserve_wrapped_reference
+            else "arbitrary zero datum per connected component"
+        ),
+        "quality_weighting": "coherence_x_DA_x_Bisquare" if use_quality_weights else "equal",
+        "median_edge_weight": float(np.nanmedian(edge_weight)),
         "median_abs_local_resid": float(np.nanmedian(np.abs(arc_resid))) if arc_resid else np.nan,
     }
 
@@ -205,17 +314,18 @@ def plot_results(df: pd.DataFrame, out: Path) -> None:
     fig, axes = plt.subplots(1, 3, figsize=(14, 4.2), dpi=220)
     ok = df[df["paper_status"] == "ok"].copy()
     axes[0].hist(ok["phase_diff_std_rad"].dropna(), bins=30, color="#4477aa", edgecolor="white")
-    axes[0].set_title("Paper-like vs skimage phase diff")
-    axes[0].set_xlabel("std rad after median removal")
-    axes[1].scatter(ok["skimage_height_m"], ok["paper_height_m"], s=22, alpha=0.75, color="#117733")
-    lim = float(np.nanmax([ok["skimage_height_m"].max(), ok["paper_height_m"].max(), 1.0])) if not ok.empty else 1.0
+    axes[0].set_title("质量加权前后相位差")
+    axes[0].set_xlabel("去中位数后的标准差（弧度）")
+    axes[1].scatter(ok["paper_equal_height_m"], ok["paper_weighted_height_m"], s=22, alpha=0.75, color="#117733")
+    lim = float(np.nanmax([ok["paper_equal_height_m"].max(), ok["paper_weighted_height_m"].max(), 1.0])) if not ok.empty else 1.0
     axes[1].plot([0, lim], [0, lim], color="#333333", linewidth=0.8)
-    axes[1].set_title("Selected-island height range")
-    axes[1].set_xlabel("skimage m")
-    axes[1].set_ylabel("paper-like m")
+    axes[1].set_title("论文等权与质量加权高程范围")
+    axes[1].set_xlabel("等权网络（米）")
+    axes[1].set_ylabel("质量加权网络（米）")
     status_counts = df["paper_status"].value_counts()
-    axes[2].bar(status_counts.index, status_counts.values, color="#cc6677")
-    axes[2].set_title("Paper-like unwrap status")
+    status_labels = ["成功" if value == "ok" else str(value) for value in status_counts.index]
+    axes[2].bar(status_labels, status_counts.values, color="#cc6677")
+    axes[2].set_title("论文加权解缠状态")
     axes[2].tick_params(axis="x", rotation=25)
     fig.tight_layout()
     out.parent.mkdir(parents=True, exist_ok=True)
@@ -226,9 +336,10 @@ def plot_results(df: pd.DataFrame, out: Path) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--outliers", default="results/tables/tongji_building_height_qc_outliers_dsm_review.csv")
-    parser.add_argument("--pairs-csv", default="work/baselines/temporal_candidate_pairs_gamma_bperp.csv")
-    parser.add_argument("--intf-root", default="work/gamma_sbas/intf")
-    parser.add_argument("--island-label", default="work/masks/island_label_touying_blue_bottom.npy")
+    parser.add_argument("--island-id-file", default="", help="Optional frozen CSV containing island_id values")
+    parser.add_argument("--pairs-csv", default="work/baselines/tongji_redundant_22_network48_qc.csv")
+    parser.add_argument("--intf-root", default="work/gamma_native_ipta_sbas/interferograms")
+    parser.add_argument("--island-label", default="work/roof_sbas_adaptive_window_paper_quality_network48/roof_core_island_label.npy")
     parser.add_argument("--fid-mask", default="work/masks/building_fid_mask_touying_blue_bottom.npy")
     parser.add_argument("--reference-par", default="data/tongji_rslc/20200708.rslc.par")
     parser.add_argument("--rows", type=int, default=630)
@@ -236,25 +347,38 @@ def main() -> None:
     parser.add_argument("--top-islands", type=int, default=8)
     parser.add_argument("--max-pairs", type=int, default=8)
     parser.add_argument("--min-coherence", type=float, default=0.2)
+    parser.add_argument("--amplitude-dispersion", default="work/mli/amplitude_dispersion_crop_bmp.npy")
     parser.add_argument("--min-pairs", type=int, default=5)
     parser.add_argument("--output-csv", default="results/tables/paper_unwrap_benchmark.csv")
     parser.add_argument("--summary", default="results/metadata/paper_unwrap_benchmark_summary.json")
-    parser.add_argument("--figure", default="results/pic_all/27_paper_unwrap_benchmark.png")
+    parser.add_argument("--figure", default="results/pic_all/27_论文加权孤岛解缠消融.svg")
     args = parser.parse_args()
-
-    outliers = pd.read_csv(args.outliers)
-    island_ids = []
-    for value in outliers.sort_values("dsm_review_priority_rank")["qc_island_ids"]:
-        for part in str(value).split(";"):
-            if part and part != "nan":
-                island_id = int(float(part))
-                if island_id not in island_ids:
-                    island_ids.append(island_id)
-        if len(island_ids) >= args.top_islands:
-            break
 
     pairs = pd.read_csv(args.pairs_csv).head(args.max_pairs).copy()
     label = np.load(args.island_label)
+    if args.island_id_file:
+        frozen = pd.read_csv(args.island_id_file)
+        island_ids = [int(value) for value in frozen["island_id"].head(args.top_islands)]
+    elif Path(args.outliers).exists():
+        outliers = pd.read_csv(args.outliers)
+        island_ids = []
+        for value in outliers.sort_values("dsm_review_priority_rank")["qc_island_ids"]:
+            for part in str(value).split(";"):
+                if part and part != "nan":
+                    island_id = int(float(part))
+                    if island_id not in island_ids:
+                        island_ids.append(island_id)
+            if len(island_ids) >= args.top_islands:
+                break
+    else:
+        ids, counts = np.unique(label[label > 0], return_counts=True)
+        order = np.argsort(-counts, kind="stable")
+        island_ids = [int(value) for value in ids[order[: args.top_islands]]]
+    amplitude_dispersion = np.load(args.amplitude_dispersion).astype(np.float32)
+    if amplitude_dispersion.shape != label.shape:
+        raise ValueError(
+            f"amplitude-dispersion shape {amplitude_dispersion.shape} does not match label shape {label.shape}"
+        )
     par = parse_gamma_par(Path(args.reference_par))
     wavelength = 299792458.0 / float(par["radar_frequency"])
     a = design(
@@ -269,7 +393,10 @@ def main() -> None:
     for row in pairs.itertuples(index=False):
         pair = f"{row.master}_{row.slave}"
         pair_dir = Path(args.intf_root) / pair
-        diff = read_fcomplex(pair_dir / f"{pair}.diff", args.rows, args.cols)
+        diff_path = pair_dir / f"{pair}.adf.diff"
+        if not diff_path.exists():
+            diff_path = pair_dir / f"{pair}.diff"
+        diff = read_fcomplex(diff_path, args.rows, args.cols)
         cc = read_float(pair_dir / f"{pair}.cc", args.rows, args.cols)
         phase_stack.append(np.angle(diff).astype(np.float32))
         coh_stack.append(cc.astype(np.float32))
@@ -285,41 +412,60 @@ def main() -> None:
         patch_keep = keep[r0:r1, c0:c1]
         pix = np.nonzero(patch_keep.ravel())[0]
         sk_phase_rows = []
-        paper_phase_rows = []
+        paper_equal_phase_rows = []
+        paper_weighted_phase_rows = []
         coh_rows = []
         pair_status = []
         pair_phase_diffs = []
         for k, pair_row in enumerate(pairs.itertuples(index=False)):
             phase_patch = phase_stack[k][r0:r1, c0:c1]
             coh_patch = coh_stack[k][r0:r1, c0:c1]
+            da_patch = amplitude_dispersion[r0:r1, c0:c1]
             valid = patch_keep & np.isfinite(phase_patch) & np.isfinite(coh_patch) & (coh_patch >= args.min_coherence)
             if int(np.sum(valid)) < 20:
                 sk = np.full_like(phase_patch, np.nan, dtype=np.float32)
-                paper = np.full_like(phase_patch, np.nan, dtype=np.float32)
+                paper_equal = np.full_like(phase_patch, np.nan, dtype=np.float32)
+                paper_weighted = np.full_like(phase_patch, np.nan, dtype=np.float32)
                 info = {"status": "too_few_valid", "kept_arcs": 0, "arcs": 0}
             else:
                 try:
                     sk = unwrap_phase(np.ma.array(phase_patch, mask=~valid)).filled(np.nan).astype(np.float32)
                 except Exception:
                     sk = np.full_like(phase_patch, np.nan, dtype=np.float32)
-                paper, info = paper_like_unwrap(phase_patch, valid, wavelength)
+                paper_equal, _ = paper_like_unwrap(
+                    phase_patch,
+                    valid,
+                    wavelength,
+                    use_quality_weights=False,
+                    preserve_wrapped_reference=False,
+                )
+                paper_weighted, info = paper_like_unwrap(
+                    phase_patch,
+                    valid,
+                    wavelength,
+                    coherence_patch=coh_patch,
+                    amplitude_dispersion_patch=da_patch,
+                )
             sk_vec = sk.ravel()[pix]
-            paper_vec = paper.ravel()[pix]
+            paper_equal_vec = paper_equal.ravel()[pix]
+            paper_weighted_vec = paper_weighted.ravel()[pix]
             coh_vec = coh_patch.ravel()[pix]
-            both = np.isfinite(sk_vec) & np.isfinite(paper_vec)
+            both = np.isfinite(paper_equal_vec) & np.isfinite(paper_weighted_vec)
             if int(np.sum(both)) > 0:
-                diff = paper_vec[both] - sk_vec[both]
+                diff = paper_weighted_vec[both] - paper_equal_vec[both]
                 diff = diff - np.nanmedian(diff)
                 pair_phase_diffs.append(float(np.nanstd(diff)))
             else:
                 pair_phase_diffs.append(np.nan)
             sk_phase_rows.append(sk_vec)
-            paper_phase_rows.append(paper_vec)
+            paper_equal_phase_rows.append(paper_equal_vec)
+            paper_weighted_phase_rows.append(paper_weighted_vec)
             coh_rows.append(coh_vec)
             pair_status.append(str(info.get("status", "unknown")))
 
         sk_dem = solve_dem(sk_phase_rows, coh_rows, a, args.min_pairs)
-        paper_dem = solve_dem(paper_phase_rows, coh_rows, a, args.min_pairs)
+        paper_equal_dem = solve_dem(paper_equal_phase_rows, coh_rows, a, args.min_pairs)
+        paper_weighted_dem = solve_dem(paper_weighted_phase_rows, coh_rows, a, args.min_pairs)
         rows.append(
             {
                 "island_id": island_id,
@@ -329,8 +475,9 @@ def main() -> None:
                 "paper_status": "ok" if any(s == "ok" for s in pair_status) else ";".join(sorted(set(pair_status))),
                 "phase_diff_std_rad": float(np.nanmedian(pair_phase_diffs)),
                 "skimage_height_m": height_range(sk_dem),
-                "paper_height_m": height_range(paper_dem),
-                "height_delta_m": height_range(paper_dem) - height_range(sk_dem),
+                "paper_equal_height_m": height_range(paper_equal_dem),
+                "paper_weighted_height_m": height_range(paper_weighted_dem),
+                "height_delta_m": height_range(paper_weighted_dem) - height_range(paper_equal_dem),
                 "selected_pair_statuses": ";".join(pair_status),
             }
         )
@@ -349,7 +496,7 @@ def main() -> None:
         "median_height_delta_m": float(df["height_delta_m"].median()) if not df.empty else None,
         "output_csv": args.output_csv,
         "figure": args.figure,
-        "note": "Diagnostic only: paper-like unwrap approximates the MATLAB KNN/Bisquare/LSMR method on selected priority outlier islands and selected GAMMA pairs; it is not yet used in the production height stack.",
+        "note": "仅作冻结消融诊断：对比等权零基准网络与相干性、振幅离差、Bisquare联合加权且保留缠绕相位基准的网络；尚未进入正式高度产品。",
     }
     Path(args.summary).write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(summary, ensure_ascii=False, indent=2))

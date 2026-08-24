@@ -1,0 +1,30 @@
+{
+  "method": "drop lowest-quality pairs while preserving edge-connectivity >=2 and minimum degree >=2",
+  "source_pairs": 48,
+  "retained_pairs": 36,
+  "dropped_original_records": [
+    8,
+    14,
+    16,
+    19,
+    21,
+    24,
+    26,
+    34,
+    38,
+    39,
+    42,
+    48
+  ],
+  "uses_building_height": false,
+  "graph": {
+    "connected": true,
+    "edge_connectivity": 2,
+    "bridges": 0,
+    "minimum_degree": 2
+  },
+  "artifacts": {
+    "source_dir": "work/gamma_native_ipta_paperquality_stability36",
+    "pairs_csv": "work/gamma_native_ipta_paperquality_stability36/pairs_stability_subset.csv"
+  }
+}

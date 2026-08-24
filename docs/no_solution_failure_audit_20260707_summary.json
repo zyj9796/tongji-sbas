@@ -1,0 +1,29 @@
+{
+  "date": "2026-07-07",
+  "input_final_csv": "results/tables/tongji_building_height_cleanid_redshift_audited_paper_lit_coh075_DA040_minp12_rmse125_bspan120_topdown_grubbs_insar_only.csv",
+  "no_solution_buildings": 789,
+  "refined_failure_class_counts": {
+    "no_sar_roof_island": 383,
+    "lgr_valid_pairs_lt_min_after_unwrap": 355,
+    "amplitude_dispersion_pixels_too_few": 27,
+    "lgr_rmse_gt_max": 24
+  },
+  "lgr_gate_diagnostic": {
+    "target_buildings": 379,
+    "target_class_before_refinement": "lgr_pixel_filters_left_too_few_pixels",
+    "counts": {
+      "rmse_gt_max": 24,
+      "valid_pairs_lt_min_after_unwrap": 355
+    }
+  },
+  "height_field_use": "not_read_for_fitting_filtering_calibration_selection_or_qc",
+  "outputs": {
+    "audit_csv": "docs/no_solution_failure_audit_20260707.csv",
+    "overview_svg": "docs/no_solution_failure_audit_20260707.svg",
+    "report_md": "docs/no_solution_failure_audit_20260707.md",
+    "summary_json": "docs/no_solution_failure_audit_20260707_summary.json",
+    "lgr_island_csv": "docs/lgr_failure_gate_diagnostics_islands_20260707.csv",
+    "lgr_building_csv": "docs/lgr_failure_gate_diagnostics_buildings_20260707.csv",
+    "lgr_summary_json": "docs/lgr_failure_gate_diagnostics_20260707_summary.json"
+  }
+}

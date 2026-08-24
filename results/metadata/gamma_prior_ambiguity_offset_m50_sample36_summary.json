@@ -1,0 +1,49 @@
+{
+  "method": "per-building SAR support + nearby stable ground -> geometry_wrapped_init -> GAMMA mb_pt -> local-ground subtraction -> IQR/median aggregation",
+  "unwrap_engine": "geometry_wrapped_init",
+  "global_punw": null,
+  "wrapped_height_audit": "results/tables/tongji_prior_roof_cycle_initialization_points.csv",
+  "initialization_height_offset_m": -50.0,
+  "product_class": "hybrid_GAMMA_SBASE_with_RD_cycle_initialization",
+  "prior_policy": "no value copied or filled; the external prior-derived R-D roof audit is used only to initialize 2pi phase cycles, then GAMMA mb_pt re-estimates height; comparison to the same prior is non-independent",
+  "pairs": 37,
+  "support_owner": null,
+  "support_min_mean_coherence": 0.75,
+  "closure_bad_count": null,
+  "max_closure_bad_triangles": -1,
+  "candidate_buildings": 36,
+  "processed_buildings": 36,
+  "gamma_solved_buildings": 36,
+  "accepted_buildings": 3,
+  "height_median_m": 14.313392053358257,
+  "height_p05_p95_m": [
+    3.977587301749736,
+    34.466871089767665
+  ],
+  "phase_sigma_median_rad": 0.327292799949646,
+  "failure_counts": {
+    "none": 36
+  },
+  "rejection_policy": {
+    "min_output_points": 4,
+    "max_median_phase_sigma": 0.75,
+    "max_roof_iqr_m": 8.0,
+    "physical_height_range_m": [
+      0.0,
+      180.0
+    ]
+  },
+  "prior_comparison_after_acceptance_non_independent": {
+    "count": 3,
+    "median_difference_m": -50.2938534617424,
+    "mae_m": 50.05043228560438,
+    "correlation": 0.9961409498867492
+  },
+  "artifacts": {
+    "audit_csv": "work/gamma_prior_ambiguity_offset_m50_sample36/building_audit_insar_only.csv",
+    "result_csv": "results/tables/gamma_prior_ambiguity_offset_m50_sample36.csv",
+    "result_geojson": "results/geodata/gamma_prior_ambiguity_offset_m50_sample36.geojson",
+    "gamma_log": "work/gamma_prior_ambiguity_offset_m50_sample36/gamma_building_mcf.log",
+    "building_shards": "work/gamma_prior_ambiguity_offset_m50_sample36/building_shards"
+  }
+}

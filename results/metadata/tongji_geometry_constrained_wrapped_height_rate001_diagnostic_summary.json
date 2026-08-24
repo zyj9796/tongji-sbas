@@ -1,0 +1,31 @@
+{
+  "method": "wrapped phase search within R-D admissible height intervals; repeated clusters only",
+  "product_class": "hybrid ambiguity diagnostic; must be rerun through GAMMA mb_pt before any product use",
+  "prior_policy": "no height copied or filled; initial prior-derived projection geometry participates, so comparison to the same prior is not independent",
+  "thresholds": {
+    "rate_limit_m_per_year": 0.01,
+    "max_circular_cost": 0.9,
+    "cluster_tolerance_m": 5.0,
+    "minimum_cluster_points": 2
+  },
+  "points_searched": 7616,
+  "points_accepted_cost": 7537,
+  "accepted_points_rate_boundary_fraction": 0.18734244394321348,
+  "buildings_with_repeated_cluster": 293,
+  "height_median_m": 11.0,
+  "height_p05_p95_m": [
+    2.5,
+    27.349999999999966
+  ],
+  "median_cluster_cost": 0.3111590137527095,
+  "median_rate_boundary_fraction": 0.1111111111111111,
+  "post_comparison_not_independent": {
+    "count": 293,
+    "mae_m": 9.811433447098976,
+    "correlation": 0.627587528184996
+  },
+  "artifacts": {
+    "building_csv": "results/tables/tongji_geometry_constrained_wrapped_height_rate001_diagnostic.csv",
+    "point_csv": "results/tables/tongji_geometry_constrained_wrapped_height_rate001_diagnostic_points.csv"
+  }
+}

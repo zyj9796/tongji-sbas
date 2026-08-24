@@ -1,0 +1,12 @@
+{
+  "method": "copy GAMMA-unwrapped stable ground; retain wrapped roof-search phases for model unwrapping",
+  "pairs": 48,
+  "target_points": 181041,
+  "target_ground_points": 7359,
+  "ground_points_copied": 3536,
+  "ground_points_missing_or_invalid": 3823,
+  "roof_candidate_points": 173682,
+  "height_prior_used": false,
+  "target_punw": "work/gamma_native_ipta_network48_search_union/ipta/punw",
+  "target_pmask": "work/gamma_native_ipta_network48_search_union/ipta/pmask"
+}

@@ -1,0 +1,9 @@
+{
+  "method": "GAMMA R-D displacement-per-m extrapolation with common 0..Hmax search interval",
+  "source_projection": "work/zjc_original_reproduction/20200708_all_building_gamma_corrected_projection_sar.geojson",
+  "source_vector_height_used_as_search_bound_or_value": false,
+  "maximum_height_m": 180.0,
+  "buildings": 1028,
+  "skipped_clean_ids": [],
+  "output": "work/zjc_original_reproduction/20200708_gamma_roof_search_envelope_0_180m.geojson"
+}

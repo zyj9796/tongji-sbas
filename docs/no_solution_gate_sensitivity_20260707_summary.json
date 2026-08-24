@@ -1,0 +1,77 @@
+{
+  "date": "2026-07-07",
+  "method": "Gate-level sensitivity pretest. Counts buildings that can reach at least 20 retained LGR pixels under one small gate change; this is not a rebuilt height product.",
+  "height_field_use": "not_read_for_fitting_filtering_calibration_selection_or_qc",
+  "variant_counts": {
+    "da045": {
+      "target_buildings": 27,
+      "reaches_min_pixels": 0,
+      "median_final_valid_pixels": 0.0,
+      "max_final_valid_pixels": 0
+    },
+    "min_pairs10": {
+      "target_buildings": 355,
+      "reaches_min_pixels": 26,
+      "median_final_valid_pixels": 0.0,
+      "max_final_valid_pixels": 39
+    },
+    "rmse150": {
+      "target_buildings": 24,
+      "reaches_min_pixels": 12,
+      "median_final_valid_pixels": 20.5,
+      "max_final_valid_pixels": 46
+    }
+  },
+  "outputs": {
+    "building_csv": "docs/no_solution_gate_sensitivity_buildings_20260707.csv",
+    "island_csv": "docs/no_solution_gate_sensitivity_islands_20260707.csv",
+    "summary_json": "docs/no_solution_gate_sensitivity_20260707_summary.json",
+    "report_md": "docs/no_solution_gate_sensitivity_20260707.md",
+    "overview_svg": "docs/no_solution_gate_sensitivity_20260707.svg"
+  },
+  "candidate_clean_ids": {
+    "da045": [],
+    "min_pairs10": [
+      103,
+      834,
+      116,
+      144,
+      1003,
+      121,
+      626,
+      205,
+      448,
+      138,
+      209,
+      694,
+      177,
+      856,
+      939,
+      986,
+      92,
+      136,
+      141,
+      220,
+      323,
+      807,
+      165,
+      880,
+      200,
+      455
+    ],
+    "rmse150": [
+      766,
+      625,
+      940,
+      821,
+      180,
+      238,
+      203,
+      171,
+      248,
+      623,
+      888,
+      149
+    ]
+  }
+}

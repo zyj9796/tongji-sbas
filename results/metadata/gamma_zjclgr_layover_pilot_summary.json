@@ -1,0 +1,46 @@
+{
+  "method": "per-building SAR support + nearby stable ground -> zjc_lgr -> GAMMA mb_pt -> local-ground subtraction -> IQR/median aggregation",
+  "unwrap_engine": "zjc_lgr",
+  "global_punw": null,
+  "prior_policy": "prior loaded only after InSAR-only solve and internal acceptance; comparison-only; never used for selection, unwrapping, inversion, QC, aggregation, or filling",
+  "pairs": 37,
+  "support_owner": null,
+  "support_min_mean_coherence": 0.0,
+  "closure_bad_count": null,
+  "max_closure_bad_triangles": -1,
+  "candidate_buildings": 3,
+  "processed_buildings": 3,
+  "gamma_solved_buildings": 3,
+  "accepted_buildings": 3,
+  "height_median_m": 0.681780993938446,
+  "height_p05_p95_m": [
+    0.5358231723308563,
+    4.8652360200881954
+  ],
+  "phase_sigma_median_rad": 0.39732983708381653,
+  "failure_counts": {
+    "none": 3
+  },
+  "rejection_policy": {
+    "min_output_points": 4,
+    "max_median_phase_sigma": 1.2,
+    "max_roof_iqr_m": 80.0,
+    "physical_height_range_m": [
+      0.0,
+      180.0
+    ]
+  },
+  "prior_comparison_after_acceptance": {
+    "count": 3,
+    "median_difference_m": -20.48039436340332,
+    "mae_m": 28.82284967104594,
+    "correlation": 0.9995593365006797
+  },
+  "artifacts": {
+    "audit_csv": "work/gamma_zjclgr_layover_pilot/building_audit_insar_only.csv",
+    "result_csv": "results/tables/gamma_zjclgr_layover_pilot.csv",
+    "result_geojson": "results/geodata/gamma_zjclgr_layover_pilot.geojson",
+    "gamma_log": "work/gamma_zjclgr_layover_pilot/gamma_building_mcf.log",
+    "building_shards": "work/gamma_zjclgr_layover_pilot/building_shards"
+  }
+}

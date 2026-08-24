@@ -1,0 +1,42 @@
+{
+  "method": "prior-independent GAMMA R-D height sweep scored by reference amplitude, frozen temporal validation, and paper-quality InSAR evidence",
+  "height_attribute_used": false,
+  "height_search_m": [
+    2.0,
+    120.0,
+    2.0
+  ],
+  "searched_buildings": 112,
+  "accepted_buildings": 20,
+  "accepted_height_median_m": 58.0,
+  "accepted_height_p05_p95_m": [
+    4.0,
+    90.1
+  ],
+  "validation_images": [
+    "20200320.crop.bmp",
+    "20200616.crop.bmp",
+    "20200730.crop.bmp",
+    "20200901.crop.bmp",
+    "20201026.crop.bmp",
+    "20201209.crop.bmp",
+    "20210224.crop.bmp",
+    "20210625.crop.bmp",
+    "20210910.crop.bmp",
+    "20211104.crop.bmp",
+    "20220601.crop.bmp",
+    "20220715.crop.bmp",
+    "20220828.crop.bmp",
+    "20221011.crop.bmp",
+    "20221205.crop.bmp",
+    "20230220.crop.bmp",
+    "20230427.crop.bmp",
+    "20230610.crop.bmp",
+    "20230724.crop.bmp",
+    "20230917.crop.bmp",
+    "20231031.crop.bmp"
+  ],
+  "output": "work/zjc_original_reproduction/20200708_sar_geometry_height_search_pilot200_roofs.geojson",
+  "metrics": "results/tables/tongji_sar_geometry_height_search_pilot200.csv",
+  "final_height_role": "none; output is only an independent position/cycle initializer for subsequent GAMMA mb_pt"
+}

@@ -1,0 +1,52 @@
+{
+  "method": "per-building SAR support + nearby stable ground -> building_uniform_height -> GAMMA mb_pt -> local-ground subtraction -> IQR/median aggregation",
+  "unwrap_engine": "building_uniform_height",
+  "global_punw": null,
+  "wrapped_height_audit": null,
+  "initialization_height_offset_m": null,
+  "product_class": "InSAR_only",
+  "prior_policy": "prior loaded only after InSAR-only solve and internal acceptance; comparison-only; never used for selection, unwrapping, inversion, QC, aggregation, or filling",
+  "pairs": 48,
+  "interferogram_dir": "work/gamma_native_ipta_sbas/interferograms",
+  "support_owner": "work/roof_sbas_optimized/roof_core_clean_id_mask.npy",
+  "support_min_mean_coherence": 0.75,
+  "closure_bad_count": null,
+  "max_closure_bad_triangles": -1,
+  "candidate_buildings": 36,
+  "processed_buildings": 36,
+  "gamma_solved_buildings": 34,
+  "accepted_buildings": 27,
+  "height_median_m": 4.131312847137451,
+  "height_p05_p95_m": [
+    0.7745428405702115,
+    28.14126651287078
+  ],
+  "phase_sigma_median_rad": 0.13082436099648476,
+  "failure_counts": {
+    "none": 34,
+    "too_few_nearby_ground_points": 1,
+    "too few support points valid in every building_uniform_height record": 1
+  },
+  "rejection_policy": {
+    "min_output_points": 4,
+    "max_median_phase_sigma": 0.75,
+    "max_roof_iqr_m": 8.0,
+    "physical_height_range_m": [
+      0.0,
+      180.0
+    ]
+  },
+  "prior_comparison_after_acceptance_non_independent": {
+    "count": 27,
+    "median_difference_m": -14.285493195056915,
+    "mae_m": 21.626927879397517,
+    "correlation": -0.059161165248625996
+  },
+  "artifacts": {
+    "audit_csv": "work/gamma_network48_uniformheight_gamma100_sample36/building_audit_insar_only.csv",
+    "result_csv": "results/tables/gamma_network48_uniformheight_gamma100_sample36.csv",
+    "result_geojson": "results/geodata/gamma_network48_uniformheight_gamma100_sample36.geojson",
+    "gamma_log": "work/gamma_network48_uniformheight_gamma100_sample36/gamma_building_mcf.log",
+    "building_shards": "work/gamma_network48_uniformheight_gamma100_sample36/building_shards"
+  }
+}

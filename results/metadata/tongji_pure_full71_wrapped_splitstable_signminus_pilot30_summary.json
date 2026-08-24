@@ -1,0 +1,34 @@
+{
+  "method": "wrapped phase search within common prior-independent height interval; largest repeated cluster",
+  "product_class": "prior-independent ambiguity diagnostic; must be rerun through GAMMA mb_pt before any product use",
+  "prior_policy": "no height read, copied, fitted, selected, or filled; common interval is prior-independent; prior is loaded only after the result is frozen for reporting",
+  "thresholds": {
+    "rate_limit_m_per_year": 0.03,
+    "max_circular_cost": 0.9,
+    "maximum_split_height_difference_m": 8.0,
+    "minimum_distant_cost_margin": 0.015,
+    "cluster_tolerance_m": 5.0,
+    "minimum_cluster_points": 2,
+    "cluster_selection": "largest"
+  },
+  "points_searched": 240,
+  "points_accepted_cost": 101,
+  "accepted_points_rate_boundary_fraction": 0.22772277227722773,
+  "buildings_with_repeated_cluster": 17,
+  "height_median_m": 1.0,
+  "height_p05_p95_m": [
+    0.0,
+    24.199999999999974
+  ],
+  "median_cluster_cost": 0.666394510680655,
+  "median_rate_boundary_fraction": 0.0,
+  "post_comparison_not_independent": {
+    "count": 17,
+    "mae_m": 20.0,
+    "correlation": 0.32939243101108723
+  },
+  "artifacts": {
+    "building_csv": "results/tables/tongji_pure_full71_wrapped_splitstable_signminus_pilot30.csv",
+    "point_csv": "results/tables/tongji_pure_full71_wrapped_splitstable_signminus_pilot30_points.csv"
+  }
+}

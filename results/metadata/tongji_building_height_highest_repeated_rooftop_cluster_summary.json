@@ -1,0 +1,30 @@
+{
+  "method": "highest repeated stable rooftop PS height cluster; singleton forbidden",
+  "prior_used_in_selection_or_filling": false,
+  "thresholds": {
+    "cluster_tolerance_m": 5.0,
+    "minimum_cluster_points": 2,
+    "maximum_cluster_iqr_m": 8.0,
+    "cluster_selection": "highest"
+  },
+  "stable_candidate_buildings": 332,
+  "buildings_solved": 268,
+  "rejected_without_repeated_cluster": 34,
+  "rejected_cluster_iqr": 30,
+  "height_median_m": 9.217313528060913,
+  "height_p05_p95_m": [
+    1.0751803070306778,
+    23.279601335525495
+  ],
+  "phase_sigma_median_rad": 0.22478375583887095,
+  "subset_spread_median_m": 3.673529596908768,
+  "post_selection_prior_comparison": {
+    "count": 268,
+    "mae_m": 11.780887058088139,
+    "correlation": 0.3637875449395955
+  },
+  "artifacts": {
+    "result_csv": "results/tables/tongji_building_height_highest_repeated_rooftop_cluster_insar_only.csv",
+    "result_geojson": "results/geodata/tongji_building_height_highest_repeated_rooftop_cluster_insar_only.geojson"
+  }
+}

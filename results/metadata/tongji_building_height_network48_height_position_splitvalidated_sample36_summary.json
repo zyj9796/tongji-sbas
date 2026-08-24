@@ -1,0 +1,53 @@
+{
+  "method": "per-building SAR support + nearby stable ground -> height_position_coupled -> GAMMA mb_pt -> local-ground subtraction -> IQR/median aggregation",
+  "unwrap_engine": "height_position_coupled",
+  "global_punw": "work/gamma_native_ipta_network48_search_union/ipta/punw",
+  "wrapped_height_audit": null,
+  "initialization_height_offset_m": null,
+  "product_class": "InSAR_only",
+  "prior_policy": "prior loaded only after InSAR-only solve and internal acceptance; comparison-only; never used for selection, unwrapping, inversion, QC, aggregation, or filling",
+  "pairs": 48,
+  "interferogram_dir": "work/gamma_native_ipta_sbas/interferograms",
+  "support_owner": null,
+  "spatial_support_projection": "work/zjc_original_reproduction/20200708_gamma_roof_search_envelope_0_180m.geojson",
+  "support_min_mean_coherence": 0.75,
+  "closure_bad_count": null,
+  "max_closure_bad_triangles": -1,
+  "candidate_buildings": 36,
+  "processed_buildings": 36,
+  "gamma_solved_buildings": 36,
+  "accepted_buildings": 18,
+  "height_median_m": 4.5711003839969635,
+  "height_p05_p95_m": [
+    0.352565547823906,
+    19.199828199297173
+  ],
+  "phase_sigma_median_rad": 0.1784350723028183,
+  "failure_counts": {
+    "none": 36
+  },
+  "rejection_policy": {
+    "min_output_points": 4,
+    "max_median_phase_sigma": 0.75,
+    "max_roof_iqr_m": 8.0,
+    "physical_height_range_m": [
+      0.0,
+      180.0
+    ],
+    "min_height_search_cost_margin": 0.05,
+    "max_height_search_split_difference_m": 5.0
+  },
+  "prior_comparison_after_acceptance_non_independent": {
+    "count": 18,
+    "median_difference_m": -16.328290320932865,
+    "mae_m": 20.449098234375317,
+    "correlation": 0.2640801937462651
+  },
+  "artifacts": {
+    "audit_csv": "work/gamma_network48_height_position_splitvalidated_sample36/building_audit_insar_only.csv",
+    "result_csv": "results/tables/tongji_building_height_network48_height_position_splitvalidated_sample36.csv",
+    "result_geojson": "results/geodata/tongji_building_height_network48_height_position_splitvalidated_sample36.geojson",
+    "gamma_log": "work/gamma_network48_height_position_splitvalidated_sample36/gamma_building_mcf.log",
+    "building_shards": "work/gamma_network48_height_position_splitvalidated_sample36/building_shards"
+  }
+}

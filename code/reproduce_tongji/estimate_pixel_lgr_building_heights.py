@@ -67,6 +67,77 @@ def solve_pixels(
     return dem, rate, rmse, n_valid, bperp_span
 
 
+def solve_wrapped_pixels_multistart(
+    phases: np.ndarray,
+    cohs: np.ndarray,
+    a: np.ndarray,
+    bperp: np.ndarray,
+    min_pairs: int,
+    dem_seed_min_m: float,
+    dem_seed_max_m: float,
+    dem_seed_step_m: float,
+    iterations: int,
+) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
+    """Solve wrapped SBAS observations without an island-local zero-height gauge."""
+    n_pairs, n_pix = phases.shape
+    dem = np.full(n_pix, np.nan, dtype=np.float32)
+    rate = np.full(n_pix, np.nan, dtype=np.float32)
+    rmse = np.full(n_pix, np.nan, dtype=np.float32)
+    n_valid = np.zeros(n_pix, dtype=np.int16)
+    bperp_span = np.full(n_pix, np.nan, dtype=np.float32)
+    seeds = np.arange(dem_seed_min_m, dem_seed_max_m + 0.5 * dem_seed_step_m, dem_seed_step_m)
+    for j in range(n_pix):
+        valid = np.isfinite(phases[:, j]) & np.isfinite(cohs[:, j]) & (cohs[:, j] > 0)
+        n_valid[j] = int(valid.sum())
+        if n_valid[j] < min_pairs:
+            continue
+        av = a[valid]
+        wrapped = phases[valid, j].astype(np.float64)
+        weights = np.clip(cohs[valid, j].astype(np.float64), 0.05, 1.0) ** 2
+        aw = av * np.sqrt(weights)[:, None]
+        best: tuple[float, float, np.ndarray] | None = None
+        for seed in seeds:
+            coef = np.array([seed, 0.0], dtype=np.float64)
+            unwrapped = wrapped.copy()
+            for _ in range(max(1, iterations)):
+                pred = av @ coef
+                ambiguity = np.rint((pred - wrapped) / (2.0 * np.pi))
+                unwrapped = wrapped + 2.0 * np.pi * ambiguity
+                coef_new, *_ = np.linalg.lstsq(aw, unwrapped * np.sqrt(weights), rcond=None)
+                if np.max(np.abs(coef_new - coef)) < 1e-7:
+                    coef = coef_new
+                    break
+                coef = coef_new
+            residual = unwrapped - av @ coef
+            score = float(np.sqrt(np.average(residual**2, weights=weights)))
+            candidate = (score, abs(float(coef[0])), coef)
+            if best is None or candidate[:2] < best[:2]:
+                best = candidate
+        if best is None:
+            continue
+        score, _, coef = best
+        dem[j] = float(coef[0])
+        rate[j] = float(coef[1] * 365.0)
+        rmse[j] = score
+        bp = bperp[valid]
+        bperp_span[j] = float(np.nanmax(bp) - np.nanmin(bp))
+    return dem, rate, rmse, n_valid, bperp_span
+
+
+def weighted_quantile(values: np.ndarray, weights: np.ndarray, quantile: float) -> float:
+    valid = np.isfinite(values) & np.isfinite(weights) & (weights > 0)
+    if not valid.any():
+        return np.nan
+    vals = values[valid]
+    wts = weights[valid]
+    order = np.argsort(vals)
+    vals = vals[order]
+    wts = wts[order]
+    cumulative = np.cumsum(wts) - 0.5 * wts
+    cumulative /= np.sum(wts)
+    return float(np.interp(quantile, cumulative, vals))
+
+
 def plot_qc(df: pd.DataFrame, label: np.ndarray, islands_info: pd.DataFrame, out: Path | None = None, out_svg: Path | None = None) -> None:
     status = np.zeros_like(label, dtype=np.uint8)
     island_ids = set(islands_info["island_id"].dropna().astype(int).tolist())
@@ -223,16 +294,25 @@ def summarize_height(
     residual_sign: float,
     min_pixels: int,
     grubbs_alpha: float,
+    quality_weights: np.ndarray | None = None,
 ) -> dict[str, float | int]:
     dem_error = residual_sign * dem_error_values
     valid = np.isfinite(dem_error) & np.isfinite(reference_values) & (reference_values > -1000.0)
+    if quality_weights is None:
+        quality_weights = np.ones_like(dem_error, dtype=np.float64)
+    else:
+        quality_weights = np.asarray(quality_weights, dtype=np.float64)
+        valid &= np.isfinite(quality_weights) & (quality_weights > 0)
     valid_count = int(np.sum(valid))
     dem_error = dem_error[valid]
     reference = reference_values[valid]
+    weights = quality_weights[valid]
     if valid_count < min_pixels:
         return {
             "pixel_count_used": valid_count,
             "height_m": np.nan,
+            "building_height_weighted_median_m": np.nan,
+            "effective_pixel_count": 0.0,
             "dem_error_p05_m": np.nan,
             "dem_error_median_m": np.nan,
             "dem_error_p95_m": np.nan,
@@ -267,6 +347,8 @@ def summarize_height(
         }
     roof_elevation = reference + dem_error
     building_height = roof_elevation - ground_dem_m
+    weighted_height = weighted_quantile(building_height, weights, 0.5)
+    effective_n = float(np.sum(weights) ** 2 / np.sum(weights**2)) if np.sum(weights**2) > 0 else 0.0
     max_test = grubbs_max_test(building_height, alpha=grubbs_alpha)
     top_test = iterative_grubbs_top(building_height, alpha=grubbs_alpha)
     dem_p05, dem_med, dem_p95 = np.percentile(dem_error, [5, 50, 95])
@@ -274,7 +356,9 @@ def summarize_height(
     h_p05, h_p25, h_p50, h_p75, h_p85, h_p90, h_p95 = np.percentile(building_height, [5, 25, 50, 75, 85, 90, 95])
     return {
         "pixel_count_used": valid_count,
-        "height_m": iqr_median(building_height),
+        "height_m": weighted_height,
+        "building_height_weighted_median_m": weighted_height,
+        "effective_pixel_count": effective_n,
         "dem_error_p05_m": float(dem_p05),
         "dem_error_median_m": float(dem_med),
         "dem_error_p95_m": float(dem_p95),
@@ -303,9 +387,17 @@ def unwrap_patch(
     valid: np.ndarray,
     method: str,
     wavelength_m: float,
+    coherence_patch: np.ndarray | None = None,
+    amplitude_dispersion_patch: np.ndarray | None = None,
 ) -> tuple[np.ndarray, str]:
     if method == "paper":
-        unw, info = paper_like_unwrap(phase_patch, valid, wavelength_m)
+        unw, info = paper_like_unwrap(
+            phase_patch,
+            valid,
+            wavelength_m,
+            coherence_patch=coherence_patch,
+            amplitude_dispersion_patch=amplitude_dispersion_patch,
+        )
         return unw.astype(np.float32), str(info.get("status", "unknown"))
     unw = unwrap_phase(np.ma.array(phase_patch, mask=~valid)).filled(np.nan)
     return unw.astype(np.float32), "skimage"
@@ -332,8 +424,15 @@ def main() -> None:
     parser.add_argument("--min-pixels", type=int, default=20)
     parser.add_argument("--max-pixel-rmse-rad", type=float, default=1.25, help="Reject pixels whose LGR phase-model RMSE exceeds this value.")
     parser.add_argument("--min-bperp-span-m", type=float, default=80.0, help="Reject pixels whose valid observations do not span this perpendicular-baseline range.")
+    parser.add_argument("--min-physical-height-m", type=float, default=-1.0, help="Reject pixel ambiguity branches below this building height; set a very low value to disable.")
+    parser.add_argument("--max-physical-height-m", type=float, default=120.0, help="Reject pixel ambiguity branches above this building height; this is an InSAR physical QC bound, not a fill value.")
     parser.add_argument("--grubbs-alpha", type=float, default=0.05, help="Significance level for one-sided iterative Grubbs high-outlier rejection.")
-    parser.add_argument("--unwrap-method", choices=["skimage", "paper"], default="skimage")
+    parser.add_argument("--unwrap-method", choices=["skimage", "paper", "temporal_multistart"], default="skimage")
+    parser.add_argument("--stable-reference-mask", default="", help="Optional stable-ground boolean NPY. Its per-pair circular phase center is removed before roof inversion.")
+    parser.add_argument("--temporal-dem-seed-min-m", type=float, default=-80.0)
+    parser.add_argument("--temporal-dem-seed-max-m", type=float, default=80.0)
+    parser.add_argument("--temporal-dem-seed-step-m", type=float, default=5.0)
+    parser.add_argument("--temporal-unwrap-iterations", type=int, default=8)
     parser.add_argument("--max-islands", type=int, default=0, help="Process only the first N islands after sorting; 0 means all.")
     parser.add_argument("--max-pairs", type=int, default=0, help="Process only the first N interferometric pairs; 0 means all.")
     parser.add_argument("--island-id-file", default="", help="Optional CSV containing island_id values to process.")
@@ -386,6 +485,20 @@ def main() -> None:
         coh_stack.append(cc.astype(np.float32))
     phase_stack = np.stack(phase_stack, axis=0)
     coh_stack = np.stack(coh_stack, axis=0)
+    reference_offsets = np.zeros(len(pairs), dtype=np.float64)
+    reference_pixel_counts = np.zeros(len(pairs), dtype=np.int32)
+    if args.stable_reference_mask:
+        reference_mask = np.load(args.stable_reference_mask).astype(bool)
+        if reference_mask.shape != label.shape:
+            raise ValueError(f"stable reference shape {reference_mask.shape} does not match label shape {label.shape}")
+        for k in range(len(pairs)):
+            valid_ref = reference_mask & np.isfinite(phase_stack[k]) & np.isfinite(coh_stack[k]) & (coh_stack[k] >= args.min_coherence)
+            reference_pixel_counts[k] = int(valid_ref.sum())
+            if reference_pixel_counts[k] < 20:
+                raise ValueError(f"pair {k} has only {reference_pixel_counts[k]} stable reference pixels")
+            z = np.sum(coh_stack[k][valid_ref].astype(np.float64) * np.exp(1j * phase_stack[k][valid_ref].astype(np.float64)))
+            reference_offsets[k] = float(np.angle(z))
+            phase_stack[k] = np.angle(np.exp(1j * (phase_stack[k] - reference_offsets[k]))).astype(np.float32)
 
     rows_out = []
     points = []
@@ -415,31 +528,75 @@ def main() -> None:
             valid = patch_keep & np.isfinite(p) & np.isfinite(c) & (c >= args.min_coherence)
             if int(np.sum(valid)) < args.min_pixels:
                 continue
-            try:
-                unw, _unwrap_status = unwrap_patch(p, valid, args.unwrap_method, wavelength)
-            except Exception:
-                continue
             valid_vec = valid.ravel()[pix]
-            unw_vec = unw.ravel()[pix]
             coh_vec = c.ravel()[pix]
-            phases[k, valid_vec] = unw_vec[valid_vec]
-            cohs[k, valid_vec] = coh_vec[valid_vec]
-        dem, rate, pixel_rmse, n_valid, bperp_span = solve_pixels(
-            phases,
-            cohs,
-            a,
-            pairs["bperp_m"].to_numpy(dtype=np.float64),
-            args.min_pairs,
+            if args.unwrap_method == "temporal_multistart":
+                p_vec = p.ravel()[pix]
+                phases[k, valid_vec] = p_vec[valid_vec]
+                cohs[k, valid_vec] = coh_vec[valid_vec]
+            else:
+                try:
+                    unw, _unwrap_status = unwrap_patch(
+                        p,
+                        valid,
+                        args.unwrap_method,
+                        wavelength,
+                        coherence_patch=c,
+                        amplitude_dispersion_patch=(da_patch if amp_disp is not None else None),
+                    )
+                except Exception:
+                    continue
+                unw_vec = unw.ravel()[pix]
+                phases[k, valid_vec] = unw_vec[valid_vec]
+                cohs[k, valid_vec] = coh_vec[valid_vec]
+        if args.unwrap_method == "temporal_multistart":
+            dem, rate, pixel_rmse, n_valid, bperp_span = solve_wrapped_pixels_multistart(
+                phases,
+                cohs,
+                a,
+                pairs["bperp_m"].to_numpy(dtype=np.float64),
+                args.min_pairs,
+                args.temporal_dem_seed_min_m,
+                args.temporal_dem_seed_max_m,
+                args.temporal_dem_seed_step_m,
+                args.temporal_unwrap_iterations,
+            )
+        else:
+            dem, rate, pixel_rmse, n_valid, bperp_span = solve_pixels(
+                phases,
+                cohs,
+                a,
+                pairs["bperp_m"].to_numpy(dtype=np.float64),
+                args.min_pairs,
+            )
+        reference_vec = reference_height[r0:r1, c0:c1].ravel()[pix]
+        physical_height = reference_vec + args.residual_sign * dem - args.ground_dem_m
+        reject_pixel = (
+            (pixel_rmse > args.max_pixel_rmse_rad)
+            | (n_valid < args.min_pairs)
+            | (bperp_span < args.min_bperp_span_m)
+            | ~np.isfinite(physical_height)
+            | (physical_height < args.min_physical_height_m)
+            | (physical_height > args.max_physical_height_m)
         )
-        reject_pixel = (pixel_rmse > args.max_pixel_rmse_rad) | (n_valid < args.min_pairs) | (bperp_span < args.min_bperp_span_m)
         dem[reject_pixel] = np.nan
         rate[~np.isfinite(dem)] = np.nan
         pixel_rmse[~np.isfinite(dem)] = np.nan
         bperp_span[~np.isfinite(dem)] = np.nan
         n_valid[~np.isfinite(dem)] = 0
-        reference_vec = reference_height[r0:r1, c0:c1].ravel()[pix]
         amp_disp_vec = amp_disp[r0:r1, c0:c1].ravel()[pix] if amp_disp is not None else None
-        island_height = summarize_height(dem, reference_vec, args.ground_dem_m, args.residual_sign, args.min_pixels, args.grubbs_alpha)
+        coherence_quality = np.full(n_pix, np.nan, dtype=np.float32)
+        coherence_columns = np.any(np.isfinite(cohs), axis=0)
+        coherence_quality[coherence_columns] = np.nanmedian(cohs[:, coherence_columns], axis=0)
+        da_quality = amp_disp_vec if amp_disp_vec is not None else np.zeros(n_pix, dtype=np.float32)
+        quality_weights = (
+            np.clip(coherence_quality, 0.0, 1.0) ** 2
+            * np.clip(1.0 - da_quality, 0.05, 1.0) ** 2
+            * np.clip(n_valid / max(len(pairs), 1), 0.0, 1.0)
+            / np.maximum(pixel_rmse, 0.20)
+        )
+        quality_weights[~np.isfinite(dem)] = np.nan
+        island_height = summarize_height(dem, reference_vec, args.ground_dem_m, args.residual_sign, args.min_pixels, args.grubbs_alpha, quality_weights)
         primary_fid = int(info.primary_uid)
         uid = fid_to_uid.get(primary_fid)
         row_out = {
@@ -450,6 +607,8 @@ def main() -> None:
             "pixel_count": int(info.pixel_count),
             "pixel_count_used": island_height["pixel_count_used"],
             "height_m": island_height["height_m"],
+            "building_height_weighted_median_m": island_height["building_height_weighted_median_m"],
+            "effective_pixel_count": island_height["effective_pixel_count"],
             "dem_error_p05_m": island_height["dem_error_p05_m"],
             "dem_error_median_m": island_height["dem_error_median_m"],
             "dem_error_p95_m": island_height["dem_error_p95_m"],
@@ -502,6 +661,7 @@ def main() -> None:
                 args.residual_sign,
                 args.min_pixels,
                 args.grubbs_alpha,
+                quality_weights[building_keep],
             )
             if not np.isfinite(building_summary["height_m"]):
                 continue
@@ -517,6 +677,8 @@ def main() -> None:
                     "island_id": island_id,
                     "island_uid_count": int(info.uid_count),
                     "height_m": building_summary["height_m"],
+                    "building_height_weighted_median_m": building_summary["building_height_weighted_median_m"],
+                    "effective_pixel_count": building_summary["effective_pixel_count"],
                     "pixel_count_used": building_summary["pixel_count_used"],
                     "dem_error_p05_m": building_summary["dem_error_p05_m"],
                     "dem_error_median_m": building_summary["dem_error_median_m"],
@@ -583,12 +745,20 @@ def main() -> None:
         "ground_dem_m": args.ground_dem_m,
             "residual_sign": args.residual_sign,
         "unwrap_method": args.unwrap_method,
+        "stable_reference_mask": args.stable_reference_mask or None,
+        "stable_reference_min_pixels_per_pair": int(reference_pixel_counts.min()) if args.stable_reference_mask else 0,
+        "stable_reference_max_pixels_per_pair": int(reference_pixel_counts.max()) if args.stable_reference_mask else 0,
+        "reference_phase_offsets_rad": reference_offsets.tolist() if args.stable_reference_mask else [],
+        "height_prior_used_for_inversion_or_fill": False,
+        "building_estimator": "quality-weighted median of roof pixels",
         "min_coherence": args.min_coherence,
         "amplitude_dispersion_npy": args.amplitude_dispersion_npy,
         "max_amplitude_dispersion": args.max_amplitude_dispersion,
         "min_pairs": args.min_pairs,
         "max_pixel_rmse_rad": args.max_pixel_rmse_rad,
         "min_bperp_span_m": args.min_bperp_span_m,
+        "physical_height_bounds_m": [args.min_physical_height_m, args.max_physical_height_m],
+        "physical_height_bounds_use_vector_height": False,
         "grubbs_alpha": args.grubbs_alpha,
         "max_islands": args.max_islands,
         "max_pairs": args.max_pairs,
@@ -597,7 +767,7 @@ def main() -> None:
         "output_points": args.output_points,
         "figure": args.figure or None,
         "figure_svg": args.figure_svg or None,
-        "method": "Pixel-wise LGR DEM-error inversion; building height = robust median(reference DSM/HGT in RDC + signed DEM-error residual - ground DEM). Current ground DEM assumption is constant 4 m; building height points are grouped by Touying FID mask within each island before WGS84 aggregation.",
+        "method": "Roof-only pixel SBAS/LGR DEM-error inversion. Optional stable-ground circular phase anchoring removes the per-pair phase datum; temporal_multistart avoids an island-local zero-height gauge. Building height is the quality-weighted median of reference DSM/HGT plus signed DEM residual minus ground elevation. Vector height is never read for inversion or filling.",
     }
     Path(args.summary).parent.mkdir(parents=True, exist_ok=True)
     Path(args.summary).write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

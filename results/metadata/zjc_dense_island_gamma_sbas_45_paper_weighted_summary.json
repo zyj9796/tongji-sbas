@@ -1,0 +1,13 @@
+{
+  "method": "dense full layover island ZJC local robust unwrap -> GAMMA mb_pt -> post-SBAS DA/coherence -> robust internal height span",
+  "prior_policy": "projection geometry only before inversion; vector height merged after solve for comparison; never fitted or filled",
+  "pairs": 37,
+  "results": [
+    {
+      "clean_id": 45,
+      "status": "too_few_final_points",
+      "final_points": 3
+    }
+  ],
+  "result_csv": "results/tables/zjc_dense_island_gamma_sbas_45_paper_weighted.csv"
+}

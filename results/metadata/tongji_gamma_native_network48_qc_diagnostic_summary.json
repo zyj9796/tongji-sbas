@@ -1,0 +1,47 @@
+{
+  "method": "GAMMA-native SLC_intf -> phase_sim_orb/sub_phase -> adf -> IPTA multi_def_pt(model 2) -> local stable-ground subtraction -> per-building IQR and median",
+  "paper_alignment": {
+    "minimum_pairs": 12,
+    "amplitude_dispersion_max": 0.4,
+    "building_aggregation": "IQR 1.5 then median"
+  },
+  "prior_policy": "height is merged only after the GAMMA solution is frozen; it is comparison-only and never used for interferograms, point selection, inversion, rejection, calibration, or filling",
+  "reference_surface": "work/gamma_native_ipta_sbas/reference_flat_4m.hgt",
+  "reference_surface_role": "constant non-NULL GAMMA phase datum only; cancels in roof-minus-local-ground height",
+  "geometric_coregistration_reference": "data/tongji_rslc/20200708.rslc.par",
+  "precision_baseline_refinement": false,
+  "ipta_phase_source": "adf",
+  "sbas_engine": "multi_def_pt",
+  "sbas_gamma": null,
+  "mb_sigma_mode": null,
+  "mb_pair_sigma_rad": null,
+  "point_domain": "roof",
+  "building_statistic": "median",
+  "domain_conflict_pixels_removed": 0,
+  "pairs": 48,
+  "dates": 22,
+  "candidate_roof_points": 58380,
+  "candidate_ground_points": 7359,
+  "gamma_accepted_roof_points": 29296,
+  "gamma_accepted_ground_points": 3536,
+  "phase_reference_point_index": 56991,
+  "buildings_solved": 580,
+  "height_median_m": 6.0765790939331055,
+  "height_p05_p95_m": [
+    -14.188658452033996,
+    18.534120512008656
+  ],
+  "internal_phase_sigma_median_rad": 0.9160621166229248,
+  "prior_comparison_after_selection": {
+    "count": 580,
+    "median_difference_m": -13.344411998987198,
+    "mae_m": 17.35789983145379,
+    "correlation": 0.17167992482785097
+  },
+  "artifacts": {
+    "point_solution": "work/gamma_native_ipta_network48_qc/ipta/gamma_point_solution.csv",
+    "result_csv": "results/tables/tongji_gamma_native_network48_qc_diagnostic.csv",
+    "result_geojson": "results/geodata/tongji_gamma_native_network48_qc_diagnostic.geojson",
+    "gamma_log": "work/gamma_native_ipta_network48_qc/gamma_native.log"
+  }
+}

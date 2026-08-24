@@ -1,0 +1,61 @@
+{
+  "method": "per-building SAR support + nearby stable ground -> geometry_wrapped_init -> GAMMA mb_pt -> local-ground subtraction -> IQR/median aggregation",
+  "unwrap_engine": "geometry_wrapped_init",
+  "global_punw": null,
+  "wrapped_height_audit": "results/tables/tongji_prior_roof_cycle_initialization_adaptive_window_paper_quality_network48_points.csv",
+  "initialization_height_offset_m": 0.0,
+  "geometry_ground_initialization": "global_multi_def",
+  "product_class": "hybrid_GAMMA_SBAS_with_RD_cycle_initialization",
+  "prior_policy": "no value copied or filled; the external prior-derived R-D roof audit is used only to initialize 2pi phase cycles, then GAMMA mb_pt re-estimates height; comparison to the same prior is non-independent",
+  "pairs": 48,
+  "mb_sigma_mode": "local_roof_coherence",
+  "mb_coherence_tempering": 0.5,
+  "paper_pair_sigma_rad": null,
+  "paper_compliant_pairs": null,
+  "paper_downweighted_pairs": null,
+  "interferogram_dir": "work/gamma_native_ipta_sbas/interferograms",
+  "support_owner": null,
+  "spatial_support_projection": null,
+  "support_min_mean_coherence": 0.75,
+  "closure_bad_count": null,
+  "max_closure_bad_triangles": -1,
+  "candidate_buildings": 318,
+  "processed_buildings": 318,
+  "gamma_solved_buildings": 250,
+  "accepted_buildings": 221,
+  "height_median_m": 25.601330876350403,
+  "height_p05_p95_m": [
+    8.59065055847168,
+    75.69815067946911
+  ],
+  "phase_sigma_median_rad": 0.19682100415229797,
+  "failure_counts": {
+    "none": 250,
+    "too few support points valid in every geometry_wrapped_init record": 35,
+    "too_few_support_points": 33
+  },
+  "rejection_policy": {
+    "min_output_points": 4,
+    "max_median_phase_sigma": 0.75,
+    "max_roof_iqr_m": 8.0,
+    "physical_height_range_m": [
+      0.0,
+      180.0
+    ],
+    "min_height_search_cost_margin": 0.0,
+    "max_height_search_split_difference_m": null
+  },
+  "prior_comparison_after_acceptance_non_independent": {
+    "count": 221,
+    "median_difference_m": 6.248793125152588,
+    "mae_m": 10.205265507986454,
+    "correlation": 0.9185772559050688
+  },
+  "artifacts": {
+    "audit_csv": "work/gamma_paperquality_localcoh_tempered050_full/building_audit_insar_only.csv",
+    "result_csv": "results/tables/tongji_building_height_paperquality_localcoh_tempered050_gamma100.csv",
+    "result_geojson": "results/geodata/tongji_building_height_paperquality_localcoh_tempered050_gamma100.geojson",
+    "gamma_log": "work/gamma_paperquality_localcoh_tempered050_full/gamma_building_mcf.log",
+    "building_shards": "work/gamma_paperquality_localcoh_tempered050_full/building_shards"
+  }
+}

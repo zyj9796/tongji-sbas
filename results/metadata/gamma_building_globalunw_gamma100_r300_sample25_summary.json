@@ -1,0 +1,43 @@
+{
+  "method": "per-building SAR support + nearby stable ground -> GAMMA global_multi_def -> GAMMA mb_pt -> local-ground subtraction -> upper-cluster/IQR aggregation",
+  "unwrap_engine": "global_multi_def",
+  "prior_policy": "prior loaded only after InSAR-only solve and internal acceptance; comparison-only; never used for selection, unwrapping, inversion, QC, aggregation, or filling",
+  "pairs": 37,
+  "candidate_buildings": 25,
+  "processed_buildings": 25,
+  "gamma_solved_buildings": 20,
+  "accepted_buildings": 18,
+  "height_median_m": 17.890286430716515,
+  "height_p05_p95_m": [
+    7.458368873596192,
+    20.4944492906332
+  ],
+  "phase_sigma_median_rad": 0.3071053810417652,
+  "failure_counts": {
+    "none": 20,
+    "too_few_nearby_ground_points": 4,
+    "too few support points valid in every global_multi_def record": 1
+  },
+  "rejection_policy": {
+    "min_output_points": 4,
+    "max_median_phase_sigma": 1.2,
+    "max_roof_iqr_m": 80.0,
+    "physical_height_range_m": [
+      0.0,
+      180.0
+    ]
+  },
+  "prior_comparison_after_acceptance": {
+    "count": 18,
+    "median_difference_m": -4.439411446452141,
+    "mae_m": 7.1555471751425,
+    "correlation": -0.09000270312598926
+  },
+  "artifacts": {
+    "audit_csv": "work/gamma_building_globalunw_gamma100_r300_sample25/building_audit_insar_only.csv",
+    "result_csv": "results/tables/gamma_building_globalunw_gamma100_r300_sample25.csv",
+    "result_geojson": "results/geodata/gamma_building_globalunw_gamma100_r300_sample25.geojson",
+    "gamma_log": "work/gamma_building_globalunw_gamma100_r300_sample25/gamma_building_mcf.log",
+    "building_shards": "work/gamma_building_globalunw_gamma100_r300_sample25/building_shards"
+  }
+}

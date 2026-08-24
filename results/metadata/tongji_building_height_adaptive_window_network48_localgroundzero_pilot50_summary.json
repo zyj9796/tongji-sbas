@@ -1,0 +1,55 @@
+{
+  "method": "per-building SAR support + nearby stable ground -> geometry_wrapped_init -> GAMMA mb_pt -> local-ground subtraction -> IQR/median aggregation",
+  "unwrap_engine": "geometry_wrapped_init",
+  "global_punw": null,
+  "wrapped_height_audit": "results/tables/tongji_prior_roof_cycle_initialization_adaptive_window_network48_points.csv",
+  "initialization_height_offset_m": 0.0,
+  "geometry_ground_initialization": "local_wrapped_zero",
+  "product_class": "hybrid_GAMMA_SBAS_with_RD_cycle_initialization",
+  "prior_policy": "no value copied or filled; the external prior-derived R-D roof audit is used only to initialize 2pi phase cycles, then GAMMA mb_pt re-estimates height; comparison to the same prior is non-independent",
+  "pairs": 48,
+  "interferogram_dir": "work/gamma_native_ipta_sbas/interferograms",
+  "support_owner": null,
+  "spatial_support_projection": null,
+  "support_min_mean_coherence": 0.75,
+  "closure_bad_count": null,
+  "max_closure_bad_triangles": -1,
+  "candidate_buildings": 50,
+  "processed_buildings": 50,
+  "gamma_solved_buildings": 38,
+  "accepted_buildings": 37,
+  "height_median_m": 15.947840332984924,
+  "height_p05_p95_m": [
+    11.195509719848634,
+    24.71009653806686
+  ],
+  "phase_sigma_median_rad": 0.1977079138159752,
+  "failure_counts": {
+    "none": 38,
+    "too_few_support_points": 12
+  },
+  "rejection_policy": {
+    "min_output_points": 4,
+    "max_median_phase_sigma": 0.75,
+    "max_roof_iqr_m": 8.0,
+    "physical_height_range_m": [
+      0.0,
+      180.0
+    ],
+    "min_height_search_cost_margin": 0.0,
+    "max_height_search_split_difference_m": null
+  },
+  "prior_comparison_after_acceptance_non_independent": {
+    "count": 37,
+    "median_difference_m": -5.037680894136429,
+    "mae_m": 4.8055209117765365,
+    "correlation": 0.9130006439509551
+  },
+  "artifacts": {
+    "audit_csv": "work/gamma_prior_roof_adaptive_window_network48_localgroundzero_pilot50/building_audit_insar_only.csv",
+    "result_csv": "results/tables/tongji_building_height_adaptive_window_network48_localgroundzero_pilot50.csv",
+    "result_geojson": "results/geodata/tongji_building_height_adaptive_window_network48_localgroundzero_pilot50.geojson",
+    "gamma_log": "work/gamma_prior_roof_adaptive_window_network48_localgroundzero_pilot50/gamma_building_mcf.log",
+    "building_shards": "work/gamma_prior_roof_adaptive_window_network48_localgroundzero_pilot50/building_shards"
+  }
+}

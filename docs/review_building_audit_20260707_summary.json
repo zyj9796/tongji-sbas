@@ -1,0 +1,25 @@
+{
+  "date": "2026-07-07",
+  "input_final_csv": "results/tables/tongji_building_height_cleanid_redshift_audited_paper_lit_coh075_DA040_minp12_rmse125_bspan120_topdown_grubbs_insar_only.csv",
+  "review_buildings": 29,
+  "audit_class_counts": {
+    "correctable_candidate": 3,
+    "keep_review": 26
+  },
+  "primary_reason_counts": {
+    "lgr_model_rmse_unstable": 6,
+    "local_projection_bias_candidate": 3,
+    "multi_scatterer_or_upper_tail_mixture": 10,
+    "near_threshold_quality": 5,
+    "post_shift_upper_tail_mixture": 1,
+    "top_grubbs_tail_instability": 4
+  },
+  "mean_removed_top_pixels": 5.344827586206897,
+  "median_removed_top_pixels": 4.0,
+  "height_field_use": "not_read_for_fitting_filtering_calibration_selection_or_qc",
+  "outputs": {
+    "audit_csv": "docs/review_building_audit_20260707.csv",
+    "overview_svg": "docs/review_building_audit_20260707.svg",
+    "report_md": "docs/review_building_audit_20260707.md"
+  }
+}

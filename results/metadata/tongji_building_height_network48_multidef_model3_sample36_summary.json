@@ -1,0 +1,52 @@
+{
+  "method": "per-building SAR support + nearby stable ground -> multi_def_pt -> GAMMA mb_pt -> local-ground subtraction -> IQR/median aggregation",
+  "unwrap_engine": "multi_def_pt",
+  "global_punw": null,
+  "wrapped_height_audit": null,
+  "initialization_height_offset_m": null,
+  "product_class": "InSAR_only",
+  "prior_policy": "prior loaded only after InSAR-only solve and internal acceptance; comparison-only; never used for selection, unwrapping, inversion, QC, aggregation, or filling",
+  "pairs": 48,
+  "interferogram_dir": "work/gamma_native_ipta_sbas/interferograms",
+  "support_owner": null,
+  "spatial_support_projection": null,
+  "support_min_mean_coherence": 0.75,
+  "closure_bad_count": null,
+  "max_closure_bad_triangles": -1,
+  "candidate_buildings": 36,
+  "processed_buildings": 36,
+  "gamma_solved_buildings": 20,
+  "accepted_buildings": 11,
+  "height_median_m": 2.3332682847976685,
+  "height_p05_p95_m": [
+    0.3479660376906395,
+    8.419738713651896
+  ],
+  "phase_sigma_median_rad": 0.1146642304956913,
+  "failure_counts": {
+    "none": 20,
+    "too few support points valid in every multi_def_pt record": 16
+  },
+  "rejection_policy": {
+    "min_output_points": 4,
+    "max_median_phase_sigma": 0.75,
+    "max_roof_iqr_m": 8.0,
+    "physical_height_range_m": [
+      0.0,
+      180.0
+    ]
+  },
+  "prior_comparison_after_acceptance_non_independent": {
+    "count": 11,
+    "median_difference_m": -16.826611578464508,
+    "mae_m": 20.66921827434139,
+    "correlation": 0.031483695530128364
+  },
+  "artifacts": {
+    "audit_csv": "work/gamma_network48_multidef_model3_sample36/building_audit_insar_only.csv",
+    "result_csv": "results/tables/tongji_building_height_network48_multidef_model3_sample36.csv",
+    "result_geojson": "results/geodata/tongji_building_height_network48_multidef_model3_sample36.geojson",
+    "gamma_log": "work/gamma_network48_multidef_model3_sample36/gamma_building_mcf.log",
+    "building_shards": "work/gamma_network48_multidef_model3_sample36/building_shards"
+  }
+}

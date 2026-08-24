@@ -1,0 +1,20 @@
+{
+  "selected_islands": [
+    204,
+    238,
+    230,
+    253,
+    308,
+    257,
+    222,
+    310
+  ],
+  "pairs_used": 8,
+  "rows": 8,
+  "paper_ok_rows": 8,
+  "median_phase_diff_std_rad": 0.3479575216770172,
+  "median_height_delta_m": -0.9834715843200641,
+  "output_csv": "results/tables/paper_weighted_unwrap_frozen_ablation8.csv",
+  "figure": "results/pic_all/27_论文加权孤岛解缠消融.svg",
+  "note": "仅作冻结消融诊断：对比等权零基准网络与相干性、振幅离差、Bisquare联合加权且保留缠绕相位基准的网络；尚未进入正式高度产品。"
+}

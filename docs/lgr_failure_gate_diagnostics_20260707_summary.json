@@ -1,0 +1,26 @@
+{
+  "date": "2026-07-07",
+  "target_failure_class": "lgr_pixel_filters_left_too_few_pixels",
+  "target_buildings": 379,
+  "target_islands": 387,
+  "building_failure_counts": {
+    "rmse_gt_max": 24,
+    "valid_pairs_lt_min_after_unwrap": 355
+  },
+  "parameters": {
+    "min_pixels": 20,
+    "min_pairs": 12,
+    "min_coherence": 0.75,
+    "max_amplitude_dispersion": 0.4,
+    "max_pixel_rmse_rad": 1.25,
+    "min_bperp_span_m": 120.0,
+    "unwrap_method": "paper",
+    "pair_count": 37
+  },
+  "height_field_use": "not_read_for_fitting_filtering_calibration_selection_or_qc",
+  "outputs": {
+    "island_csv": "docs/lgr_failure_gate_diagnostics_islands_20260707.csv",
+    "building_csv": "docs/lgr_failure_gate_diagnostics_buildings_20260707.csv",
+    "summary_json": "docs/lgr_failure_gate_diagnostics_20260707_summary.json"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "method": "per-building SAR support + nearby stable ground -> geometry_wrapped_init -> GAMMA mb_pt -> local-ground subtraction -> IQR/median aggregation",
+  "unwrap_engine": "geometry_wrapped_init",
+  "global_punw": null,
+  "prior_policy": "prior loaded only after InSAR-only solve and internal acceptance; comparison-only; never used for selection, unwrapping, inversion, QC, aggregation, or filling",
+  "pairs": 37,
+  "support_owner": null,
+  "support_min_mean_coherence": 0.0,
+  "closure_bad_count": null,
+  "max_closure_bad_triangles": -1,
+  "candidate_buildings": 1,
+  "processed_buildings": 1,
+  "gamma_solved_buildings": 1,
+  "accepted_buildings": 1,
+  "height_median_m": 52.724383533000946,
+  "height_p05_p95_m": [
+    52.724383533000946,
+    52.724383533000946
+  ],
+  "phase_sigma_median_rad": 0.9203454852104187,
+  "failure_counts": {
+    "none": 1
+  },
+  "rejection_policy": {
+    "min_output_points": 2,
+    "max_median_phase_sigma": 1.2,
+    "max_roof_iqr_m": 80.0,
+    "physical_height_range_m": [
+      0.0,
+      180.0
+    ]
+  },
+  "prior_comparison_after_acceptance": {
+    "count": 1,
+    "median_difference_m": 1.724383533000946,
+    "mae_m": 1.724383533000946,
+    "correlation": null
+  },
+  "artifacts": {
+    "audit_csv": "work/gamma_building_geometry_wrapped_init_b45/building_audit_insar_only.csv",
+    "result_csv": "results/tables/tongji_building_height_geometry_wrapped_init_b45.csv",
+    "result_geojson": "results/geodata/tongji_building_height_geometry_wrapped_init_b45.geojson",
+    "gamma_log": "work/gamma_building_geometry_wrapped_init_b45/gamma_building_mcf.log",
+    "building_shards": "work/gamma_building_geometry_wrapped_init_b45/building_shards"
+  }
+}

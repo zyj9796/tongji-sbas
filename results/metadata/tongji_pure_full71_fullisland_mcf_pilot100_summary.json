@@ -1,0 +1,59 @@
+{
+  "method": "per-building SAR support + nearby stable ground -> mcf_pt -> GAMMA mb_pt -> local-ground subtraction -> IQR/median aggregation",
+  "unwrap_engine": "mcf_pt",
+  "global_punw": null,
+  "wrapped_height_audit": null,
+  "initialization_height_offset_m": null,
+  "geometry_ground_initialization": null,
+  "product_class": "InSAR_only",
+  "prior_policy": "prior loaded only after InSAR-only solve and internal acceptance; comparison-only; never used for selection, unwrapping, inversion, QC, aggregation, or filling",
+  "pairs": 71,
+  "mb_sigma_mode": "equal",
+  "paper_pair_sigma_rad": null,
+  "paper_compliant_pairs": null,
+  "paper_downweighted_pairs": null,
+  "interferogram_dir": "work/gamma_native_ipta_sbas_full71/interferograms",
+  "support_owner": null,
+  "spatial_support_projection": "work/zjc_original_reproduction/20200708_gamma_common_0_120m_search_envelope.geojson",
+  "support_min_mean_coherence": 0.65,
+  "closure_bad_count": null,
+  "max_closure_bad_triangles": -1,
+  "candidate_buildings": 100,
+  "processed_buildings": 100,
+  "gamma_solved_buildings": 26,
+  "accepted_buildings": 8,
+  "height_median_m": 1.825740098953247,
+  "height_p05_p95_m": [
+    0.2920676998794079,
+    4.249555407464503
+  ],
+  "phase_sigma_median_rad": 0.4433857426047325,
+  "failure_counts": {
+    "too_few_support_points": 74,
+    "none": 26
+  },
+  "rejection_policy": {
+    "min_output_points": 4,
+    "max_median_phase_sigma": 1.2,
+    "max_roof_iqr_m": 120.0,
+    "physical_height_range_m": [
+      0.0,
+      120.0
+    ],
+    "min_height_search_cost_margin": 0.0,
+    "max_height_search_split_difference_m": null
+  },
+  "prior_comparison_after_acceptance_non_independent": {
+    "count": 8,
+    "median_difference_m": -22.174259901046753,
+    "mae_m": 24.277471190318465,
+    "correlation": 0.025628360924854557
+  },
+  "artifacts": {
+    "audit_csv": "work/gamma_pure_full71_fullisland_mcf_pilot100/building_audit_insar_only.csv",
+    "result_csv": "results/tables/tongji_pure_full71_fullisland_mcf_pilot100.csv",
+    "result_geojson": "results/geodata/tongji_pure_full71_fullisland_mcf_pilot100.geojson",
+    "gamma_log": "work/gamma_pure_full71_fullisland_mcf_pilot100/gamma_building_mcf.log",
+    "building_shards": "work/gamma_pure_full71_fullisland_mcf_pilot100/building_shards"
+  }
+}

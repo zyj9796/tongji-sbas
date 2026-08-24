@@ -1,0 +1,40 @@
+{
+  "date": "2026-07-07",
+  "old_product": "top_down_grubbs_insar_only",
+  "new_product": "p95_floor_reestimated_insar_only",
+  "solved_compared": 239,
+  "changed_positive_count": 29,
+  "height_delta_m_median": 0.0,
+  "height_delta_m_p05": 0.0,
+  "height_delta_m_p95": 8.071733970642088,
+  "height_delta_m_max": 63.22862510681152,
+  "delta_gt_2m_count": 25,
+  "delta_gt_5m_count": 19,
+  "delta_gt_10m_count": 8,
+  "top_raised_clean_ids": [
+    726,
+    832,
+    313,
+    164,
+    544,
+    550,
+    576,
+    292,
+    555,
+    600,
+    206,
+    749,
+    781,
+    691,
+    734,
+    344,
+    566,
+    570,
+    842,
+    897
+  ],
+  "height_field_use": "not_read_for_fitting_filtering_calibration_selection_or_qc",
+  "outputs": {
+    "diff_csv": "results/tables/tongji_building_height_p95_floor_reestimate_vs_topdown_grubbs_diff.csv"
+  }
+}

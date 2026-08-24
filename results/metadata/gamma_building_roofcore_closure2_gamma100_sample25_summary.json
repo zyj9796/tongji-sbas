@@ -1,0 +1,46 @@
+{
+  "method": "per-building SAR support + nearby stable ground -> global_multi_def -> GAMMA mb_pt -> local-ground subtraction -> IQR/upper_cluster aggregation",
+  "unwrap_engine": "global_multi_def",
+  "prior_policy": "prior loaded only after InSAR-only solve and internal acceptance; comparison-only; never used for selection, unwrapping, inversion, QC, aggregation, or filling",
+  "pairs": 37,
+  "support_owner": "work/roof_sbas_optimized/roof_core_clean_id_mask.npy",
+  "support_min_mean_coherence": 0.0,
+  "closure_bad_count": "work/gamma_native_ipta_sbas/ipta/triangle_closure_bad_count_ref.npy",
+  "max_closure_bad_triangles": 2,
+  "candidate_buildings": 25,
+  "processed_buildings": 25,
+  "gamma_solved_buildings": 24,
+  "accepted_buildings": 18,
+  "height_median_m": 16.688208042178303,
+  "height_p05_p95_m": [
+    3.793686640262604,
+    21.35468027591705
+  ],
+  "phase_sigma_median_rad": 0.3143846094608307,
+  "failure_counts": {
+    "none": 24,
+    "too few support points valid in every global_multi_def record": 1
+  },
+  "rejection_policy": {
+    "min_output_points": 4,
+    "max_median_phase_sigma": 1.2,
+    "max_roof_iqr_m": 80.0,
+    "physical_height_range_m": [
+      0.0,
+      180.0
+    ]
+  },
+  "prior_comparison_after_acceptance": {
+    "count": 18,
+    "median_difference_m": -5.030030161142349,
+    "mae_m": 8.744533514552232,
+    "correlation": -0.055162117206406416
+  },
+  "artifacts": {
+    "audit_csv": "work/gamma_building_roofcore_closure2_gamma100_sample25/building_audit_insar_only.csv",
+    "result_csv": "results/tables/gamma_building_roofcore_closure2_gamma100_sample25.csv",
+    "result_geojson": "results/geodata/gamma_building_roofcore_closure2_gamma100_sample25.geojson",
+    "gamma_log": "work/gamma_building_roofcore_closure2_gamma100_sample25/gamma_building_mcf.log",
+    "building_shards": "work/gamma_building_roofcore_closure2_gamma100_sample25/building_shards"
+  }
+}

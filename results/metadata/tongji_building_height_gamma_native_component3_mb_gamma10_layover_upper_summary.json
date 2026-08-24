@@ -1,0 +1,45 @@
+{
+  "method": "GAMMA-native SLC_intf -> phase_sim_orb/sub_phase -> adf -> IPTA multi_def_pt(model 2) -> local stable-ground subtraction -> per-building IQR and median",
+  "paper_alignment": {
+    "minimum_pairs": 12,
+    "amplitude_dispersion_max": 0.4,
+    "building_aggregation": "IQR 1.5 then median"
+  },
+  "prior_policy": "height is merged only after the GAMMA solution is frozen; it is comparison-only and never used for interferograms, point selection, inversion, rejection, calibration, or filling",
+  "reference_surface": "work/gamma_native_ipta_sbas/reference_flat_4m.hgt",
+  "reference_surface_role": "constant non-NULL GAMMA phase datum only; cancels in roof-minus-local-ground height",
+  "geometric_coregistration_reference": "data/tongji_rslc/20200708.rslc.par",
+  "precision_baseline_refinement": false,
+  "ipta_phase_source": "adf",
+  "sbas_engine": "mb_pt",
+  "sbas_gamma": 10.0,
+  "point_domain": "layover",
+  "building_statistic": "upper_cluster",
+  "domain_conflict_pixels_removed": 31814,
+  "pairs": 42,
+  "dates": 23,
+  "candidate_roof_points": 97531,
+  "candidate_ground_points": 7359,
+  "gamma_accepted_roof_points": 44648,
+  "gamma_accepted_ground_points": 3744,
+  "phase_reference_point_index": 36950,
+  "buildings_solved": 618,
+  "height_median_m": 11.225972414016724,
+  "height_p05_p95_m": [
+    -12.951727390289307,
+    29.26799325942993
+  ],
+  "internal_phase_sigma_median_rad": 0.9324399828910828,
+  "prior_comparison_after_selection": {
+    "count": 618,
+    "median_difference_m": -8.540715098381042,
+    "mae_m": 15.222931206081677,
+    "correlation": 0.20029399051493998
+  },
+  "artifacts": {
+    "point_solution": "work/gamma_native_ipta_sbas_full71/ipta/gamma_point_solution.csv",
+    "result_csv": "results/tables/tongji_building_height_gamma_native_component3_mb_gamma10_layover_upper.csv",
+    "result_geojson": "results/geodata/tongji_building_height_gamma_native_component3_mb_gamma10_layover_upper.geojson",
+    "gamma_log": "work/gamma_native_ipta_sbas_full71/gamma_native.log"
+  }
+}

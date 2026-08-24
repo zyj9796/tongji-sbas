@@ -31,6 +31,8 @@ from matplotlib.patches import Polygon as MplPolygon
 from pyproj import Transformer
 from rasterio.features import geometry_mask
 from scipy.optimize import brentq, minimize_scalar
+from shapely.geometry import Polygon, mapping
+from shapely.ops import unary_union
 from skimage.draw import polygon as draw_polygon
 
 
@@ -114,8 +116,11 @@ class ZeroDopplerProjector:
         return float(np.dot(v, target - p))
 
     def solve_time(self, target: np.ndarray) -> float:
-        a = self.start_time
-        b = self.end_time
+        # Solve over the orbit-state-vector time span, not only the image time
+        # span. Targets outside the cropped scene must retain an out-of-frame
+        # azimuth coordinate instead of collapsing onto the first/last row.
+        a = float(self.times[0])
+        b = float(self.times[-1])
         fa = self.doppler_zero_function(a, target)
         fb = self.doppler_zero_function(b, target)
         if np.isfinite(fa) and np.isfinite(fb) and fa * fb <= 0:
@@ -179,6 +184,20 @@ def project_ring(projector: ZeroDopplerProjector, transformer: Transformer, ring
     return np.asarray(rows_cols, dtype=np.float64), slant_ranges
 
 
+def swept_support(bottom_xy: np.ndarray, roof_xy: np.ndarray):
+    """Return the valid 2-D radar support swept from ground to rooftop."""
+    if len(bottom_xy) != len(roof_xy) or len(bottom_xy) < 3:
+        raise ValueError("Ground and rooftop rings must have matching vertices")
+    parts = [Polygon(bottom_xy), Polygon(roof_xy)]
+    for idx in range(len(bottom_xy)):
+        nxt = (idx + 1) % len(bottom_xy)
+        parts.append(Polygon([bottom_xy[idx], bottom_xy[nxt], roof_xy[nxt], roof_xy[idx]]))
+    support = unary_union([part.buffer(0) for part in parts if not part.is_empty]).buffer(0)
+    if support.is_empty:
+        raise ValueError("Height-dependent projected support is empty")
+    return support
+
+
 def feature_metrics(xy: np.ndarray, projector: ZeroDopplerProjector) -> dict[str, Any]:
     finite = np.all(np.isfinite(xy), axis=1)
     in_frame = finite & (xy[:, 0] >= 0) & (xy[:, 0] < projector.cols) & (xy[:, 1] >= 0) & (xy[:, 1] < projector.rows)
@@ -210,12 +229,20 @@ def project_buildings(config: dict[str, Any], args: argparse.Namespace) -> tuple
     metrics = []
     skipped = []
     for _, row in buildings.iterrows():
-        uid = int(row["uid"])
+        uid_value = row.get("uid", row.get("clean_id"))
+        if uid_value is None:
+            skipped.append({"uid": None, "reason": "missing_uid_or_clean_id"})
+            continue
+        uid = int(uid_value)
         ring = exterior_lonlat(row.geometry)
         if ring is None:
             skipped.append({"uid": uid, "reason": "unsupported_geometry"})
             continue
-        height_prior = float(row.get("height_prior_m") or 0.0)
+        height_value = row.get("height_prior_m", row.get("height"))
+        if height_value is None or not np.isfinite(float(height_value)):
+            floor_value = row.get("Floor", row.get("floor"))
+            height_value = float(floor_value) * 3.0 if floor_value is not None else 0.0
+        height_prior = float(height_value)
         top_h = sample_dsm_surface_m(row.geometry, Path(args.dsm))
         if top_h is None:
             top_h = height_prior
@@ -231,7 +258,8 @@ def project_buildings(config: dict[str, Any], args: argparse.Namespace) -> tuple
         roof_xy[:, 1] += args.row_shift
         bottom_xy[:, 0] += args.col_shift
         bottom_xy[:, 1] += args.row_shift
-        layover_xy = np.vstack([bottom_xy, roof_xy[::-1]])
+        support_geom = swept_support(bottom_xy, roof_xy)
+        support_xy = np.asarray(support_geom.convex_hull.exterior.coords, dtype=np.float64)
         base_props = {
             "uid": uid,
             "height_prior_m": height_prior,
@@ -242,13 +270,14 @@ def project_buildings(config: dict[str, Any], args: argparse.Namespace) -> tuple
             "projection_col_shift": float(args.col_shift),
             "mean_slant_range_m": float(np.nanmean(roof_slant + bottom_slant)) if roof_slant or bottom_slant else None,
         }
-        for surface, xy in [("bottom", bottom_xy), ("roof", roof_xy), ("layover", layover_xy)]:
+        for surface, xy in [("bottom", bottom_xy), ("roof", roof_xy), ("layover", support_xy)]:
             props = {**base_props, "surface": surface, **feature_metrics(xy, projector)}
+            geometry = mapping(support_geom) if surface == "layover" else {"type": "Polygon", "coordinates": [xy.tolist() + [xy[0].tolist()]]}
             features.append(
                 {
                     "type": "Feature",
                     "properties": props,
-                    "geometry": {"type": "Polygon", "coordinates": [xy.tolist() + [xy[0].tolist()]]},
+                    "geometry": geometry,
                 }
             )
             metrics.append(props)

@@ -1,0 +1,15 @@
+{
+  "dates": 43,
+  "pairs": 71,
+  "slc_tab": "work/gamma_native_full_baseline/tongji_slc_tab.txt",
+  "bperp_file": "work/gamma_native_full_baseline/tongji_base_calc_bperp.txt",
+  "itab": "work/gamma_native_full_baseline/tongji_sbas.itab",
+  "output_csv": "work/baselines/gamma_native_full_dt72_bperp500.csv",
+  "log": "work/gamma_native_full_baseline/base_calc.log",
+  "base_calc_command": "base_calc work/gamma_native_full_baseline/tongji_slc_tab.txt data/tongji_rslc/20200708.rslc.par work/gamma_native_full_baseline/tongji_base_calc_bperp.txt work/gamma_native_full_baseline/tongji_sbas.itab 1 0 - 500.0 0 72 -",
+  "ld_library_path_prefix": "/tmp/gamma_gdal_compat",
+  "returncode": 0,
+  "bperp_min_m": -466.1337,
+  "bperp_max_m": 484.9684,
+  "bperp_median_abs_m": 127.028
+}

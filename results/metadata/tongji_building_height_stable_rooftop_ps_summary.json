@@ -1,0 +1,26 @@
+{
+  "method": "highest GAMMA mb_pt rooftop PS passing early/late and long/short baseline repeatability",
+  "prior_used_in_selection_or_filling": false,
+  "thresholds": {
+    "point_sigma_rad": 0.75,
+    "fit_rms_rad": 1.2,
+    "subset_spread_m": 8.0,
+    "mb_fit_difference_m": 8.0
+  },
+  "buildings_solved": 332,
+  "median_height_m": 16.14448642730713,
+  "p05_p95_height_m": [
+    2.531653690338135,
+    82.3072246551513
+  ],
+  "post_selection_prior_comparison": {
+    "count": 332,
+    "mae_m": 14.857640051608344,
+    "correlation": 0.11204579301026761
+  },
+  "artifacts": {
+    "result_csv": "results/tables/tongji_building_height_stable_rooftop_ps_insar_only.csv",
+    "result_geojson": "results/geodata/tongji_building_height_stable_rooftop_ps_insar_only.geojson",
+    "point_audit": "work/gamma_building_roofcore_closurecorrected_gamma100_full/stable_rooftop_point_audit.csv"
+  }
+}

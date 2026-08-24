@@ -1,0 +1,50 @@
+{
+  "date": "2026-07-07",
+  "variant": "rmse150",
+  "baseline": "cleanid_redshift_audited_paper_lit_coh075_DA040_minp12_rmse125_bspan120_topdown_grubbs",
+  "change_counts": {
+    "added_solution": 12,
+    "reliability_changed": 25,
+    "retained_solution": 214,
+    "still_no_solution": 777
+  },
+  "current_solved": 239,
+  "variant_solved": 251,
+  "added_solutions": 12,
+  "lost_solutions": 0,
+  "variant_reliability_counts": {
+    "high": 179,
+    "medium": 45,
+    "no_solution": 777,
+    "review": 27
+  },
+  "added_reliability_counts": {
+    "high": 8,
+    "medium": 3,
+    "review": 1
+  },
+  "retained_height_delta_m_median": 0.0,
+  "retained_height_delta_m_p05": 0.0,
+  "retained_height_delta_m_p95": 15.779848861694333,
+  "added_clean_ids": [
+    171,
+    238,
+    248,
+    623,
+    766,
+    821,
+    888,
+    940,
+    149,
+    203,
+    625,
+    180
+  ],
+  "height_field_use": "not_read_for_fitting_filtering_calibration_selection_or_qc",
+  "outputs": {
+    "comparison_csv": "docs/rmse150_vs_current_topdown_comparison_20260707.csv",
+    "report_md": "docs/rmse150_product_test_20260707.md",
+    "overview_svg": "docs/rmse150_product_test_20260707.svg",
+    "summary_json": "docs/rmse150_product_test_20260707_summary.json"
+  }
+}

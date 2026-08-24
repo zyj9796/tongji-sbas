@@ -1,0 +1,11 @@
+{
+  "product_class": "phase_cycle_initialization_not_height_result",
+  "policy": "prior height initializes GAMMA phase cycles only; no missing result is filled",
+  "roof_owner": "work/roof_sbas_optimized/roof_core_clean_id_mask.npy",
+  "projection_heights": null,
+  "points": 58380,
+  "buildings": 637,
+  "buildings_with_at_least_two_points": 631,
+  "buildings_with_at_least_four_points": 622,
+  "output": "results/tables/tongji_prior_roof_cycle_initialization_network48_qc_points.csv"
+}

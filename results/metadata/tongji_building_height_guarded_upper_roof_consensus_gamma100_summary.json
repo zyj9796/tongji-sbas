@@ -1,0 +1,53 @@
+{
+  "method": "paper IQR+median with dual-network spatially connected upper-roof plateau gate",
+  "prior_used_for_selection_or_height": false,
+  "prior_filled_buildings": 0,
+  "accepted_buildings": 230,
+  "upper_plateau_buildings": 16,
+  "upper_plateau_clean_ids": [
+    145,
+    157,
+    183,
+    194,
+    199,
+    211,
+    492,
+    562,
+    568,
+    749,
+    750,
+    760,
+    773,
+    797,
+    856,
+    883
+  ],
+  "uplift_median_p95_max_m": [
+    2.8082391619682276,
+    7.988522604107857,
+    8.321796596050262
+  ],
+  "height_median_p05_p95_max_m": [
+    17.2106299623847,
+    5.991390754282475,
+    47.65741840600967,
+    86.5387627184391
+  ],
+  "frozen_gates": {
+    "spatial_radius_px": 3.1,
+    "height_link_m": 3.0,
+    "min_plateau_points": 4,
+    "min_plateau_fraction": 0.2,
+    "max_plateau_iqr_m": 3.0,
+    "uplift_range_m": [
+      1.5,
+      12.0
+    ],
+    "max_network_difference_m": 3.0,
+    "min_point_jaccard": 0.5
+  },
+  "artifacts": {
+    "csv": "results/tables/tongji_building_height_guarded_upper_roof_consensus_gamma100.csv",
+    "geojson": "results/geodata/tongji_building_height_guarded_upper_roof_consensus_gamma100.geojson"
+  }
+}

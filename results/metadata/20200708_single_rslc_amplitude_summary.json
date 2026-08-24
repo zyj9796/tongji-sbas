@@ -1,0 +1,24 @@
+{
+  "method": "single full-precision SCOMPLEX acquisition -> complex magnitude -> global amplitude^0.70 display -> percentile stretch",
+  "source": "data/tongji_rslc/20200708.rslc",
+  "source_date": "20200708",
+  "source_count": 1,
+  "shape_rows_cols": [
+    630,
+    900
+  ],
+  "input_dtype": "big-endian signed int16 real/imaginary pairs",
+  "temporal_aggregation": false,
+  "spatial_filtering": false,
+  "spatial_resampling": false,
+  "multilooking": false,
+  "bmp_or_8bit_input_used": false,
+  "display_parameters": {
+    "amplitude_power": 0.7,
+    "display_percentile_low": 1.0,
+    "display_percentile_high": 99.4,
+    "spatial_filter": "none"
+  },
+  "output_array": "work/mli/20200708_rslc_amplitude.npy",
+  "figure_svg": "picall/02_同济雷达单景幅度.svg"
+}

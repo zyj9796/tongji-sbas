@@ -1,0 +1,55 @@
+{
+  "method": "per-building SAR support + nearby stable ground -> building_uniform_height -> GAMMA mb_pt -> local-ground subtraction -> IQR/median aggregation",
+  "unwrap_engine": "building_uniform_height",
+  "global_punw": null,
+  "wrapped_height_audit": null,
+  "initialization_height_offset_m": null,
+  "geometry_ground_initialization": null,
+  "product_class": "InSAR_only",
+  "prior_policy": "prior loaded only after InSAR-only solve and internal acceptance; comparison-only; never used for selection, unwrapping, inversion, QC, aggregation, or filling",
+  "pairs": 71,
+  "mb_sigma_mode": "equal",
+  "paper_pair_sigma_rad": null,
+  "paper_compliant_pairs": null,
+  "paper_downweighted_pairs": null,
+  "interferogram_dir": "work/gamma_native_ipta_sbas_full71/interferograms",
+  "support_owner": null,
+  "spatial_support_projection": null,
+  "support_min_mean_coherence": 0.65,
+  "closure_bad_count": null,
+  "max_closure_bad_triangles": -1,
+  "candidate_buildings": 30,
+  "processed_buildings": 30,
+  "gamma_solved_buildings": 0,
+  "accepted_buildings": 0,
+  "height_median_m": null,
+  "height_p05_p95_m": null,
+  "phase_sigma_median_rad": null,
+  "failure_counts": {
+    "too few support points valid in every building_uniform_height record": 30
+  },
+  "rejection_policy": {
+    "min_output_points": 4,
+    "max_median_phase_sigma": 0.75,
+    "max_roof_iqr_m": 8.0,
+    "physical_height_range_m": [
+      0.0,
+      180.0
+    ],
+    "min_height_search_cost_margin": 0.015,
+    "max_height_search_split_difference_m": 8.0
+  },
+  "prior_comparison_after_acceptance_non_independent": {
+    "count": 0,
+    "median_difference_m": null,
+    "mae_m": null,
+    "correlation": null
+  },
+  "artifacts": {
+    "audit_csv": "work/gamma_pure_full71_uniformheight_pilot30/building_audit_insar_only.csv",
+    "result_csv": "results/tables/tongji_pure_full71_uniformheight_gamma_pilot30.csv",
+    "result_geojson": "results/geodata/tongji_pure_full71_uniformheight_gamma_pilot30.geojson",
+    "gamma_log": "work/gamma_pure_full71_uniformheight_pilot30/gamma_building_mcf.log",
+    "building_shards": "work/gamma_pure_full71_uniformheight_pilot30/building_shards"
+  }
+}

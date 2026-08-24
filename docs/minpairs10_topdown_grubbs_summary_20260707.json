@@ -1,0 +1,34 @@
+{
+  "input": "minpairs10_topstats_insar_only_20260707.geojson",
+  "method": "Hypothesis-guided top-height estimate. stable_quantile uses max when Grubbs accepts it, then stable p95/p90. descending_grubbs starts from 100% and uses the highest value retained after iterative Grubbs testing. descending_grubbs_p95_floor protects against over-removal by keeping the result no lower than p95 and marking many-removal cases for review. top_down_grubbs starts from the maximum and iteratively removes only statistically rejected high outliers, with no quantile fallback.",
+  "selection_mode": "top_down_grubbs",
+  "tail_gap_m": 8.0,
+  "tail_ratio": 0.75,
+  "buildings_total": 1028,
+  "buildings_with_likely_top_height": 276,
+  "method_counts": {
+    "max_accept_grubbs": 182,
+    "max_reject_use_top_down_grubbs": 57,
+    "max_reject_use_top_down_grubbs_many_removed": 37,
+    "no_strict_insar_solution": 752
+  },
+  "reliability_counts": {
+    "high": 182,
+    "medium": 57,
+    "no_solution": 752,
+    "review": 37
+  },
+  "height_likely_top_m_median": 22.943089485168457,
+  "height_likely_top_m_p05": 4.236084461212158,
+  "height_likely_top_m_p95": 49.248952865600586,
+  "height_field_use": "not_read_for_comparison_or_quality_control",
+  "diagnostic_mae_to_height_m": null,
+  "diagnostic_bias_to_height_m": null,
+  "diagnostic_rmse_to_height_m": null,
+  "outputs": {
+    "geojson": "minpairs10_topdown_grubbs_insar_only_20260707.geojson",
+    "csv": "minpairs10_topdown_grubbs_insar_only_20260707.csv",
+    "png": null,
+    "svg": null
+  }
+}

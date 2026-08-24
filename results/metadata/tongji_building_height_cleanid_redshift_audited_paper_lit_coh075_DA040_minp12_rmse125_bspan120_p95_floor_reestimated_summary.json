@@ -1,0 +1,36 @@
+{
+  "input": "/home/u/geocoding/tongji_sbas/results/geodata/tongji_building_height_cleanid_redshift_audited_paper_lit_coh075_DA040_minp12_rmse125_bspan120_topstats_insar_only.geojson",
+  "method": "Hypothesis-guided top-height estimate. stable_quantile uses max when Grubbs accepts it, then stable p95/p90. descending_grubbs starts from 100% and uses the highest value retained after iterative Grubbs testing. descending_grubbs_p95_floor protects against over-removal by keeping the result no lower than p95 and marking many-removal cases for review. top_down_grubbs starts from the maximum and iteratively removes only statistically rejected high outliers, with no quantile fallback.",
+  "selection_mode": "descending_grubbs_p95_floor",
+  "tail_gap_m": 8.0,
+  "tail_ratio": 0.75,
+  "buildings_total": 1028,
+  "buildings_with_likely_top_height": 239,
+  "method_counts": {
+    "grubbs_top_below_p95_use_p95_floor": 7,
+    "grubbs_top_below_p95_use_p95_floor_many_removed": 22,
+    "max_accept_grubbs": 168,
+    "max_reject_use_iterative_grubbs_top": 35,
+    "max_reject_use_iterative_grubbs_top_many_removed": 7,
+    "no_strict_insar_solution": 789
+  },
+  "reliability_counts": {
+    "high": 168,
+    "medium": 42,
+    "no_solution": 789,
+    "review": 29
+  },
+  "height_likely_top_m_median": 23.269086837768555,
+  "height_likely_top_m_p05": 5.219901275634766,
+  "height_likely_top_m_p95": 50.99639739990228,
+  "height_field_use": "not_read_for_comparison_or_quality_control",
+  "diagnostic_mae_to_height_m": null,
+  "diagnostic_bias_to_height_m": null,
+  "diagnostic_rmse_to_height_m": null,
+  "outputs": {
+    "geojson": "/home/u/geocoding/tongji_sbas/results/geodata/tongji_building_height_cleanid_redshift_audited_paper_lit_coh075_DA040_minp12_rmse125_bspan120_p95_floor_reestimated_insar_only.geojson",
+    "csv": "/home/u/geocoding/tongji_sbas/results/tables/tongji_building_height_cleanid_redshift_audited_paper_lit_coh075_DA040_minp12_rmse125_bspan120_p95_floor_reestimated_insar_only.csv",
+    "png": null,
+    "svg": "/home/u/geocoding/tongji_sbas/results/pic_all/svg/current_strict_clean_equal_height_full/204_cleanid_redshift_audited_building_height_p95_floor_reestimated.svg"
+  }
+}

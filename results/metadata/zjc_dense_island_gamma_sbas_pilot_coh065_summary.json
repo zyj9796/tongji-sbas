@@ -1,0 +1,37 @@
+{
+  "method": "dense full layover island ZJC local robust unwrap -> GAMMA mb_pt -> post-SBAS DA/coherence -> robust internal height span",
+  "prior_policy": "projection geometry only before inversion; vector height merged after solve for comparison; never fitted or filled",
+  "pairs": 37,
+  "results": [
+    {
+      "clean_id": 38,
+      "status": "too_few_final_points",
+      "final_points": 6
+    },
+    {
+      "clean_id": 39,
+      "status": "solved",
+      "island_pixels": 197,
+      "common_points": 32,
+      "final_points": 16,
+      "height_span_maxmin_m": 0.0,
+      "height_span_p01_p99_m": 0.0,
+      "height_span_p05_p95_m": 0.0,
+      "median_phase_sigma_rad": 2.0020970829554702e-13,
+      "unwrap_ok_pairs": 37
+    },
+    {
+      "clean_id": 45,
+      "status": "solved",
+      "island_pixels": 430,
+      "common_points": 51,
+      "final_points": 28,
+      "height_span_maxmin_m": 0.0,
+      "height_span_p01_p99_m": 0.0,
+      "height_span_p05_p95_m": 0.0,
+      "median_phase_sigma_rad": 2.0020970829554702e-13,
+      "unwrap_ok_pairs": 37
+    }
+  ],
+  "result_csv": "results/tables/zjc_dense_island_gamma_sbas_pilot_coh065.csv"
+}

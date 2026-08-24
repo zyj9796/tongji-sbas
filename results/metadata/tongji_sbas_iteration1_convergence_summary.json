@@ -1,0 +1,20 @@
+{
+  "method": "Compare independent SBAS height solutions and GAMMA roof-centroid movement; vector height is not read",
+  "height_attribute_used_for_acceptance": false,
+  "initial_solved_buildings": 238,
+  "updated_solved_buildings": 211,
+  "common_solved_buildings": 201,
+  "lost_after_update": 37,
+  "new_after_update": 10,
+  "height_change_median_m": 2.421717882156372,
+  "height_change_p95_m": 7.3617095947265625,
+  "roof_centroid_shift_median_pixels": 2.2615711421751654,
+  "roof_centroid_shift_p95_pixels": 6.448872219742355,
+  "converged_buildings": 23,
+  "convergence_fraction_of_common": 0.11442786069651742,
+  "acceptance_rule": "no initially solved building may be lost and at least 80% of common solutions must satisfy both tolerances",
+  "height_tolerance_m": 1.0,
+  "roof_centroid_tolerance_pixels": 0.5,
+  "adopt_iteration": false,
+  "decision": "retain_initial_strict_solution"
+}

@@ -1,0 +1,13 @@
+{
+  "method": "previous GAMMA SBAS height updates registered roof along GAMMA R-D displacement-per-metre vector",
+  "registered_roofs": "work/zjc_original_reproduction/20200708_all_building_adaptive_window_paper_quality_gated_roof_projection_sar.geojson",
+  "rd_projection": "work/zjc_original_reproduction/20200708_all_building_gamma_corrected_projection_sar.geojson",
+  "height_solution": "results/tables/tongji_building_height_paperquality_gamma100.csv",
+  "buildings": 1028,
+  "updated_from_previous_sbas": 238,
+  "retained_initial_geometry_without_solution": 790,
+  "median_roof_shift_pixels": 2.6583076574425624,
+  "p95_roof_shift_pixels": 6.457994507516492,
+  "prior_fill_used": false,
+  "output": "work/zjc_original_reproduction/20200708_all_building_sbas_iteration1_roof_projection_sar.geojson"
+}

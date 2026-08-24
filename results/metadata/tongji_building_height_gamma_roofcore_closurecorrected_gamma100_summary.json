@@ -1,0 +1,48 @@
+{
+  "method": "per-building SAR support + nearby stable ground -> global_multi_def -> GAMMA mb_pt -> local-ground subtraction -> IQR/upper_cluster aggregation",
+  "unwrap_engine": "global_multi_def",
+  "global_punw": "work/gamma_native_ipta_sbas/ipta/punw_closure_corrected",
+  "prior_policy": "prior loaded only after InSAR-only solve and internal acceptance; comparison-only; never used for selection, unwrapping, inversion, QC, aggregation, or filling",
+  "pairs": 37,
+  "support_owner": "work/roof_sbas_optimized/roof_core_clean_id_mask.npy",
+  "support_min_mean_coherence": 0.0,
+  "closure_bad_count": null,
+  "max_closure_bad_triangles": -1,
+  "candidate_buildings": 604,
+  "processed_buildings": 604,
+  "gamma_solved_buildings": 495,
+  "accepted_buildings": 299,
+  "height_median_m": 13.797551274299622,
+  "height_p05_p95_m": [
+    1.8556393012404442,
+    30.167410635948162
+  ],
+  "phase_sigma_median_rad": 0.2914851903915405,
+  "failure_counts": {
+    "none": 495,
+    "too few support points valid in every global_multi_def record": 78,
+    "too_few_support_points": 31
+  },
+  "rejection_policy": {
+    "min_output_points": 4,
+    "max_median_phase_sigma": 1.2,
+    "max_roof_iqr_m": 80.0,
+    "physical_height_range_m": [
+      0.0,
+      180.0
+    ]
+  },
+  "prior_comparison_after_acceptance": {
+    "count": 299,
+    "median_difference_m": -6.941019177436829,
+    "mae_m": 9.853839993941751,
+    "correlation": 0.35383867777701433
+  },
+  "artifacts": {
+    "audit_csv": "work/gamma_building_roofcore_closurecorrected_gamma100_full/building_audit_insar_only.csv",
+    "result_csv": "results/tables/tongji_building_height_gamma_roofcore_closurecorrected_gamma100_insar_only.csv",
+    "result_geojson": "results/geodata/tongji_building_height_gamma_roofcore_closurecorrected_gamma100_insar_only.geojson",
+    "gamma_log": "work/gamma_building_roofcore_closurecorrected_gamma100_full/gamma_building_mcf.log",
+    "building_shards": "work/gamma_building_roofcore_closurecorrected_gamma100_full/building_shards"
+  }
+}

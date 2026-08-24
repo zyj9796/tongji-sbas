@@ -1,0 +1,47 @@
+{
+  "method": "GAMMA-native SLC_intf -> phase_sim_orb/sub_phase -> adf -> IPTA multi_def_pt(model 2) -> local stable-ground subtraction -> per-building IQR and median",
+  "paper_alignment": {
+    "minimum_pairs": 12,
+    "amplitude_dispersion_max": 0.4,
+    "building_aggregation": "IQR 1.5 then median"
+  },
+  "prior_policy": "height is merged only after the GAMMA solution is frozen; it is comparison-only and never used for interferograms, point selection, inversion, rejection, calibration, or filling",
+  "reference_surface": "work/gamma_native_ipta_sbas/reference_flat_4m.hgt",
+  "reference_surface_role": "constant non-NULL GAMMA phase datum only; cancels in roof-minus-local-ground height",
+  "geometric_coregistration_reference": "data/tongji_rslc/20200708.rslc.par",
+  "precision_baseline_refinement": false,
+  "ipta_phase_source": "adf",
+  "sbas_engine": "multi_def_pt",
+  "sbas_gamma": null,
+  "mb_sigma_mode": null,
+  "mb_pair_sigma_rad": null,
+  "point_domain": "roof",
+  "building_statistic": "median",
+  "domain_conflict_pixels_removed": 0,
+  "pairs": 48,
+  "dates": 22,
+  "candidate_roof_points": 23580,
+  "candidate_ground_points": 8054,
+  "gamma_accepted_roof_points": 17424,
+  "gamma_accepted_ground_points": 5242,
+  "phase_reference_point_index": 28425,
+  "buildings_solved": 323,
+  "height_median_m": 1.9251389503479004,
+  "height_p05_p95_m": [
+    -15.445492744445799,
+    19.82594685554503
+  ],
+  "internal_phase_sigma_median_rad": 0.7809205055236816,
+  "prior_comparison_after_selection": {
+    "count": 323,
+    "median_difference_m": -19.174386501312256,
+    "mae_m": 22.270392014100086,
+    "correlation": 0.34467603194203894
+  },
+  "artifacts": {
+    "point_solution": "work/gamma_native_ipta_iteration1_paper_quality_network48/ipta/gamma_point_solution.csv",
+    "result_csv": "results/tables/tongji_gamma_native_iteration1_diagnostic.csv",
+    "result_geojson": "results/geodata/tongji_gamma_native_iteration1_diagnostic.geojson",
+    "gamma_log": "work/gamma_native_ipta_iteration1_paper_quality_network48/gamma_native.log"
+  }
+}

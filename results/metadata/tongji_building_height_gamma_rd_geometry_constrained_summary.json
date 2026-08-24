@@ -1,0 +1,28 @@
+{
+  "method": "temporally stable GAMMA SBAS rooftop PS gated by R-D height-position consistency",
+  "product_class": "hybrid geometry-constrained diagnostic; not InSAR-only",
+  "prior_policy": "height values are never copied or filled; prior-derived initial roof projection participates in geometry and prevents independent validation against that same prior",
+  "thresholds": {
+    "height_step_m": 0.5,
+    "geometry_tolerance_m": 5.0,
+    "pixel_buffer": 0.51
+  },
+  "buildings_with_any_solution": 301,
+  "singleton_buildings": 36,
+  "repeated_point_buildings": 265,
+  "height_median_m": 9.779675245285034,
+  "height_p05_p95_m": [
+    1.1806848645210266,
+    22.495695114135746
+  ],
+  "post_solution_prior_comparison_not_independent": {
+    "count": 301,
+    "mae_m": 10.886748765097108,
+    "correlation": 0.6233573790176109
+  },
+  "artifacts": {
+    "result_csv": "results/tables/tongji_building_height_gamma_rd_geometry_constrained.csv",
+    "result_geojson": "results/geodata/tongji_building_height_gamma_rd_geometry_constrained.geojson",
+    "point_audit": "results/tables/tongji_building_height_gamma_rd_geometry_constrained_point_audit.csv"
+  }
+}

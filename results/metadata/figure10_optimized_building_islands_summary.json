@@ -1,0 +1,36 @@
+{
+  "figures": [
+    "picall/10_建筑孤岛全景.svg",
+    "picall/11_建筑孤岛局部放大.svg"
+  ],
+  "source_amplitude": "work/mli/20200708_rslc_amplitude.npy",
+  "source_projection": "work/zjc_original_reproduction/20200708_all_building_adaptive_window_roof_projection_sar.geojson",
+  "island_selection_uses_final_height_solution": false,
+  "height_used_as_matching_target_or_fill": false,
+  "amplitude_display": "single 20200708 RSLC magnitude; global amplitude^0.70 and 1%-99.4% stretch",
+  "selected_buildings": 553,
+  "selected_islands": 575,
+  "selected_pixels": 87446,
+  "reliable_evidence_pixels": 55504,
+  "island_table_rows": 575,
+  "cross_building_conflict_pixels_removed": 1829,
+  "selection_rules": {
+    "erosion_pixels": 1,
+    "small_roof_full_boundary_fallback": false,
+    "exclude_cross_building_layover_conflicts": false,
+    "roof_only_conflict_basis": "overlapping roof coverage",
+    "maximum_amplitude_dispersion": 0.4,
+    "pair_coherence_threshold": 0.55,
+    "minimum_mean_coherence": 0.65,
+    "minimum_coherent_pairs": 12,
+    "minimum_connected_pixels": 8,
+    "minimum_reliable_pixels_per_island": 8,
+    "minimum_reliable_fraction_per_island": 0.15
+  },
+  "local_window_row_col": [
+    320,
+    465,
+    397,
+    587
+  ]
+}

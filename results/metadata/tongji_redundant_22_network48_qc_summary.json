@@ -1,0 +1,98 @@
+{
+  "policy": "remove lowest-coherence pairs while preserving graph constraints; no height used",
+  "target_pairs": 48,
+  "selected_pairs": 48,
+  "initial_graph": {
+    "nodes": 22,
+    "edges": 60,
+    "connected": true,
+    "edge_connectivity": 3,
+    "bridges": 0,
+    "degree_min": 3,
+    "degree_max": 9
+  },
+  "selected_graph": {
+    "nodes": 22,
+    "edges": 48,
+    "connected": true,
+    "edge_connectivity": 2,
+    "bridges": 0,
+    "degree_min": 2,
+    "degree_max": 7
+  },
+  "removed_pairs": [
+    {
+      "master": "20220623",
+      "slave": "20220715",
+      "mean_cc": 0.3758015525251602,
+      "dt_days": 22
+    },
+    {
+      "master": "20220806",
+      "slave": "20220919",
+      "mean_cc": 0.4055276172418469,
+      "dt_days": 44
+    },
+    {
+      "master": "20230220",
+      "slave": "20230427",
+      "mean_cc": 0.4071456998645997,
+      "dt_days": 66
+    },
+    {
+      "master": "20220601",
+      "slave": "20220623",
+      "mean_cc": 0.4087950588043301,
+      "dt_days": 22
+    },
+    {
+      "master": "20220715",
+      "slave": "20220828",
+      "mean_cc": 0.4096347469780909,
+      "dt_days": 44
+    },
+    {
+      "master": "20220806",
+      "slave": "20220828",
+      "mean_cc": 0.4152547098997694,
+      "dt_days": 22
+    },
+    {
+      "master": "20230427",
+      "slave": "20230610",
+      "mean_cc": 0.4167442429469029,
+      "dt_days": 44
+    },
+    {
+      "master": "20220828",
+      "slave": "20221102",
+      "mean_cc": 0.4180672600150267,
+      "dt_days": 66
+    },
+    {
+      "master": "20230702",
+      "slave": "20230724",
+      "mean_cc": 0.4181443007901799,
+      "dt_days": 22
+    },
+    {
+      "master": "20220828",
+      "slave": "20221011",
+      "mean_cc": 0.4204402134737567,
+      "dt_days": 44
+    },
+    {
+      "master": "20230610",
+      "slave": "20230724",
+      "mean_cc": 0.4217861023773707,
+      "dt_days": 44
+    },
+    {
+      "master": "20230917",
+      "slave": "20231111",
+      "mean_cc": 0.4306442357763712,
+      "dt_days": 55
+    }
+  ],
+  "output": "work/baselines/tongji_redundant_22_network48_qc.csv"
+}

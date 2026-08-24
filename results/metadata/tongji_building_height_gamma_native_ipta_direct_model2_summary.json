@@ -1,0 +1,40 @@
+{
+  "method": "GAMMA-native SLC_intf -> phase_sim_orb/sub_phase -> adf -> IPTA multi_def_pt(model 2) -> local stable-ground subtraction -> per-building IQR and median",
+  "paper_alignment": {
+    "minimum_pairs": 12,
+    "amplitude_dispersion_max": 0.4,
+    "building_aggregation": "IQR 1.5 then median"
+  },
+  "prior_policy": "height is merged only after the GAMMA solution is frozen; it is comparison-only and never used for interferograms, point selection, inversion, rejection, calibration, or filling",
+  "reference_surface": "work/gamma_native_ipta_sbas/reference_flat_4m.hgt",
+  "reference_surface_role": "constant non-NULL GAMMA phase datum only; cancels in roof-minus-local-ground height",
+  "geometric_coregistration_reference": "data/tongji_rslc/20200708.rslc.par",
+  "precision_baseline_refinement": false,
+  "ipta_phase_source": "direct",
+  "pairs": 37,
+  "dates": 22,
+  "candidate_roof_points": 54840,
+  "candidate_ground_points": 7359,
+  "gamma_accepted_roof_points": 24760,
+  "gamma_accepted_ground_points": 3444,
+  "phase_reference_point_index": 54053,
+  "buildings_solved": 569,
+  "height_median_m": 5.294260025024414,
+  "height_p05_p95_m": [
+    -17.95423412322998,
+    29.02113227844241
+  ],
+  "internal_phase_sigma_median_rad": 0.9544750452041626,
+  "prior_comparison_after_selection": {
+    "count": 569,
+    "median_difference_m": -13.712287187576294,
+    "mae_m": 20.074856786296323,
+    "correlation": 0.12054847270920256
+  },
+  "artifacts": {
+    "point_solution": "work/gamma_native_ipta_sbas/ipta/gamma_point_solution.csv",
+    "result_csv": "results/tables/tongji_building_height_gamma_native_ipta_direct_model2.csv",
+    "result_geojson": "results/geodata/tongji_building_height_gamma_native_ipta_direct_model2.geojson",
+    "gamma_log": "work/gamma_native_ipta_sbas/gamma_native.log"
+  }
+}

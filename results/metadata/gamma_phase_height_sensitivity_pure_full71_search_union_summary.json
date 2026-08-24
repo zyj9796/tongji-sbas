@@ -1,0 +1,12 @@
+{
+  "method": "[GAMMA phase_sim_orb_pt(104 m) - phase_sim_orb_pt(4 m)] / 100 m; ph_flag=1",
+  "prior_height_used": false,
+  "pairs": 71,
+  "points": 48258,
+  "median_abs_sensitivity_rad_per_m": 0.11000821739435196,
+  "p05_p95_sensitivity_rad_per_m": [
+    -0.3986111879348755,
+    0.35810863971710205
+  ],
+  "output": "work/gamma_native_ipta_pure_full71_search_union/ipta/phase_height_sensitivity_rad_per_m.npy"
+}
