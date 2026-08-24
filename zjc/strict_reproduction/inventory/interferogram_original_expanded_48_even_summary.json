@@ -1,0 +1,54 @@
+[
+  {
+    "pair_index": 8,
+    "primary": "20231120",
+    "secondary": "20231212",
+    "perpendicular_baseline_m": 35.5666,
+    "temporal_baseline_days": 21.9997,
+    "pair_name": "20231120_20231212",
+    "status": "processed",
+    "building_island_pixel_count": 411725,
+    "finite_coherence_count": 411725,
+    "mean_building_island_coherence": 0.4228823482990265,
+    "filter": {
+      "name": "GAMMA_adf",
+      "alpha": 0.4,
+      "nfft": 32,
+      "cc_window": 5
+    },
+    "coherence": {
+      "name": "GAMMA_cc_wave",
+      "window": [
+        5,
+        5
+      ],
+      "mode": 3
+    }
+  },
+  {
+    "pair_index": 10,
+    "primary": "20231120",
+    "secondary": "20240103",
+    "perpendicular_baseline_m": 48.0206,
+    "temporal_baseline_days": 43.9994,
+    "pair_name": "20231120_20240103",
+    "status": "processed",
+    "building_island_pixel_count": 411725,
+    "finite_coherence_count": 411725,
+    "mean_building_island_coherence": 0.40983232855796814,
+    "filter": {
+      "name": "GAMMA_adf",
+      "alpha": 0.4,
+      "nfft": 32,
+      "cc_window": 5
+    },
+    "coherence": {
+      "name": "GAMMA_cc_wave",
+      "window": [
+        5,
+        5
+      ],
+      "mode": 3
+    }
+  }
+]

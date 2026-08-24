@@ -1,0 +1,68 @@
+[
+  {
+    "date": "20231109",
+    "method": "quicklook_RANSAC_displacement_to_range_Doppler_metadata",
+    "source_pixels_unchanged": true,
+    "orbit_state_vectors_unchanged": true,
+    "adaptive_crop_range_azimuth_px": [
+      2432,
+      5821
+    ],
+    "nominal_metadata_crop_range_azimuth_px": [
+      2400,
+      10000
+    ],
+    "time_shift_seconds": 1.0104822,
+    "slant_range_shift_metres": -39.97232,
+    "before": {
+      "start_time": 11982.596615,
+      "center_time": 11983.442794,
+      "near_range_slc": 629334.4614,
+      "center_range_slc": 635579.5119,
+      "far_range_slc": 641824.5623
+    },
+    "after": {
+      "start_time": 11983.6070972,
+      "center_time": 11984.4532762,
+      "near_range_slc": 629294.4890800001,
+      "center_range_slc": 635539.5395800001,
+      "far_range_slc": 641784.58998
+    },
+    "feature_matches": 760,
+    "ransac_inliers": 714,
+    "inlier_fraction": 0.9394736842105263
+  },
+  {
+    "date": "20231212",
+    "method": "quicklook_RANSAC_displacement_to_range_Doppler_metadata",
+    "source_pixels_unchanged": true,
+    "orbit_state_vectors_unchanged": true,
+    "adaptive_crop_range_azimuth_px": [
+      2128,
+      5715
+    ],
+    "nominal_metadata_crop_range_azimuth_px": [
+      2400,
+      10000
+    ],
+    "time_shift_seconds": 1.0399695,
+    "slant_range_shift_metres": 339.76472,
+    "before": {
+      "start_time": 11946.433385,
+      "center_time": 11947.282713,
+      "near_range_slc": 629344.4546,
+      "center_range_slc": 635589.505,
+      "far_range_slc": 641834.5554
+    },
+    "after": {
+      "start_time": 11947.4733545,
+      "center_time": 11948.3226825,
+      "near_range_slc": 629684.21932,
+      "center_range_slc": 635929.26972,
+      "far_range_slc": 642174.3201199999
+    },
+    "feature_matches": 588,
+    "ransac_inliers": 546,
+    "inlier_fraction": 0.9285714285714286
+  }
+]

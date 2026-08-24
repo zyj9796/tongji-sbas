@@ -1,0 +1,227 @@
+[
+  {
+    "date": "20231007",
+    "status": "reference",
+    "qa_pass": true
+  },
+  {
+    "date": "20231029",
+    "status": "existing_valid",
+    "qa_pass": true,
+    "accepted_offsets": 921,
+    "tested_offsets": 1024,
+    "final_range_offset_intercept_px": -0.00622,
+    "final_azimuth_offset_intercept_px": 0.00068,
+    "final_range_fit_sigma_px": 0.0064,
+    "final_azimuth_fit_sigma_px": 0.0078
+  },
+  {
+    "date": "20231109",
+    "status": "existing_valid",
+    "qa_pass": true,
+    "accepted_offsets": 897,
+    "tested_offsets": 1024,
+    "final_range_offset_intercept_px": 0.00198,
+    "final_azimuth_offset_intercept_px": -0.00022,
+    "final_range_fit_sigma_px": 0.0066,
+    "final_azimuth_fit_sigma_px": 0.0087
+  },
+  {
+    "date": "20231120",
+    "status": "processed",
+    "qa_pass": true,
+    "accepted_offsets": 876,
+    "tested_offsets": 1024,
+    "final_range_offset_intercept_px": -0.00043,
+    "final_azimuth_offset_intercept_px": 0.00106,
+    "final_range_fit_sigma_px": 0.0064,
+    "final_azimuth_fit_sigma_px": 0.0073
+  },
+  {
+    "date": "20231201",
+    "status": "processed",
+    "qa_pass": true,
+    "accepted_offsets": 872,
+    "tested_offsets": 1024,
+    "final_range_offset_intercept_px": 0.00015,
+    "final_azimuth_offset_intercept_px": 0.00081,
+    "final_range_fit_sigma_px": 0.0071,
+    "final_azimuth_fit_sigma_px": 0.0088
+  },
+  {
+    "date": "20231212",
+    "status": "existing_valid",
+    "qa_pass": true,
+    "accepted_offsets": 901,
+    "tested_offsets": 1024,
+    "final_range_offset_intercept_px": -4e-05,
+    "final_azimuth_offset_intercept_px": -0.00094,
+    "final_range_fit_sigma_px": 0.0081,
+    "final_azimuth_fit_sigma_px": 0.0101
+  },
+  {
+    "date": "20231223",
+    "status": "processed",
+    "qa_pass": true,
+    "accepted_offsets": 876,
+    "tested_offsets": 1024,
+    "final_range_offset_intercept_px": -0.00193,
+    "final_azimuth_offset_intercept_px": 0.00208,
+    "final_range_fit_sigma_px": 0.0124,
+    "final_azimuth_fit_sigma_px": 0.0129
+  },
+  {
+    "date": "20240103",
+    "status": "processed",
+    "qa_pass": true,
+    "accepted_offsets": 842,
+    "tested_offsets": 1024,
+    "final_range_offset_intercept_px": -0.00462,
+    "final_azimuth_offset_intercept_px": 0.00046,
+    "final_range_fit_sigma_px": 0.009,
+    "final_azimuth_fit_sigma_px": 0.0102
+  },
+  {
+    "date": "20240114",
+    "status": "processed",
+    "qa_pass": true,
+    "accepted_offsets": 875,
+    "tested_offsets": 1024,
+    "final_range_offset_intercept_px": -0.00147,
+    "final_azimuth_offset_intercept_px": 0.00093,
+    "final_range_fit_sigma_px": 0.0084,
+    "final_azimuth_fit_sigma_px": 0.0102
+  },
+  {
+    "date": "20240125",
+    "status": "processed",
+    "qa_pass": true,
+    "accepted_offsets": 888,
+    "tested_offsets": 1024,
+    "final_range_offset_intercept_px": -0.00169,
+    "final_azimuth_offset_intercept_px": 0.00293,
+    "final_range_fit_sigma_px": 0.0089,
+    "final_azimuth_fit_sigma_px": 0.0101
+  },
+  {
+    "date": "20240205",
+    "status": "processed",
+    "qa_pass": true,
+    "accepted_offsets": 904,
+    "tested_offsets": 1024,
+    "final_range_offset_intercept_px": 0.00234,
+    "final_azimuth_offset_intercept_px": -0.00219,
+    "final_range_fit_sigma_px": 0.0096,
+    "final_azimuth_fit_sigma_px": 0.0103
+  },
+  {
+    "date": "20240216",
+    "status": "processed",
+    "qa_pass": true,
+    "accepted_offsets": 902,
+    "tested_offsets": 1024,
+    "final_range_offset_intercept_px": 0.00439,
+    "final_azimuth_offset_intercept_px": 0.00058,
+    "final_range_fit_sigma_px": 0.0087,
+    "final_azimuth_fit_sigma_px": 0.0102
+  },
+  {
+    "date": "20240227",
+    "status": "processed",
+    "qa_pass": true,
+    "accepted_offsets": 875,
+    "tested_offsets": 1024,
+    "final_range_offset_intercept_px": -0.00292,
+    "final_azimuth_offset_intercept_px": -0.00016,
+    "final_range_fit_sigma_px": 0.0081,
+    "final_azimuth_fit_sigma_px": 0.0099
+  },
+  {
+    "date": "20240309",
+    "status": "processed",
+    "qa_pass": true,
+    "accepted_offsets": 895,
+    "tested_offsets": 1024,
+    "final_range_offset_intercept_px": -0.00648,
+    "final_azimuth_offset_intercept_px": 0.00087,
+    "final_range_fit_sigma_px": 0.0079,
+    "final_azimuth_fit_sigma_px": 0.0092
+  },
+  {
+    "date": "20240331",
+    "status": "processed",
+    "qa_pass": true,
+    "accepted_offsets": 870,
+    "tested_offsets": 1024,
+    "final_range_offset_intercept_px": 0.00403,
+    "final_azimuth_offset_intercept_px": 0.00214,
+    "final_range_fit_sigma_px": 0.0077,
+    "final_azimuth_fit_sigma_px": 0.0097
+  },
+  {
+    "date": "20240411",
+    "status": "processed",
+    "qa_pass": true,
+    "accepted_offsets": 886,
+    "tested_offsets": 1024,
+    "final_range_offset_intercept_px": -0.00342,
+    "final_azimuth_offset_intercept_px": 0.0008,
+    "final_range_fit_sigma_px": 0.0092,
+    "final_azimuth_fit_sigma_px": 0.0102
+  },
+  {
+    "date": "20240422",
+    "status": "processed",
+    "qa_pass": true,
+    "accepted_offsets": 901,
+    "tested_offsets": 1024,
+    "final_range_offset_intercept_px": 0.0057,
+    "final_azimuth_offset_intercept_px": 0.00239,
+    "final_range_fit_sigma_px": 0.0086,
+    "final_azimuth_fit_sigma_px": 0.0102
+  },
+  {
+    "date": "20240503",
+    "status": "processed",
+    "qa_pass": true,
+    "accepted_offsets": 908,
+    "tested_offsets": 1024,
+    "final_range_offset_intercept_px": -0.00399,
+    "final_azimuth_offset_intercept_px": 0.00105,
+    "final_range_fit_sigma_px": 0.0088,
+    "final_azimuth_fit_sigma_px": 0.0116
+  },
+  {
+    "date": "20240514",
+    "status": "processed",
+    "qa_pass": true,
+    "accepted_offsets": 883,
+    "tested_offsets": 1024,
+    "final_range_offset_intercept_px": 0.00131,
+    "final_azimuth_offset_intercept_px": 0.00062,
+    "final_range_fit_sigma_px": 0.0091,
+    "final_azimuth_fit_sigma_px": 0.0107
+  },
+  {
+    "date": "20240525",
+    "status": "processed",
+    "qa_pass": true,
+    "accepted_offsets": 917,
+    "tested_offsets": 1024,
+    "final_range_offset_intercept_px": 0.00083,
+    "final_azimuth_offset_intercept_px": 0.00257,
+    "final_range_fit_sigma_px": 0.0123,
+    "final_azimuth_fit_sigma_px": 0.0151
+  },
+  {
+    "date": "20240605",
+    "status": "processed",
+    "qa_pass": true,
+    "accepted_offsets": 900,
+    "tested_offsets": 1024,
+    "final_range_offset_intercept_px": 0.0025,
+    "final_azimuth_offset_intercept_px": 0.00024,
+    "final_range_fit_sigma_px": 0.009,
+    "final_azimuth_fit_sigma_px": 0.0103
+  }
+]

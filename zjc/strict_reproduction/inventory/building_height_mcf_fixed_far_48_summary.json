@@ -1,0 +1,47 @@
+{
+  "method": "GAMMA Delaunay MCF independent unwrapping + two-parameter weighted SVD-equivalent WLS",
+  "zero_mode": "fixed-far-ground",
+  "paper_selected_pixel_count": 17931,
+  "interferogram_pair_count": 48,
+  "solved_pixel_count": 17931,
+  "solved_building_count": 169,
+  "height_above_anchor_m_quantiles": {
+    "0.05": -13.848592737144108,
+    "0.25": 5.747200837507325,
+    "0.5": 25.587139092668583,
+    "0.75": 56.64131328536805,
+    "0.95": 135.26015776415034
+  },
+  "velocity_m_per_year_quantiles": {
+    "0.05": -0.035051391825693785,
+    "0.25": -0.012221049226193664,
+    "0.5": -0.0016730983385917714,
+    "0.75": 0.005378853489241779,
+    "0.95": 0.03270502870898026
+  },
+  "phase_residual_rms_rad_quantiles": {
+    "0.05": 0.3085494859135802,
+    "0.25": 2.060648654482037,
+    "0.5": 2.847441601317255,
+    "0.75": 3.505797014280475,
+    "0.95": 4.72305875665772
+  },
+  "height_sigma_m_quantiles": {
+    "0.05": 0.9530793896145229,
+    "0.25": 2.5043043354843975,
+    "0.5": 7.099403214205814,
+    "0.75": 11.168908148215063,
+    "0.95": 14.229926096340645
+  },
+  "building_height_above_anchor_m_quantiles": {
+    "0.05": -12.635848078592065,
+    "0.25": 1.439287429115706,
+    "0.5": 10.67454137185958,
+    "0.75": 23.229304826742585,
+    "0.95": 52.66697247700133
+  },
+  "minimum_pairs": 12,
+  "bisquare_tuning_constant": 4.685,
+  "height_prior_used_in_inversion": false,
+  "floor_use": "search-mask geometry only; never used as observation, fill, bound, or correction"
+}

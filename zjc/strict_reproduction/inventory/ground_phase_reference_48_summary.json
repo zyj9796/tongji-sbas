@@ -1,0 +1,626 @@
+[
+  {
+    "pair_name": "20231007_20231029",
+    "ground_point_count": 731,
+    "robust_inlier_count": 726,
+    "plane_coefficients_rad": [
+      0.4379268937574306,
+      -1.6201546629600319,
+      -0.27798715608110414
+    ],
+    "ground_circular_residual_median_rad": 0.0184856048223232,
+    "ground_circular_residual_nmad_rad": 0.6304579853241523,
+    "ground_circular_residual_rmse_rad": 0.7410575816737772
+  },
+  {
+    "pair_name": "20231007_20231109",
+    "ground_point_count": 731,
+    "robust_inlier_count": 710,
+    "plane_coefficients_rad": [
+      2.4616469009085575,
+      3.0700105748206092,
+      0.22554125171241673
+    ],
+    "ground_circular_residual_median_rad": -0.5450413046638379,
+    "ground_circular_residual_nmad_rad": 1.5263088446188224,
+    "ground_circular_residual_rmse_rad": 1.5784828850238917
+  },
+  {
+    "pair_name": "20231029_20231109",
+    "ground_point_count": 731,
+    "robust_inlier_count": 706,
+    "plane_coefficients_rad": [
+      -1.6599296623773516,
+      0.6448229106552518,
+      0.12682824078252222
+    ],
+    "ground_circular_residual_median_rad": -0.15108632582720505,
+    "ground_circular_residual_nmad_rad": 0.9389106119324432,
+    "ground_circular_residual_rmse_rad": 1.1624840743157179
+  },
+  {
+    "pair_name": "20231029_20231212",
+    "ground_point_count": 731,
+    "robust_inlier_count": 731,
+    "plane_coefficients_rad": [
+      -6.193188512646986,
+      -12.307094756667514,
+      0.4932847413462558
+    ],
+    "ground_circular_residual_median_rad": 0.04033618755901425,
+    "ground_circular_residual_nmad_rad": 2.397796964638227,
+    "ground_circular_residual_rmse_rad": 1.822378970280139
+  },
+  {
+    "pair_name": "20231109_20231120",
+    "ground_point_count": 731,
+    "robust_inlier_count": 567,
+    "plane_coefficients_rad": [
+      -1.9651793251645375,
+      0.3046969812207437,
+      0.4229200421955246
+    ],
+    "ground_circular_residual_median_rad": 0.04493949569225842,
+    "ground_circular_residual_nmad_rad": 0.6872382432564702,
+    "ground_circular_residual_rmse_rad": 0.8600489355294814
+  },
+  {
+    "pair_name": "20231109_20231201",
+    "ground_point_count": 731,
+    "robust_inlier_count": 554,
+    "plane_coefficients_rad": [
+      1.8661935916333512,
+      -0.4454401071710286,
+      0.1899881737797422
+    ],
+    "ground_circular_residual_median_rad": 0.008143935468307719,
+    "ground_circular_residual_nmad_rad": 0.6527938337669991,
+    "ground_circular_residual_rmse_rad": 0.831913583456518
+  },
+  {
+    "pair_name": "20231109_20231223",
+    "ground_point_count": 731,
+    "robust_inlier_count": 731,
+    "plane_coefficients_rad": [
+      9.259631170670298,
+      15.052701198037385,
+      1.6861383068964744
+    ],
+    "ground_circular_residual_median_rad": -0.0034983097800091096,
+    "ground_circular_residual_nmad_rad": 2.4125438527418224,
+    "ground_circular_residual_rmse_rad": 1.8440122237996295
+  },
+  {
+    "pair_name": "20231120_20231212",
+    "ground_point_count": 731,
+    "robust_inlier_count": 728,
+    "plane_coefficients_rad": [
+      2.823899565984904,
+      3.423202346156156,
+      -0.2800015648549424
+    ],
+    "ground_circular_residual_median_rad": -0.18752635141624174,
+    "ground_circular_residual_nmad_rad": 1.546646930101295,
+    "ground_circular_residual_rmse_rad": 1.5024619226382128
+  },
+  {
+    "pair_name": "20231120_20231223",
+    "ground_point_count": 731,
+    "robust_inlier_count": 731,
+    "plane_coefficients_rad": [
+      -0.35417398030258773,
+      1.9533034252548707,
+      2.628391978654997
+    ],
+    "ground_circular_residual_median_rad": 0.008747472097931586,
+    "ground_circular_residual_nmad_rad": 2.179300190432109,
+    "ground_circular_residual_rmse_rad": 1.7528323995197328
+  },
+  {
+    "pair_name": "20231120_20240103",
+    "ground_point_count": 731,
+    "robust_inlier_count": 678,
+    "plane_coefficients_rad": [
+      0.4054797430207971,
+      -4.5911626256963425,
+      -1.8078723625367874
+    ],
+    "ground_circular_residual_median_rad": -0.4042413591588525,
+    "ground_circular_residual_nmad_rad": 1.848538163501883,
+    "ground_circular_residual_rmse_rad": 1.6551562284984311
+  },
+  {
+    "pair_name": "20231201_20231212",
+    "ground_point_count": 731,
+    "robust_inlier_count": 731,
+    "plane_coefficients_rad": [
+      -1.9618928443976655,
+      -6.161490451689538,
+      -1.5631060022453132
+    ],
+    "ground_circular_residual_median_rad": -0.3150997219466989,
+    "ground_circular_residual_nmad_rad": 2.3833805354560673,
+    "ground_circular_residual_rmse_rad": 1.8435188367577124
+  },
+  {
+    "pair_name": "20231201_20231223",
+    "ground_point_count": 731,
+    "robust_inlier_count": 731,
+    "plane_coefficients_rad": [
+      -5.653960539307477,
+      -7.195156021148099,
+      -0.5436026962140084
+    ],
+    "ground_circular_residual_median_rad": 0.4607588639749307,
+    "ground_circular_residual_nmad_rad": 1.9453494631371568,
+    "ground_circular_residual_rmse_rad": 1.7354669499516204
+  },
+  {
+    "pair_name": "20231201_20240103",
+    "ground_point_count": 731,
+    "robust_inlier_count": 731,
+    "plane_coefficients_rad": [
+      -2.0676483787212123,
+      -2.5674984401555645,
+      2.103079351009502
+    ],
+    "ground_circular_residual_median_rad": 0.048142067808156996,
+    "ground_circular_residual_nmad_rad": 2.277436671619587,
+    "ground_circular_residual_rmse_rad": 1.7729965748795842
+  },
+  {
+    "pair_name": "20231212_20231223",
+    "ground_point_count": 731,
+    "robust_inlier_count": 731,
+    "plane_coefficients_rad": [
+      8.236535166429771,
+      11.125761389915413,
+      1.7004078119465322
+    ],
+    "ground_circular_residual_median_rad": -0.1010725525954441,
+    "ground_circular_residual_nmad_rad": 2.3782557575109498,
+    "ground_circular_residual_rmse_rad": 1.836039990533986
+  },
+  {
+    "pair_name": "20231212_20240114",
+    "ground_point_count": 731,
+    "robust_inlier_count": 567,
+    "plane_coefficients_rad": [
+      1.9176305699513045,
+      0.3927678234242766,
+      0.21034124301973645
+    ],
+    "ground_circular_residual_median_rad": 0.05885969291362114,
+    "ground_circular_residual_nmad_rad": 0.5384438325525948,
+    "ground_circular_residual_rmse_rad": 0.7444854377201376
+  },
+  {
+    "pair_name": "20231212_20240125",
+    "ground_point_count": 731,
+    "robust_inlier_count": 731,
+    "plane_coefficients_rad": [
+      -3.114312904530288,
+      1.5531185037201707,
+      1.482710939644805
+    ],
+    "ground_circular_residual_median_rad": 1.1924070479359477,
+    "ground_circular_residual_nmad_rad": 1.7829106166878246,
+    "ground_circular_residual_rmse_rad": 1.9757638179208354
+  },
+  {
+    "pair_name": "20231223_20240103",
+    "ground_point_count": 731,
+    "robust_inlier_count": 731,
+    "plane_coefficients_rad": [
+      0.6701332418146212,
+      -3.487030576379218,
+      -1.8868137166505021
+    ],
+    "ground_circular_residual_median_rad": 0.04205350763605888,
+    "ground_circular_residual_nmad_rad": 2.133127927175887,
+    "ground_circular_residual_rmse_rad": 1.7390547488537362
+  },
+  {
+    "pair_name": "20231223_20240114",
+    "ground_point_count": 731,
+    "robust_inlier_count": 731,
+    "plane_coefficients_rad": [
+      0.4271874039809373,
+      3.088689433848385,
+      1.6072733004150106
+    ],
+    "ground_circular_residual_median_rad": -0.3581661417096893,
+    "ground_circular_residual_nmad_rad": 2.4809272488051515,
+    "ground_circular_residual_rmse_rad": 1.9141384455034234
+  },
+  {
+    "pair_name": "20231223_20240125",
+    "ground_point_count": 731,
+    "robust_inlier_count": 730,
+    "plane_coefficients_rad": [
+      -5.602923548945507,
+      -1.8561681225686142,
+      1.045262100799069
+    ],
+    "ground_circular_residual_median_rad": -0.8704736194372702,
+    "ground_circular_residual_nmad_rad": 1.7110952734985054,
+    "ground_circular_residual_rmse_rad": 1.8169966175856294
+  },
+  {
+    "pair_name": "20240103_20240114",
+    "ground_point_count": 731,
+    "robust_inlier_count": 731,
+    "plane_coefficients_rad": [
+      0.7594037691509155,
+      4.946786926067835,
+      -1.393277037015174
+    ],
+    "ground_circular_residual_median_rad": 0.6518761552649492,
+    "ground_circular_residual_nmad_rad": 1.9008263385658617,
+    "ground_circular_residual_rmse_rad": 1.735062203605056
+  },
+  {
+    "pair_name": "20240103_20240125",
+    "ground_point_count": 731,
+    "robust_inlier_count": 670,
+    "plane_coefficients_rad": [
+      -1.534547328763245,
+      -3.282787933556321,
+      -0.42050570888945543
+    ],
+    "ground_circular_residual_median_rad": 0.2722241809642571,
+    "ground_circular_residual_nmad_rad": 1.500880416332641,
+    "ground_circular_residual_rmse_rad": 1.5497123266287611
+  },
+  {
+    "pair_name": "20240103_20240205",
+    "ground_point_count": 731,
+    "robust_inlier_count": 731,
+    "plane_coefficients_rad": [
+      -8.22517363920717,
+      -2.246178888234975,
+      2.476971640672567
+    ],
+    "ground_circular_residual_median_rad": 0.11312540668000512,
+    "ground_circular_residual_nmad_rad": 2.4655889285617474,
+    "ground_circular_residual_rmse_rad": 1.8655418618899762
+  },
+  {
+    "pair_name": "20240103_20240216",
+    "ground_point_count": 731,
+    "robust_inlier_count": 727,
+    "plane_coefficients_rad": [
+      3.653255109410089,
+      5.393936128430868,
+      3.0436768908410294
+    ],
+    "ground_circular_residual_median_rad": 0.04703546285783222,
+    "ground_circular_residual_nmad_rad": 2.337899192866746,
+    "ground_circular_residual_rmse_rad": 1.8236888451955962
+  },
+  {
+    "pair_name": "20240114_20240205",
+    "ground_point_count": 731,
+    "robust_inlier_count": 561,
+    "plane_coefficients_rad": [
+      -2.1897359927180546,
+      -0.1843078574760284,
+      0.7412914450430914
+    ],
+    "ground_circular_residual_median_rad": 0.04063074793626731,
+    "ground_circular_residual_nmad_rad": 0.6164202573358021,
+    "ground_circular_residual_rmse_rad": 0.8063365122826917
+  },
+  {
+    "pair_name": "20240114_20240216",
+    "ground_point_count": 731,
+    "robust_inlier_count": 619,
+    "plane_coefficients_rad": [
+      -2.732678368576483,
+      -0.2839748901556718,
+      0.45937876247542053
+    ],
+    "ground_circular_residual_median_rad": 0.08936451031737347,
+    "ground_circular_residual_nmad_rad": 0.5021930061421628,
+    "ground_circular_residual_rmse_rad": 0.7640055822685858
+  },
+  {
+    "pair_name": "20240125_20240227",
+    "ground_point_count": 731,
+    "robust_inlier_count": 731,
+    "plane_coefficients_rad": [
+      0.6094493046294877,
+      -3.9825052326596424,
+      -0.09428885156180676
+    ],
+    "ground_circular_residual_median_rad": -0.6418888606387627,
+    "ground_circular_residual_nmad_rad": 1.4308513054704517,
+    "ground_circular_residual_rmse_rad": 1.5956686342863244
+  },
+  {
+    "pair_name": "20240125_20240309",
+    "ground_point_count": 731,
+    "robust_inlier_count": 731,
+    "plane_coefficients_rad": [
+      2.1359920354637563,
+      8.642951928054641,
+      1.4798460170210486
+    ],
+    "ground_circular_residual_median_rad": -0.024263233715843248,
+    "ground_circular_residual_nmad_rad": 2.5151525250233315,
+    "ground_circular_residual_rmse_rad": 1.9019370769558592
+  },
+  {
+    "pair_name": "20240205_20240227",
+    "ground_point_count": 731,
+    "robust_inlier_count": 697,
+    "plane_coefficients_rad": [
+      -0.17126680842683367,
+      -4.084123831409298,
+      -0.9520991095488138
+    ],
+    "ground_circular_residual_median_rad": -0.7898840039230124,
+    "ground_circular_residual_nmad_rad": 1.643091830956225,
+    "ground_circular_residual_rmse_rad": 1.6953269605295027
+  },
+  {
+    "pair_name": "20240205_20240331",
+    "ground_point_count": 731,
+    "robust_inlier_count": 731,
+    "plane_coefficients_rad": [
+      -2.9628926687612376,
+      -3.8178209542149615,
+      -1.9409176615993027
+    ],
+    "ground_circular_residual_median_rad": -0.4497403226604333,
+    "ground_circular_residual_nmad_rad": 1.892765189822718,
+    "ground_circular_residual_rmse_rad": 1.7412014715468365
+  },
+  {
+    "pair_name": "20240216_20240227",
+    "ground_point_count": 731,
+    "robust_inlier_count": 731,
+    "plane_coefficients_rad": [
+      -2.337091116906699,
+      -8.83744096844166,
+      -3.0201269521269505
+    ],
+    "ground_circular_residual_median_rad": 0.2626787277767482,
+    "ground_circular_residual_nmad_rad": 2.1567397721503405,
+    "ground_circular_residual_rmse_rad": 1.7478688789467336
+  },
+  {
+    "pair_name": "20240216_20240309",
+    "ground_point_count": 731,
+    "robust_inlier_count": 731,
+    "plane_coefficients_rad": [
+      1.605949516338194,
+      4.800909933147184,
+      0.25480259463989396
+    ],
+    "ground_circular_residual_median_rad": 0.7910834984200719,
+    "ground_circular_residual_nmad_rad": 1.4529011382606603,
+    "ground_circular_residual_rmse_rad": 1.6608594442023956
+  },
+  {
+    "pair_name": "20240216_20240411",
+    "ground_point_count": 731,
+    "robust_inlier_count": 731,
+    "plane_coefficients_rad": [
+      -0.5828508652163514,
+      7.765848667442008,
+      1.8787277324048914
+    ],
+    "ground_circular_residual_median_rad": 0.09410640727988959,
+    "ground_circular_residual_nmad_rad": 2.381064082681736,
+    "ground_circular_residual_rmse_rad": 1.8514213744540586
+  },
+  {
+    "pair_name": "20240227_20240309",
+    "ground_point_count": 731,
+    "robust_inlier_count": 728,
+    "plane_coefficients_rad": [
+      2.228283954548125,
+      6.927331338043457,
+      1.5460122301209298
+    ],
+    "ground_circular_residual_median_rad": 0.16026648318758774,
+    "ground_circular_residual_nmad_rad": 2.2111216935264704,
+    "ground_circular_residual_rmse_rad": 1.7660864586351108
+  },
+  {
+    "pair_name": "20240227_20240411",
+    "ground_point_count": 731,
+    "robust_inlier_count": 726,
+    "plane_coefficients_rad": [
+      3.2924278902383666,
+      5.763043624823157,
+      -0.6924869614715439
+    ],
+    "ground_circular_residual_median_rad": 0.21346110735831392,
+    "ground_circular_residual_nmad_rad": 1.9396862133695743,
+    "ground_circular_residual_rmse_rad": 1.6683495584138675
+  },
+  {
+    "pair_name": "20240227_20240422",
+    "ground_point_count": 731,
+    "robust_inlier_count": 731,
+    "plane_coefficients_rad": [
+      -0.13651931490148117,
+      0.8716326150490799,
+      -3.527492540880648
+    ],
+    "ground_circular_residual_median_rad": -0.043513389928772093,
+    "ground_circular_residual_nmad_rad": 2.3682503665639376,
+    "ground_circular_residual_rmse_rad": 1.822234958716152
+  },
+  {
+    "pair_name": "20240309_20240331",
+    "ground_point_count": 731,
+    "robust_inlier_count": 591,
+    "plane_coefficients_rad": [
+      0.2377267957089318,
+      -1.0925624787171024,
+      -0.09639879740990116
+    ],
+    "ground_circular_residual_median_rad": -0.10016838473156021,
+    "ground_circular_residual_nmad_rad": 0.5726833351189546,
+    "ground_circular_residual_rmse_rad": 0.8938692480234512
+  },
+  {
+    "pair_name": "20240331_20240411",
+    "ground_point_count": 731,
+    "robust_inlier_count": 731,
+    "plane_coefficients_rad": [
+      -3.4258064188021295,
+      -4.277267473580113,
+      -0.7662386781220292
+    ],
+    "ground_circular_residual_median_rad": 0.3587517409700688,
+    "ground_circular_residual_nmad_rad": 2.225165103766803,
+    "ground_circular_residual_rmse_rad": 1.763061785716344
+  },
+  {
+    "pair_name": "20240331_20240422",
+    "ground_point_count": 731,
+    "robust_inlier_count": 724,
+    "plane_coefficients_rad": [
+      -2.5141353114981735,
+      4.405185138069914,
+      1.3532437249814648
+    ],
+    "ground_circular_residual_median_rad": -0.41822625211480546,
+    "ground_circular_residual_nmad_rad": 1.9856917664030187,
+    "ground_circular_residual_rmse_rad": 1.7285712007498342
+  },
+  {
+    "pair_name": "20240331_20240503",
+    "ground_point_count": 731,
+    "robust_inlier_count": 731,
+    "plane_coefficients_rad": [
+      0.21199605937909796,
+      4.666238541096117,
+      -0.06745681455651518
+    ],
+    "ground_circular_residual_median_rad": 0.7112682563955597,
+    "ground_circular_residual_nmad_rad": 1.9427905844758908,
+    "ground_circular_residual_rmse_rad": 1.7665129148837055
+  },
+  {
+    "pair_name": "20240331_20240514",
+    "ground_point_count": 731,
+    "robust_inlier_count": 731,
+    "plane_coefficients_rad": [
+      -9.690787159560461,
+      -10.975900608532777,
+      -1.5744951978680897
+    ],
+    "ground_circular_residual_median_rad": 0.29189656045598283,
+    "ground_circular_residual_nmad_rad": 2.382976902933896,
+    "ground_circular_residual_rmse_rad": 1.8564008619475032
+  },
+  {
+    "pair_name": "20240411_20240514",
+    "ground_point_count": 731,
+    "robust_inlier_count": 731,
+    "plane_coefficients_rad": [
+      -4.341123724207224,
+      -12.03849148394055,
+      -0.33390106115203055
+    ],
+    "ground_circular_residual_median_rad": -0.06308833804148595,
+    "ground_circular_residual_nmad_rad": 1.9212691380508378,
+    "ground_circular_residual_rmse_rad": 1.6588254233279414
+  },
+  {
+    "pair_name": "20240422_20240514",
+    "ground_point_count": 731,
+    "robust_inlier_count": 731,
+    "plane_coefficients_rad": [
+      -8.261422416126916,
+      -23.806915620596673,
+      -1.6575891330308867
+    ],
+    "ground_circular_residual_median_rad": 0.2599967366834606,
+    "ground_circular_residual_nmad_rad": 2.3908203593692443,
+    "ground_circular_residual_rmse_rad": 1.8632904776955974
+  },
+  {
+    "pair_name": "20240422_20240605",
+    "ground_point_count": 731,
+    "robust_inlier_count": 731,
+    "plane_coefficients_rad": [
+      13.4627353760238,
+      15.042419522599474,
+      -2.1374050095125052
+    ],
+    "ground_circular_residual_median_rad": 0.1201698214995291,
+    "ground_circular_residual_nmad_rad": 2.185094792954522,
+    "ground_circular_residual_rmse_rad": 1.783630646846045
+  },
+  {
+    "pair_name": "20240503_20240514",
+    "ground_point_count": 731,
+    "robust_inlier_count": 731,
+    "plane_coefficients_rad": [
+      -3.8908417348793924,
+      -14.415549758748114,
+      0.21754278438102784
+    ],
+    "ground_circular_residual_median_rad": -0.1156725075112084,
+    "ground_circular_residual_nmad_rad": 2.299532549238211,
+    "ground_circular_residual_rmse_rad": 1.8024401122016565
+  },
+  {
+    "pair_name": "20240503_20240605",
+    "ground_point_count": 731,
+    "robust_inlier_count": 731,
+    "plane_coefficients_rad": [
+      -9.15913867352287,
+      -4.793037625678818,
+      1.7250352226707353
+    ],
+    "ground_circular_residual_median_rad": -0.27211799002730985,
+    "ground_circular_residual_nmad_rad": 2.1821345870820834,
+    "ground_circular_residual_rmse_rad": 1.7706841500164976
+  },
+  {
+    "pair_name": "20240514_20240525",
+    "ground_point_count": 731,
+    "robust_inlier_count": 731,
+    "plane_coefficients_rad": [
+      3.531079911146244,
+      13.040710150861978,
+      1.247994936795986
+    ],
+    "ground_circular_residual_median_rad": -0.057506785039816814,
+    "ground_circular_residual_nmad_rad": 2.2855815188043804,
+    "ground_circular_residual_rmse_rad": 1.8035193366159796
+  },
+  {
+    "pair_name": "20240514_20240605",
+    "ground_point_count": 731,
+    "robust_inlier_count": 731,
+    "plane_coefficients_rad": [
+      5.761890371852391,
+      10.958425682653752,
+      2.493784290849101
+    ],
+    "ground_circular_residual_median_rad": 0.06316174276287127,
+    "ground_circular_residual_nmad_rad": 2.4988588673010725,
+    "ground_circular_residual_rmse_rad": 1.8630731981887279
+  },
+  {
+    "pair_name": "20240525_20240605",
+    "ground_point_count": 731,
+    "robust_inlier_count": 725,
+    "plane_coefficients_rad": [
+      -0.8255217750063498,
+      -2.6490878775407896,
+      -0.20748313072043248
+    ],
+    "ground_circular_residual_median_rad": 1.2732476111259508,
+    "ground_circular_residual_nmad_rad": 2.1590711707335952,
+    "ground_circular_residual_rmse_rad": 2.183821303341667
+  }
+]

@@ -1,0 +1,261 @@
+[
+  {
+    "date": "20231007",
+    "status": "existing_valid",
+    "crop_bytes": 280000000
+  },
+  {
+    "date": "20231029",
+    "status": "existing_valid",
+    "crop_bytes": 280000000
+  },
+  {
+    "date": "20231109",
+    "status": "processed",
+    "crop_bytes": 280000000,
+    "crop_range_offset_px": 2432,
+    "crop_azimuth_offset_px": 5821,
+    "mosaic_range_offset_px": 0.01578,
+    "mosaic_azimuth_offset_px": -12985.00066,
+    "azimuth_patch_center_px": 13386,
+    "crop_bounds_minlat_maxlat_minlon_maxlon": [
+      39.11933595,
+      39.27219841,
+      117.06930394,
+      117.3330167
+    ],
+    "intermediate_slcs_retained": false
+  },
+  {
+    "date": "20231120",
+    "status": "existing_valid",
+    "crop_bytes": 280000000
+  },
+  {
+    "date": "20231201",
+    "status": "existing_valid",
+    "crop_bytes": 280000000
+  },
+  {
+    "date": "20231212",
+    "status": "processed",
+    "crop_bytes": 280000000,
+    "crop_range_offset_px": 2128,
+    "crop_azimuth_offset_px": 5715,
+    "mosaic_range_offset_px": 0.00461,
+    "mosaic_azimuth_offset_px": -12936.00139,
+    "azimuth_patch_center_px": 13337,
+    "crop_bounds_minlat_maxlat_minlon_maxlon": [
+      39.11898923,
+      39.27224247,
+      117.06922145,
+      117.33306897
+    ],
+    "intermediate_slcs_retained": false
+  },
+  {
+    "date": "20231223",
+    "status": "existing_valid",
+    "crop_bytes": 280000000
+  },
+  {
+    "date": "20240103",
+    "status": "existing_valid",
+    "crop_bytes": 280000000
+  },
+  {
+    "date": "20240114",
+    "status": "processed",
+    "crop_bytes": 280000000,
+    "mosaic_range_offset_px": 0.00106,
+    "mosaic_azimuth_offset_px": -12984.99631,
+    "azimuth_patch_center_px": 13386,
+    "crop_bounds_minlat_maxlat_minlon_maxlon": [
+      39.05721034,
+      39.21004869,
+      117.04712904,
+      117.31063809
+    ],
+    "intermediate_slcs_retained": false
+  },
+  {
+    "date": "20240125",
+    "status": "processed",
+    "crop_bytes": 280000000,
+    "mosaic_range_offset_px": 0.00659,
+    "mosaic_azimuth_offset_px": -12984.99431,
+    "azimuth_patch_center_px": 13386,
+    "crop_bounds_minlat_maxlat_minlon_maxlon": [
+      39.05755932,
+      39.21039987,
+      117.04731902,
+      117.31083812
+    ],
+    "intermediate_slcs_retained": false
+  },
+  {
+    "date": "20240205",
+    "status": "processed",
+    "crop_bytes": 280000000,
+    "mosaic_range_offset_px": -0.00232,
+    "mosaic_azimuth_offset_px": -12984.99912,
+    "azimuth_patch_center_px": 13386,
+    "crop_bounds_minlat_maxlat_minlon_maxlon": [
+      39.05736475,
+      39.21020351,
+      117.04800974,
+      117.31151272
+    ],
+    "intermediate_slcs_retained": false
+  },
+  {
+    "date": "20240216",
+    "status": "processed",
+    "crop_bytes": 280000000,
+    "mosaic_range_offset_px": 0.00777,
+    "mosaic_azimuth_offset_px": -12985.0075,
+    "azimuth_patch_center_px": 13386,
+    "crop_bounds_minlat_maxlat_minlon_maxlon": [
+      39.05689123,
+      39.20972796,
+      117.04781884,
+      117.31131418
+    ],
+    "intermediate_slcs_retained": false
+  },
+  {
+    "date": "20240227",
+    "status": "processed",
+    "crop_bytes": 280000000,
+    "mosaic_range_offset_px": -0.0038,
+    "mosaic_azimuth_offset_px": -12984.99648,
+    "azimuth_patch_center_px": 13386,
+    "crop_bounds_minlat_maxlat_minlon_maxlon": [
+      39.05705783,
+      39.20989882,
+      117.04686031,
+      117.31037245
+    ],
+    "intermediate_slcs_retained": false
+  },
+  {
+    "date": "20240309",
+    "status": "processed",
+    "crop_bytes": 280000000,
+    "mosaic_range_offset_px": 0.00195,
+    "mosaic_azimuth_offset_px": -12984.98565,
+    "azimuth_patch_center_px": 13386,
+    "crop_bounds_minlat_maxlat_minlon_maxlon": [
+      39.0581678,
+      39.21100906,
+      117.04818286,
+      117.31170441
+    ],
+    "intermediate_slcs_retained": false
+  },
+  {
+    "date": "20240331",
+    "status": "processed",
+    "crop_bytes": 280000000,
+    "mosaic_range_offset_px": 0.0,
+    "mosaic_azimuth_offset_px": -12984.99469,
+    "azimuth_patch_center_px": 13386,
+    "crop_bounds_minlat_maxlat_minlon_maxlon": [
+      39.05852911,
+      39.21136877,
+      117.04760736,
+      117.31112425
+    ],
+    "intermediate_slcs_retained": false
+  },
+  {
+    "date": "20240411",
+    "status": "processed",
+    "crop_bytes": 280000000,
+    "mosaic_range_offset_px": -0.0013,
+    "mosaic_azimuth_offset_px": -12984.9948,
+    "azimuth_patch_center_px": 13386,
+    "crop_bounds_minlat_maxlat_minlon_maxlon": [
+      39.05842859,
+      39.21126608,
+      117.04907677,
+      117.31257482
+    ],
+    "intermediate_slcs_retained": false
+  },
+  {
+    "date": "20240422",
+    "status": "processed",
+    "crop_bytes": 280000000,
+    "mosaic_range_offset_px": -0.00105,
+    "mosaic_azimuth_offset_px": -12984.99393,
+    "azimuth_patch_center_px": 13386,
+    "crop_bounds_minlat_maxlat_minlon_maxlon": [
+      39.05795644,
+      39.21079576,
+      117.04878859,
+      117.31228922
+    ],
+    "intermediate_slcs_retained": false
+  },
+  {
+    "date": "20240503",
+    "status": "processed",
+    "crop_bytes": 280000000,
+    "mosaic_range_offset_px": 0.00646,
+    "mosaic_azimuth_offset_px": -12984.99635,
+    "azimuth_patch_center_px": 13386,
+    "crop_bounds_minlat_maxlat_minlon_maxlon": [
+      39.05827176,
+      39.21111713,
+      117.0475542,
+      117.31109585
+    ],
+    "intermediate_slcs_retained": false
+  },
+  {
+    "date": "20240514",
+    "status": "processed",
+    "crop_bytes": 280000000,
+    "mosaic_range_offset_px": 0.00105,
+    "mosaic_azimuth_offset_px": -12984.99985,
+    "azimuth_patch_center_px": 13386,
+    "crop_bounds_minlat_maxlat_minlon_maxlon": [
+      39.05811833,
+      39.21095238,
+      117.04691239,
+      117.3103959
+    ],
+    "intermediate_slcs_retained": false
+  },
+  {
+    "date": "20240525",
+    "status": "processed",
+    "crop_bytes": 280000000,
+    "mosaic_range_offset_px": 0.0,
+    "mosaic_azimuth_offset_px": -12985.00077,
+    "azimuth_patch_center_px": 13386,
+    "crop_bounds_minlat_maxlat_minlon_maxlon": [
+      39.05753215,
+      39.21037315,
+      117.04790005,
+      117.31142068
+    ],
+    "intermediate_slcs_retained": false
+  },
+  {
+    "date": "20240605",
+    "status": "processed",
+    "crop_bytes": 280000000,
+    "mosaic_range_offset_px": -0.00502,
+    "mosaic_azimuth_offset_px": -12984.99548,
+    "azimuth_patch_center_px": 13386,
+    "crop_bounds_minlat_maxlat_minlon_maxlon": [
+      39.05812769,
+      39.21097285,
+      117.04892673,
+      117.31245241
+    ],
+    "intermediate_slcs_retained": false
+  }
+]

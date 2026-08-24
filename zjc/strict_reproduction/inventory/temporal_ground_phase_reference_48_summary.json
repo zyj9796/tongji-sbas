@@ -1,0 +1,41 @@
+{
+  "method": "ground date-phase angular synchronization followed by local circular interpolation",
+  "date_count": 21,
+  "pair_count": 48,
+  "temporal_triangle_count": 22,
+  "all_ground_point_count": 11862,
+  "closure_stable_ground_point_count": 11033,
+  "temporally_synchronized_ground_point_count": 11033,
+  "closure_rms_max_rad": 0.5,
+  "temporal_fit_rms_max_rad": 0.7,
+  "temporal_fit_rms_rad_quantiles_all": {
+    "0.05": 0.004119828181282468,
+    "0.25": 0.015274178737869322,
+    "0.5": 0.03565755955974087,
+    "0.75": 0.07531694323742322,
+    "0.95": 0.25372695358123853
+  },
+  "nearest_ground_count": 24,
+  "nearest_ground_distance_m_quantiles": {
+    "0.05": 44.7533205059185,
+    "0.25": 111.5942185273237,
+    "0.5": 182.10176671576022,
+    "0.75": 278.94191931852953,
+    "0.95": 406.46343014804313
+  },
+  "local_date_reference_resultant_quantiles": {
+    "0.05": 0.18463058944157906,
+    "0.25": 0.4336578792334716,
+    "0.5": 0.6226385568932984,
+    "0.75": 0.7725236108098285,
+    "0.95": 0.8949691996546218
+  },
+  "pair_reference_resultant_quantiles": {
+    "0.05": 0.1382218274061061,
+    "0.25": 0.31008705808991677,
+    "0.5": 0.4949852743568288,
+    "0.75": 0.6625759965723639,
+    "0.95": 0.8204667452038519
+  },
+  "policy": "ground defines phase zero only; no ground or Floor value enters building-height aggregation"
+}

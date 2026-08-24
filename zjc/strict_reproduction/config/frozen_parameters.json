@@ -1,0 +1,107 @@
+{
+  "paper_center": {
+    "longitude_deg": 117.21002777777778,
+    "latitude_deg": 39.12663888888889
+  },
+  "reference_acquisition": "20231007",
+  "input_geometry": {
+    "pass": "DESCENDING",
+    "look_direction": "LEFT",
+    "polarisation": "VV",
+    "mode": "SM",
+    "range_pixel_spacing_m": 1.249135241667,
+    "azimuth_pixel_spacing_m": 1.790613058378,
+    "radar_frequency_hz": 5400000100.0
+  },
+  "segment_mosaic": {
+    "segments_per_date": 2,
+    "reference_azimuth_offset_seg2_to_seg1_px": -12984.99503,
+    "reference_range_offset_seg2_to_seg1_px": -0.00121,
+    "reference_offset_fit_sigma_range_px": 0.0009,
+    "reference_offset_fit_sigma_azimuth_px": 0.0009,
+    "phase_correction": true,
+    "gain_correction": true
+  },
+  "paper_crop": {
+    "range_offset_px": 2400,
+    "azimuth_offset_px": 10000,
+    "range_samples": 10000,
+    "azimuth_lines": 7000,
+    "paper_center_range_px": 6479.3442,
+    "paper_center_azimuth_px": 3543.925,
+    "corner_lon_lat_zero_height": {
+      "near_start": [117.08404713, 39.21005857],
+      "far_start": [117.31162559, 39.16229306],
+      "near_end": [117.04815771, 39.10492838],
+      "far_end": [117.27540241, 39.05722691]
+    },
+    "recovery_evidence": [
+      "论文图3.7与参考景幅度的模板匹配峰值位于约(range=2380, azimuth=10018)",
+      "整百像元候选中(range=2400, azimuth=10000)相关性最高",
+      "裁剪四角与论文图3.4绿色研究区一致",
+      "论文中心点落入图3.7的约range 4500-7200、azimuth 3000-4800放大框"
+    ]
+  },
+  "dem": {
+    "product": "SRTMGL1 V003 / N39E117",
+    "source_vertical_reference": "EGM96 geoid",
+    "gamma_vertical_reference": "WGS84 ellipsoid",
+    "gamma_conversion": "dem_import with bundled EGM96 geoid grid"
+  },
+  "map_grid_branches": {
+    "primary": {
+      "purpose": "preserve individual-building geometry at approximately one radar ground pixel",
+      "target_posting_m": [1.79, 2.05],
+      "note": "Consistent with the 2.5-5.5 m GeoTIFFs retained by the original code, but more fully preserves the supplied vector. Exact factors are finalized from gc_map output."
+    },
+    "literal_text_sensitivity": {
+      "purpose": "audit the thesis statement that vectors are rasterized at DEM-matched resolution",
+      "target_posting_arcsec": 1,
+      "expected_limitation": "SRTM posting cannot preserve many individual building footprints"
+    }
+  },
+  "mask_and_islands": {
+    "raster_resampling": "nearest",
+    "morphological_opening_kernel_px": [3, 3],
+    "connectivity": 8,
+    "dbscan_eps_px": 2.5,
+    "dbscan_min_samples": 20
+  },
+  "quality_thresholds": {
+    "amplitude_dispersion_max": 0.4,
+    "mean_coherence_min": 0.75,
+    "minimum_interferograms_per_island": 12
+  },
+  "pair_network": {
+    "candidate_pair_count": 74,
+    "paper_result_pair_count": 48,
+    "paper_result_abs_perpendicular_baseline_min_m": 30.0,
+    "paper_result_abs_perpendicular_baseline_max_m": 250.0,
+    "text_sensitivity_pair_count": 45,
+    "text_sensitivity_temporal_baseline_max_days": 44
+  },
+  "robust_model": {
+    "bisquare_tuning_constant": 4.685,
+    "building_outlier_rule": "1.5*IQR",
+    "paper_text_building_aggregation": "median after 1.5*IQR",
+    "original_matlab_building_aggregation": "max-min",
+    "recommended_expanded_strip_aggregation": "P95-P05 robust height span",
+    "recommended_reason": "the original-code expanded strip mixes ground/facade/roof candidates; retain vertical-span meaning without single-extreme control"
+  },
+  "independent_gamma_mcf": {
+    "partition_key": "building_uid",
+    "overlap_policy": "preserve duplicated SAR coordinates independently per building",
+    "gamma_program": "mcf",
+    "triangulation_mode": 1,
+    "phase_reference": "one fixed highest-quality point in the far-range 5% edge per building",
+    "height_prior_in_unwrapping_or_sbas": false
+  },
+  "final_output": {
+    "candidate_buildings": 216,
+    "solved_buildings": 198,
+    "quality_pass_buildings": 128,
+    "unsolved_policy": "null, never prior-filled",
+    "formal_svg_count": 6,
+    "formal_figure_format": "SVG only"
+  }
+}

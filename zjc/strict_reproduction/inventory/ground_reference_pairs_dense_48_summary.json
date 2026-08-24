@@ -1,0 +1,482 @@
+[
+  {
+    "pair_index": 1,
+    "pair_name": "20231007_20231029",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 2,
+    "pair_name": "20231007_20231109",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 3,
+    "pair_name": "20231029_20231109",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 4,
+    "pair_name": "20231029_20231212",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 5,
+    "pair_name": "20231109_20231120",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 6,
+    "pair_name": "20231109_20231201",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 7,
+    "pair_name": "20231109_20231223",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 8,
+    "pair_name": "20231120_20231212",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 9,
+    "pair_name": "20231120_20231223",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 10,
+    "pair_name": "20231120_20240103",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 11,
+    "pair_name": "20231201_20231212",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 12,
+    "pair_name": "20231201_20231223",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 13,
+    "pair_name": "20231201_20240103",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 14,
+    "pair_name": "20231212_20231223",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 15,
+    "pair_name": "20231212_20240114",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 16,
+    "pair_name": "20231212_20240125",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 17,
+    "pair_name": "20231223_20240103",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 18,
+    "pair_name": "20231223_20240114",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 19,
+    "pair_name": "20231223_20240125",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 20,
+    "pair_name": "20240103_20240114",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 21,
+    "pair_name": "20240103_20240125",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 22,
+    "pair_name": "20240103_20240205",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 23,
+    "pair_name": "20240103_20240216",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 24,
+    "pair_name": "20240114_20240205",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 25,
+    "pair_name": "20240114_20240216",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 26,
+    "pair_name": "20240125_20240227",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 27,
+    "pair_name": "20240125_20240309",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 28,
+    "pair_name": "20240205_20240227",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 29,
+    "pair_name": "20240205_20240331",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 30,
+    "pair_name": "20240216_20240227",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 31,
+    "pair_name": "20240216_20240309",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 32,
+    "pair_name": "20240216_20240411",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 33,
+    "pair_name": "20240227_20240309",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 34,
+    "pair_name": "20240227_20240411",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 35,
+    "pair_name": "20240227_20240422",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 36,
+    "pair_name": "20240309_20240331",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 37,
+    "pair_name": "20240331_20240411",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 38,
+    "pair_name": "20240331_20240422",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 39,
+    "pair_name": "20240331_20240503",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 40,
+    "pair_name": "20240331_20240514",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 41,
+    "pair_name": "20240411_20240514",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 42,
+    "pair_name": "20240422_20240514",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 43,
+    "pair_name": "20240422_20240605",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 44,
+    "pair_name": "20240503_20240514",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 45,
+    "pair_name": "20240503_20240605",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 46,
+    "pair_name": "20240514_20240525",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 47,
+    "pair_name": "20240514_20240605",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 48,
+    "pair_name": "20240525_20240605",
+    "ground_reference_count": 11862,
+    "finite_phase_count": 11862,
+    "looks": [
+      2,
+      6
+    ]
+  }
+]

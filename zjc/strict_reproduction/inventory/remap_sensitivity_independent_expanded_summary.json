@@ -1,0 +1,9 @@
+{
+  "kind": "sensitivity",
+  "file_count": 48,
+  "source_unique_coordinate_count": 411725,
+  "target_hypothesis_point_count": 595973,
+  "target_unique_coordinate_count": 411725,
+  "coordinate_coverage_complete": true,
+  "numeric_values_changed": false
+}

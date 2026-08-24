@@ -1,0 +1,25 @@
+{
+  "candidate_highrise_building_count": 216,
+  "solved_building_count": 198,
+  "quality_pass_building_count": 128,
+  "recommended_height_definition": "pixel SBAS relative height P95-P05",
+  "recommended_height_m_quantiles": {
+    "0.05": 4.362991039752959,
+    "0.25": 14.61027457118034,
+    "0.5": 36.68721789121627,
+    "0.75": 59.641781759262074,
+    "0.95": 95.0025103759765
+  },
+  "ground_ellipsoid_height_m_quantiles": {
+    "0.05": -4.958107542991638,
+    "0.5": -2.2654521465301514,
+    "0.95": 12.13394856452939
+  },
+  "network_48_minus_45_robust_height_m_quantiles": {
+    "0.05": -3.2631134319305333,
+    "0.5": 0.09613082706927845,
+    "0.95": 3.016513652801506
+  },
+  "prior_policy": "Floor is absent from inversion and aggregation; nominal 3m/floor appears only in separate post hoc audit CSV",
+  "unsolved_policy": "null; never filled"
+}

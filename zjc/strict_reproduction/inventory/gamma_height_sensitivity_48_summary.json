@@ -1,0 +1,626 @@
+[
+  {
+    "pair_index": 1,
+    "pair_name": "20231007_20231029",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": -0.018147101625800133,
+    "sensitivity_median_rad_per_m": -0.01797957345843315,
+    "sensitivity_max_rad_per_m": -0.017773475497961044,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 2,
+    "pair_name": "20231007_20231109",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": 0.017954155802726746,
+    "sensitivity_median_rad_per_m": 0.018410932272672653,
+    "sensitivity_max_rad_per_m": 0.01888044737279415,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 3,
+    "pair_name": "20231029_20231109",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": 0.03572763130068779,
+    "sensitivity_median_rad_per_m": 0.03640202805399895,
+    "sensitivity_max_rad_per_m": 0.0370045006275177,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 4,
+    "pair_name": "20231029_20231212",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": 0.033748481422662735,
+    "sensitivity_median_rad_per_m": 0.03443029150366783,
+    "sensitivity_max_rad_per_m": 0.03502757102251053,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 5,
+    "pair_name": "20231109_20231120",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": -0.02291475608944893,
+    "sensitivity_median_rad_per_m": -0.02255941554903984,
+    "sensitivity_max_rad_per_m": -0.022232022136449814,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 6,
+    "pair_name": "20231109_20231201",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": -0.028993600979447365,
+    "sensitivity_median_rad_per_m": -0.02850327268242836,
+    "sensitivity_max_rad_per_m": -0.02796771749854088,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 7,
+    "pair_name": "20231109_20231223",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": -0.06462039053440094,
+    "sensitivity_median_rad_per_m": -0.06339789927005768,
+    "sensitivity_max_rad_per_m": -0.06197918951511383,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 8,
+    "pair_name": "20231120_20231212",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": 0.02025287225842476,
+    "sensitivity_median_rad_per_m": 0.02059021219611168,
+    "sensitivity_max_rad_per_m": 0.020937826484441757,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 9,
+    "pair_name": "20231120_20231223",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": -0.04170563444495201,
+    "sensitivity_median_rad_per_m": -0.0408284068107605,
+    "sensitivity_max_rad_per_m": -0.03974716737866402,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 10,
+    "pair_name": "20231120_20240103",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": 0.027301469817757607,
+    "sensitivity_median_rad_per_m": 0.027798986062407494,
+    "sensitivity_max_rad_per_m": 0.028259556740522385,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 11,
+    "pair_name": "20231201_20231212",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": 0.025988567620515823,
+    "sensitivity_median_rad_per_m": 0.026532694697380066,
+    "sensitivity_max_rad_per_m": 0.027016673237085342,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 12,
+    "pair_name": "20231201_20231223",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": -0.035626791417598724,
+    "sensitivity_median_rad_per_m": -0.034894414246082306,
+    "sensitivity_max_rad_per_m": -0.03401147201657295,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 13,
+    "pair_name": "20231201_20240103",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": 0.03303716331720352,
+    "sensitivity_median_rad_per_m": 0.03373483568429947,
+    "sensitivity_max_rad_per_m": 0.03433840349316597,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 14,
+    "pair_name": "20231212_20231223",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": -0.06264346092939377,
+    "sensitivity_median_rad_per_m": -0.061426661908626556,
+    "sensitivity_max_rad_per_m": -0.060000039637088776,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 15,
+    "pair_name": "20231212_20240114",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": -0.026399334892630577,
+    "sensitivity_median_rad_per_m": -0.026015907526016235,
+    "sensitivity_max_rad_per_m": -0.02559237740933895,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 16,
+    "pair_name": "20231212_20240125",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": -0.04090585559606552,
+    "sensitivity_median_rad_per_m": -0.04031061381101608,
+    "sensitivity_max_rad_per_m": -0.03962872177362442,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 17,
+    "pair_name": "20231223_20240103",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": 0.06704863905906677,
+    "sensitivity_median_rad_per_m": 0.0686299130320549,
+    "sensitivity_max_rad_per_m": 0.0699651911854744,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 18,
+    "pair_name": "20231223_20240114",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": 0.034407660365104675,
+    "sensitivity_median_rad_per_m": 0.03541083633899689,
+    "sensitivity_max_rad_per_m": 0.03624412789940834,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 19,
+    "pair_name": "20231223_20240125",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": 0.020371317863464355,
+    "sensitivity_median_rad_per_m": 0.02111634612083435,
+    "sensitivity_max_rad_per_m": 0.021737605333328247,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 20,
+    "pair_name": "20240103_20240114",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": -0.033721067011356354,
+    "sensitivity_median_rad_per_m": -0.033218540251255035,
+    "sensitivity_max_rad_per_m": -0.0326409749686718,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 21,
+    "pair_name": "20240103_20240125",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": -0.04822758585214615,
+    "sensitivity_median_rad_per_m": -0.04751309007406235,
+    "sensitivity_max_rad_per_m": -0.04667731747031212,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 22,
+    "pair_name": "20240103_20240205",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": -0.06127392128109932,
+    "sensitivity_median_rad_per_m": -0.0602421797811985,
+    "sensitivity_max_rad_per_m": -0.05902503430843353,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 23,
+    "pair_name": "20240103_20240216",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": -0.05283639580011368,
+    "sensitivity_median_rad_per_m": -0.05191159248352051,
+    "sensitivity_max_rad_per_m": -0.050852399319410324,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 24,
+    "pair_name": "20240114_20240205",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": -0.027552854269742966,
+    "sensitivity_median_rad_per_m": -0.027023404836654663,
+    "sensitivity_max_rad_per_m": -0.026384059339761734,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 25,
+    "pair_name": "20240114_20240216",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": -0.019115328788757324,
+    "sensitivity_median_rad_per_m": -0.01869302988052368,
+    "sensitivity_max_rad_per_m": -0.018211424350738525,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 26,
+    "pair_name": "20240125_20240227",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": 0.01750611700117588,
+    "sensitivity_median_rad_per_m": 0.017833689227700233,
+    "sensitivity_max_rad_per_m": 0.018186021596193314,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 27,
+    "pair_name": "20240125_20240309",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": -0.028127098456025124,
+    "sensitivity_median_rad_per_m": -0.027608046308159828,
+    "sensitivity_max_rad_per_m": -0.027005542069673538,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 28,
+    "pair_name": "20240205_20240227",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": 0.029853831976652145,
+    "sensitivity_median_rad_per_m": 0.03056999109685421,
+    "sensitivity_max_rad_per_m": 0.031232353299856186,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 29,
+    "pair_name": "20240205_20240331",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": 0.021635020151734352,
+    "sensitivity_median_rad_per_m": 0.022185008972883224,
+    "sensitivity_max_rad_per_m": 0.02264341153204441,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 30,
+    "pair_name": "20240216_20240227",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": 0.021681198850274086,
+    "sensitivity_median_rad_per_m": 0.022229280322790146,
+    "sensitivity_max_rad_per_m": 0.022794827818870544,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 31,
+    "pair_name": "20240216_20240309",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": -0.023518290370702744,
+    "sensitivity_median_rad_per_m": -0.02320941910147667,
+    "sensitivity_max_rad_per_m": -0.022830460220575333,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 32,
+    "pair_name": "20240216_20240411",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": -0.025230756029486656,
+    "sensitivity_median_rad_per_m": -0.02474137768149376,
+    "sensitivity_max_rad_per_m": -0.024167796596884727,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 33,
+    "pair_name": "20240227_20240309",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": -0.04631311818957329,
+    "sensitivity_median_rad_per_m": -0.045449331402778625,
+    "sensitivity_max_rad_per_m": -0.04451165720820427,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 34,
+    "pair_name": "20240227_20240411",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": -0.04802558571100235,
+    "sensitivity_median_rad_per_m": -0.04698074236512184,
+    "sensitivity_max_rad_per_m": -0.045848995447158813,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 35,
+    "pair_name": "20240227_20240422",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": -0.04991249740123749,
+    "sensitivity_median_rad_per_m": -0.04889163374900818,
+    "sensitivity_max_rad_per_m": -0.047735750675201416,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 36,
+    "pair_name": "20240309_20240331",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": 0.03629284352064133,
+    "sensitivity_median_rad_per_m": 0.037064097821712494,
+    "sensitivity_max_rad_per_m": 0.037724174559116364,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 37,
+    "pair_name": "20240331_20240411",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": -0.039436642080545425,
+    "sensitivity_median_rad_per_m": -0.0385957732796669,
+    "sensitivity_max_rad_per_m": -0.03763018175959587,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 38,
+    "pair_name": "20240331_20240422",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": -0.04132355377078056,
+    "sensitivity_median_rad_per_m": -0.04050485044717789,
+    "sensitivity_max_rad_per_m": -0.039516936987638474,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 39,
+    "pair_name": "20240331_20240503",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": -0.03529053181409836,
+    "sensitivity_median_rad_per_m": -0.034804683178663254,
+    "sensitivity_max_rad_per_m": -0.034194301813840866,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 40,
+    "pair_name": "20240331_20240514",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": 0.06570249050855637,
+    "sensitivity_median_rad_per_m": 0.06694338470697403,
+    "sensitivity_max_rad_per_m": 0.0680016353726387,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 41,
+    "pair_name": "20240411_20240514",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": 0.10333266854286194,
+    "sensitivity_median_rad_per_m": 0.10553894937038422,
+    "sensitivity_max_rad_per_m": 0.10743828117847443,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 42,
+    "pair_name": "20240422_20240514",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": 0.10521942377090454,
+    "sensitivity_median_rad_per_m": 0.10744897276163101,
+    "sensitivity_max_rad_per_m": 0.10932519286870956,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 43,
+    "pair_name": "20240422_20240605",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": -0.0353640653192997,
+    "sensitivity_median_rad_per_m": -0.03486929461359978,
+    "sensitivity_max_rad_per_m": -0.03424777835607529,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 44,
+    "pair_name": "20240503_20240514",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": 0.09989678859710693,
+    "sensitivity_median_rad_per_m": 0.10174873471260071,
+    "sensitivity_max_rad_per_m": 0.10327965021133423,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 45,
+    "pair_name": "20240503_20240605",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": -0.041397009044885635,
+    "sensitivity_median_rad_per_m": -0.04056943207979202,
+    "sensitivity_max_rad_per_m": -0.039570413529872894,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 46,
+    "pair_name": "20240514_20240525",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": -0.10507336258888245,
+    "sensitivity_median_rad_per_m": -0.10337374359369278,
+    "sensitivity_max_rad_per_m": -0.1013883575797081,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 47,
+    "pair_name": "20240514_20240605",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": -0.14467665553092957,
+    "sensitivity_median_rad_per_m": -0.14231814444065094,
+    "sensitivity_max_rad_per_m": -0.13946720957756042,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  },
+  {
+    "pair_index": 48,
+    "pair_name": "20240525_20240605",
+    "finite_pixel_count": 68951,
+    "sensitivity_min_rad_per_m": -0.03963569179177284,
+    "sensitivity_median_rad_per_m": -0.03894171863794327,
+    "sensitivity_max_rad_per_m": -0.03807884827256203,
+    "gamma_program": "dh_map_orb",
+    "looks": [
+      2,
+      6
+    ]
+  }
+]

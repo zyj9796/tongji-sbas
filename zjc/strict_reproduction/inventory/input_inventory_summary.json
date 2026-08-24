@@ -1,0 +1,69 @@
+{
+  "paper_center_lon": 117.21002777777778,
+  "paper_center_lat": 39.12663888888889,
+  "zip_count": 115,
+  "date_count": 21,
+  "logical_product_count": 105,
+  "duplicate_zip_count": 10,
+  "selected_center_segment_count": 42,
+  "selected_segments_per_date": {
+    "20231007": 2,
+    "20231029": 2,
+    "20231109": 2,
+    "20231120": 2,
+    "20231201": 2,
+    "20231212": 2,
+    "20231223": 2,
+    "20240103": 2,
+    "20240114": 2,
+    "20240125": 2,
+    "20240205": 2,
+    "20240216": 2,
+    "20240227": 2,
+    "20240309": 2,
+    "20240331": 2,
+    "20240411": 2,
+    "20240422": 2,
+    "20240503": 2,
+    "20240514": 2,
+    "20240525": 2,
+    "20240605": 2
+  },
+  "all_dates_have_two_selected_segments": true,
+  "total_zip_size_bytes": 75727809630,
+  "vector": {
+    "path": "zjc/天津建筑轮廓数据/天津.shp",
+    "sha256_components": {
+      ".dbf": "03c34a735bf7b9a18a194334a061a157dbe2717def6986c35a7a8928935a5ff8",
+      ".prj": "a02a27b1d1982c8516d83398e85a3c8b1aef1713c13ef4d84d7bde17430c07c4",
+      ".sbn": "ac911315c778c01ca25aa3ad47a7f65d0690e3dde8c55e76dafa0cbf116b3004",
+      ".sbx": "d9e5111f295353c9ee4101af8d73215e804895f08bc68b7d587f4ebaa38a4418",
+      ".shp": "cd52b45cde34c161d6a48bf09fa5567fedc22d2234ab608b53ecfc7f64623a9a",
+      ".shx": "41bd5449aa88ebf76908d3792209b571ad916a39ad9c83d3a73079b3d41e2a88"
+    },
+    "crs": "EPSG:4326",
+    "feature_count": 154051,
+    "geometry_types": {
+      "Polygon": 153401,
+      "NULL": 585,
+      "MultiPolygon": 65
+    },
+    "invalid_geometry_count": 0,
+    "null_geometry_count": 585,
+    "bounds_west_south_east_north": [
+      117.05021094100005,
+      39.03087283710005,
+      117.330285957,
+      39.26503550540008
+    ],
+    "columns": [
+      "Id",
+      "Floor",
+      "geometry"
+    ],
+    "floor_null_count": 0,
+    "floor_min": 1,
+    "floor_median": 2.0,
+    "floor_max": 114
+  }
+}

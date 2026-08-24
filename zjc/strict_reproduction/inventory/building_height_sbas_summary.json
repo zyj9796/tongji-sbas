@@ -1,0 +1,57 @@
+{
+  "method": "wrapped circular initialization plus coherence-weighted Bisquare WLS SBAS",
+  "paper_quality_selected_pixel_count": 3924,
+  "minimum_valid_pair_count": 12,
+  "pixels_with_minimum_pairs": 3924,
+  "solved_pixel_count": 3924,
+  "solved_building_count": 96,
+  "height_search_m": [
+    -100.0,
+    400.0,
+    0.5
+  ],
+  "velocity_search_m_per_year": [
+    -0.2,
+    0.2,
+    0.002
+  ],
+  "height_m_quantiles": {
+    "0.05": -93.61924894776483,
+    "0.25": -36.798790754646205,
+    "0.5": -6.425725661093667,
+    "0.75": 17.963940702270396,
+    "0.95": 80.71360182955338
+  },
+  "velocity_m_per_year_quantiles": {
+    "0.05": -0.017156456435825144,
+    "0.25": -0.0062952310880353924,
+    "0.5": -0.0018336853977743667,
+    "0.75": 0.0018165496914224971,
+    "0.95": 0.01551506911180076
+  },
+  "wrapped_phase_rms_rad_quantiles": {
+    "0.05": 0.5087785513825842,
+    "0.25": 0.6295553314345894,
+    "0.5": 0.741236797475824,
+    "0.75": 0.9459984512134332,
+    "0.95": 1.2785266242665023
+  },
+  "height_sigma_m_quantiles": {
+    "0.05": 1.3755292125454077,
+    "0.25": 2.525866621185646,
+    "0.5": 4.187173052474391,
+    "0.75": 6.703685894405847,
+    "0.95": 12.372776710169877
+  },
+  "building_height_m_quantiles": {
+    "0.05": -79.21921371206872,
+    "0.25": -24.789597096616205,
+    "0.5": -4.340907062443446,
+    "0.75": 11.678324809755448,
+    "0.95": 58.3509021553743
+  },
+  "bisquare_tuning_constant": 4.685,
+  "height_prior_used": false,
+  "floor_attribute_read_by_inversion": false,
+  "ground_reference_use": "phase zero only; not part of building aggregation"
+}

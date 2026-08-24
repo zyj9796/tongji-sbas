@@ -1,6 +1,19 @@
 # Agent Current State
 
-Last updated: 2026-08-24
+Last updated: 2026-08-25
+
+## Latest checkpoint — Tianjin paper strict reproduction from raw BC3 SLC
+
+- Isolated root: `zjc/strict_reproduction/`. This branch starts from `/home/u/Downloads/中国天津市点位2`, `zjc/天津建筑轮廓数据/天津.shp`, SRTMGL1 `N39E117`, the paper, and its MATLAB; it does not reuse the Tongji-campus products described below.
+- Full stack complete: 21 dates (2023-10-07 to 2024-06-05), two strip segments per date, one 10000x7000 common crop, one reference SLC plus 20 RSLCs. All coregistration fits pass the 0.1-pixel gate.
+- Main paper-result network: 48 differential interferograms. Text-strict sensitivity network: 45 pairs because the paper's 48-pair result includes three 55-day pairs despite the prose saying <=44 days.
+- Formal island branch preserves overlapping SAR-coordinate hypotheses independently per `building_uid`: 216 candidate buildings, 595,973 building-coordinate hypotheses. Paper thresholds DA<=0.4 and mean coherence>=0.75 retain 25,358 pixels in 198 buildings.
+- Every pair/building was unwrapped with actual GAMMA `mcf`, `tri_mode=1` Delaunay. Consolidated audit contains 48 pairs and zero failed buildings. SBAS is a coherence-weighted two-parameter velocity/height solve with Bisquare 4.685 and at least 12 pairs.
+- Final map height is the robust pixel-height span P95-P05. The CSV also preserves the paper-text 1.5xIQR median and original-MATLAB max-min range because they are not equivalent on the expanded mixed ground/facade/roof search strip. This correction is disclosed and is not presented as the paper's literal formula.
+- Formal results: `zjc/strict_reproduction/results/paper_strict/building_height_final.gpkg` (126,626 features; 198 solved, 126,428 null), matching CSV, pixel NPZ, and six standalone Chinese SVGs under `results/figures/`. Of the 198 numerical solutions, 128 pass the frozen internal quality gate.
+- `Floor` is used only to recover the paper/original-code high-rise candidate and search-mask geometry. It is absent from MCF/SBAS and final aggregation. `Floor*3m` is introduced only after results freeze in `floor_prior_posthoc_audit.csv`; it never fills or corrects a result.
+- Final structural QA: `zjc/strict_reproduction/inventory/final_reproduction_validation.json`, `all_pass=true`.
+- Read first: `zjc/strict_reproduction/docs/01_严格复现执行结果与审计.md`. It records the high residuals, poor post-hoc agreement to Floor, missing LiDAR/79-building validation list, and the boundary between executable reproduction and claims that cannot be independently reproduced.
 
 ## Latest optimization — guarded dual-network upper-roof plateau
 

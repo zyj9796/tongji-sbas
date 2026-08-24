@@ -1,0 +1,106 @@
+{
+  "global_range_offset": 3112,
+  "global_azimuth_offset": 1412,
+  "width": 5688,
+  "lines": 5500,
+  "margin_px": 64,
+  "alignment_px": 4,
+  "target_global_row_range": [
+    1476,
+    6847
+  ],
+  "target_global_col_range": [
+    3179,
+    8734
+  ],
+  "full_pixel_count": 70000000,
+  "window_pixel_count": 31284000,
+  "retained_fraction": 0.4469142857142857,
+  "slc_records": [
+    {
+      "date": "20231007",
+      "bytes": 125136000
+    },
+    {
+      "date": "20231029",
+      "bytes": 125136000
+    },
+    {
+      "date": "20231109",
+      "bytes": 125136000
+    },
+    {
+      "date": "20231120",
+      "bytes": 125136000
+    },
+    {
+      "date": "20231201",
+      "bytes": 125136000
+    },
+    {
+      "date": "20231212",
+      "bytes": 125136000
+    },
+    {
+      "date": "20231223",
+      "bytes": 125136000
+    },
+    {
+      "date": "20240103",
+      "bytes": 125136000
+    },
+    {
+      "date": "20240114",
+      "bytes": 125136000
+    },
+    {
+      "date": "20240125",
+      "bytes": 125136000
+    },
+    {
+      "date": "20240205",
+      "bytes": 125136000
+    },
+    {
+      "date": "20240216",
+      "bytes": 125136000
+    },
+    {
+      "date": "20240227",
+      "bytes": 125136000
+    },
+    {
+      "date": "20240309",
+      "bytes": 125136000
+    },
+    {
+      "date": "20240331",
+      "bytes": 125136000
+    },
+    {
+      "date": "20240411",
+      "bytes": 125136000
+    },
+    {
+      "date": "20240422",
+      "bytes": 125136000
+    },
+    {
+      "date": "20240503",
+      "bytes": 125136000
+    },
+    {
+      "date": "20240514",
+      "bytes": 125136000
+    },
+    {
+      "date": "20240525",
+      "bytes": 125136000
+    },
+    {
+      "date": "20240605",
+      "bytes": 125136000
+    }
+  ],
+  "policy": "exact array subset; GAMMA SLC_copy updates timing/range metadata; margin protects ADF support"
+}

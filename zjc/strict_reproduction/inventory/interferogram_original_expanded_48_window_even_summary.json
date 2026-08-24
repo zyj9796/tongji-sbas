@@ -1,0 +1,610 @@
+[
+  {
+    "pair_index": 12,
+    "primary": "20231201",
+    "secondary": "20231223",
+    "perpendicular_baseline_m": -60.3533,
+    "temporal_baseline_days": 21.9997,
+    "pair_name": "20231201_20231223",
+    "status": "processed",
+    "building_island_pixel_count": 411725,
+    "finite_coherence_count": 411725,
+    "mean_building_island_coherence": 0.39135250449180603,
+    "filter": {
+      "name": "GAMMA_adf",
+      "alpha": 0.4,
+      "nfft": 32,
+      "cc_window": 5
+    },
+    "coherence": {
+      "name": "GAMMA_cc_wave",
+      "window": [
+        5,
+        5
+      ],
+      "mode": 3
+    },
+    "processing_window": {
+      "global_range_offset": 3112,
+      "global_azimuth_offset": 1412,
+      "width": 5688,
+      "lines": 5500
+    }
+  },
+  {
+    "pair_index": 14,
+    "primary": "20231212",
+    "secondary": "20231223",
+    "perpendicular_baseline_m": -106.2044,
+    "temporal_baseline_days": 10.9999,
+    "pair_name": "20231212_20231223",
+    "status": "processed",
+    "building_island_pixel_count": 411725,
+    "finite_coherence_count": 411725,
+    "mean_building_island_coherence": 0.37594959139823914,
+    "filter": {
+      "name": "GAMMA_adf",
+      "alpha": 0.4,
+      "nfft": 32,
+      "cc_window": 5
+    },
+    "coherence": {
+      "name": "GAMMA_cc_wave",
+      "window": [
+        5,
+        5
+      ],
+      "mode": 3
+    },
+    "processing_window": {
+      "global_range_offset": 3112,
+      "global_azimuth_offset": 1412,
+      "width": 5688,
+      "lines": 5500
+    }
+  },
+  {
+    "pair_index": 16,
+    "primary": "20231212",
+    "secondary": "20240125",
+    "perpendicular_baseline_m": -69.6185,
+    "temporal_baseline_days": 43.9994,
+    "pair_name": "20231212_20240125",
+    "status": "processed",
+    "building_island_pixel_count": 411725,
+    "finite_coherence_count": 411725,
+    "mean_building_island_coherence": 0.40567973256111145,
+    "filter": {
+      "name": "GAMMA_adf",
+      "alpha": 0.4,
+      "nfft": 32,
+      "cc_window": 5
+    },
+    "coherence": {
+      "name": "GAMMA_cc_wave",
+      "window": [
+        5,
+        5
+      ],
+      "mode": 3
+    },
+    "processing_window": {
+      "global_range_offset": 3112,
+      "global_azimuth_offset": 1412,
+      "width": 5688,
+      "lines": 5500
+    }
+  },
+  {
+    "pair_index": 18,
+    "primary": "20231223",
+    "secondary": "20240114",
+    "perpendicular_baseline_m": 61.2798,
+    "temporal_baseline_days": 21.9997,
+    "pair_name": "20231223_20240114",
+    "status": "processed",
+    "building_island_pixel_count": 411725,
+    "finite_coherence_count": 411725,
+    "mean_building_island_coherence": 0.40058445930480957,
+    "filter": {
+      "name": "GAMMA_adf",
+      "alpha": 0.4,
+      "nfft": 32,
+      "cc_window": 5
+    },
+    "coherence": {
+      "name": "GAMMA_cc_wave",
+      "window": [
+        5,
+        5
+      ],
+      "mode": 3
+    },
+    "processing_window": {
+      "global_range_offset": 3112,
+      "global_azimuth_offset": 1412,
+      "width": 5688,
+      "lines": 5500
+    }
+  },
+  {
+    "pair_index": 20,
+    "primary": "20240103",
+    "secondary": "20240114",
+    "perpendicular_baseline_m": -57.3786,
+    "temporal_baseline_days": 10.9999,
+    "pair_name": "20240103_20240114",
+    "status": "processed",
+    "building_island_pixel_count": 411725,
+    "finite_coherence_count": 411725,
+    "mean_building_island_coherence": 0.433658629655838,
+    "filter": {
+      "name": "GAMMA_adf",
+      "alpha": 0.4,
+      "nfft": 32,
+      "cc_window": 5
+    },
+    "coherence": {
+      "name": "GAMMA_cc_wave",
+      "window": [
+        5,
+        5
+      ],
+      "mode": 3
+    },
+    "processing_window": {
+      "global_range_offset": 3112,
+      "global_azimuth_offset": 1412,
+      "width": 5688,
+      "lines": 5500
+    }
+  },
+  {
+    "pair_index": 22,
+    "primary": "20240103",
+    "secondary": "20240205",
+    "perpendicular_baseline_m": -104.1086,
+    "temporal_baseline_days": 32.9996,
+    "pair_name": "20240103_20240205",
+    "status": "processed",
+    "building_island_pixel_count": 411725,
+    "finite_coherence_count": 411725,
+    "mean_building_island_coherence": 0.41053158044815063,
+    "filter": {
+      "name": "GAMMA_adf",
+      "alpha": 0.4,
+      "nfft": 32,
+      "cc_window": 5
+    },
+    "coherence": {
+      "name": "GAMMA_cc_wave",
+      "window": [
+        5,
+        5
+      ],
+      "mode": 3
+    },
+    "processing_window": {
+      "global_range_offset": 3112,
+      "global_azimuth_offset": 1412,
+      "width": 5688,
+      "lines": 5500
+    }
+  },
+  {
+    "pair_index": 24,
+    "primary": "20240114",
+    "secondary": "20240205",
+    "perpendicular_baseline_m": -46.73,
+    "temporal_baseline_days": 21.9997,
+    "pair_name": "20240114_20240205",
+    "status": "processed",
+    "building_island_pixel_count": 411725,
+    "finite_coherence_count": 411725,
+    "mean_building_island_coherence": 0.45315301418304443,
+    "filter": {
+      "name": "GAMMA_adf",
+      "alpha": 0.4,
+      "nfft": 32,
+      "cc_window": 5
+    },
+    "coherence": {
+      "name": "GAMMA_cc_wave",
+      "window": [
+        5,
+        5
+      ],
+      "mode": 3
+    },
+    "processing_window": {
+      "global_range_offset": 3112,
+      "global_azimuth_offset": 1412,
+      "width": 5688,
+      "lines": 5500
+    }
+  },
+  {
+    "pair_index": 26,
+    "primary": "20240125",
+    "secondary": "20240227",
+    "perpendicular_baseline_m": 30.8169,
+    "temporal_baseline_days": 32.9996,
+    "pair_name": "20240125_20240227",
+    "status": "processed",
+    "building_island_pixel_count": 411725,
+    "finite_coherence_count": 411725,
+    "mean_building_island_coherence": 0.4688977897167206,
+    "filter": {
+      "name": "GAMMA_adf",
+      "alpha": 0.4,
+      "nfft": 32,
+      "cc_window": 5
+    },
+    "coherence": {
+      "name": "GAMMA_cc_wave",
+      "window": [
+        5,
+        5
+      ],
+      "mode": 3
+    },
+    "processing_window": {
+      "global_range_offset": 3112,
+      "global_azimuth_offset": 1412,
+      "width": 5688,
+      "lines": 5500
+    }
+  },
+  {
+    "pair_index": 28,
+    "primary": "20240205",
+    "secondary": "20240227",
+    "perpendicular_baseline_m": 52.853,
+    "temporal_baseline_days": 21.9997,
+    "pair_name": "20240205_20240227",
+    "status": "processed",
+    "building_island_pixel_count": 411725,
+    "finite_coherence_count": 411725,
+    "mean_building_island_coherence": 0.44098320603370667,
+    "filter": {
+      "name": "GAMMA_adf",
+      "alpha": 0.4,
+      "nfft": 32,
+      "cc_window": 5
+    },
+    "coherence": {
+      "name": "GAMMA_cc_wave",
+      "window": [
+        5,
+        5
+      ],
+      "mode": 3
+    },
+    "processing_window": {
+      "global_range_offset": 3112,
+      "global_azimuth_offset": 1412,
+      "width": 5688,
+      "lines": 5500
+    }
+  },
+  {
+    "pair_index": 30,
+    "primary": "20240216",
+    "secondary": "20240227",
+    "perpendicular_baseline_m": 38.4556,
+    "temporal_baseline_days": 10.9999,
+    "pair_name": "20240216_20240227",
+    "status": "processed",
+    "building_island_pixel_count": 411725,
+    "finite_coherence_count": 411725,
+    "mean_building_island_coherence": 0.45802780985832214,
+    "filter": {
+      "name": "GAMMA_adf",
+      "alpha": 0.4,
+      "nfft": 32,
+      "cc_window": 5
+    },
+    "coherence": {
+      "name": "GAMMA_cc_wave",
+      "window": [
+        5,
+        5
+      ],
+      "mode": 3
+    },
+    "processing_window": {
+      "global_range_offset": 3112,
+      "global_azimuth_offset": 1412,
+      "width": 5688,
+      "lines": 5500
+    }
+  },
+  {
+    "pair_index": 32,
+    "primary": "20240216",
+    "secondary": "20240411",
+    "perpendicular_baseline_m": -42.7708,
+    "temporal_baseline_days": 54.9993,
+    "pair_name": "20240216_20240411",
+    "status": "processed",
+    "building_island_pixel_count": 411725,
+    "finite_coherence_count": 411725,
+    "mean_building_island_coherence": 0.4288003146648407,
+    "filter": {
+      "name": "GAMMA_adf",
+      "alpha": 0.4,
+      "nfft": 32,
+      "cc_window": 5
+    },
+    "coherence": {
+      "name": "GAMMA_cc_wave",
+      "window": [
+        5,
+        5
+      ],
+      "mode": 3
+    },
+    "processing_window": {
+      "global_range_offset": 3112,
+      "global_azimuth_offset": 1412,
+      "width": 5688,
+      "lines": 5500
+    }
+  },
+  {
+    "pair_index": 34,
+    "primary": "20240227",
+    "secondary": "20240411",
+    "perpendicular_baseline_m": -81.2264,
+    "temporal_baseline_days": 43.9995,
+    "pair_name": "20240227_20240411",
+    "status": "processed",
+    "building_island_pixel_count": 411725,
+    "finite_coherence_count": 411725,
+    "mean_building_island_coherence": 0.407245010137558,
+    "filter": {
+      "name": "GAMMA_adf",
+      "alpha": 0.4,
+      "nfft": 32,
+      "cc_window": 5
+    },
+    "coherence": {
+      "name": "GAMMA_cc_wave",
+      "window": [
+        5,
+        5
+      ],
+      "mode": 3
+    },
+    "processing_window": {
+      "global_range_offset": 3112,
+      "global_azimuth_offset": 1412,
+      "width": 5688,
+      "lines": 5500
+    }
+  },
+  {
+    "pair_index": 36,
+    "primary": "20240309",
+    "secondary": "20240331",
+    "perpendicular_baseline_m": 64.0546,
+    "temporal_baseline_days": 21.9997,
+    "pair_name": "20240309_20240331",
+    "status": "processed",
+    "building_island_pixel_count": 411725,
+    "finite_coherence_count": 411725,
+    "mean_building_island_coherence": 0.4251241981983185,
+    "filter": {
+      "name": "GAMMA_adf",
+      "alpha": 0.4,
+      "nfft": 32,
+      "cc_window": 5
+    },
+    "coherence": {
+      "name": "GAMMA_cc_wave",
+      "window": [
+        5,
+        5
+      ],
+      "mode": 3
+    },
+    "processing_window": {
+      "global_range_offset": 3112,
+      "global_azimuth_offset": 1412,
+      "width": 5688,
+      "lines": 5500
+    }
+  },
+  {
+    "pair_index": 38,
+    "primary": "20240331",
+    "secondary": "20240422",
+    "perpendicular_baseline_m": -70.0459,
+    "temporal_baseline_days": 21.9997,
+    "pair_name": "20240331_20240422",
+    "status": "processed",
+    "building_island_pixel_count": 411725,
+    "finite_coherence_count": 411725,
+    "mean_building_island_coherence": 0.4075741171836853,
+    "filter": {
+      "name": "GAMMA_adf",
+      "alpha": 0.4,
+      "nfft": 32,
+      "cc_window": 5
+    },
+    "coherence": {
+      "name": "GAMMA_cc_wave",
+      "window": [
+        5,
+        5
+      ],
+      "mode": 3
+    },
+    "processing_window": {
+      "global_range_offset": 3112,
+      "global_azimuth_offset": 1412,
+      "width": 5688,
+      "lines": 5500
+    }
+  },
+  {
+    "pair_index": 40,
+    "primary": "20240331",
+    "secondary": "20240514",
+    "perpendicular_baseline_m": 115.6546,
+    "temporal_baseline_days": 43.9995,
+    "pair_name": "20240331_20240514",
+    "status": "processed",
+    "building_island_pixel_count": 411725,
+    "finite_coherence_count": 411725,
+    "mean_building_island_coherence": 0.39756760001182556,
+    "filter": {
+      "name": "GAMMA_adf",
+      "alpha": 0.4,
+      "nfft": 32,
+      "cc_window": 5
+    },
+    "coherence": {
+      "name": "GAMMA_cc_wave",
+      "window": [
+        5,
+        5
+      ],
+      "mode": 3
+    },
+    "processing_window": {
+      "global_range_offset": 3112,
+      "global_azimuth_offset": 1412,
+      "width": 5688,
+      "lines": 5500
+    }
+  },
+  {
+    "pair_index": 42,
+    "primary": "20240422",
+    "secondary": "20240514",
+    "perpendicular_baseline_m": 185.7005,
+    "temporal_baseline_days": 21.9997,
+    "pair_name": "20240422_20240514",
+    "status": "processed",
+    "building_island_pixel_count": 411725,
+    "finite_coherence_count": 411725,
+    "mean_building_island_coherence": 0.3856183588504791,
+    "filter": {
+      "name": "GAMMA_adf",
+      "alpha": 0.4,
+      "nfft": 32,
+      "cc_window": 5
+    },
+    "coherence": {
+      "name": "GAMMA_cc_wave",
+      "window": [
+        5,
+        5
+      ],
+      "mode": 3
+    },
+    "processing_window": {
+      "global_range_offset": 3112,
+      "global_azimuth_offset": 1412,
+      "width": 5688,
+      "lines": 5500
+    }
+  },
+  {
+    "pair_index": 44,
+    "primary": "20240503",
+    "secondary": "20240514",
+    "perpendicular_baseline_m": 175.7821,
+    "temporal_baseline_days": 10.9999,
+    "pair_name": "20240503_20240514",
+    "status": "processed",
+    "building_island_pixel_count": 411725,
+    "finite_coherence_count": 411725,
+    "mean_building_island_coherence": 0.3903248906135559,
+    "filter": {
+      "name": "GAMMA_adf",
+      "alpha": 0.4,
+      "nfft": 32,
+      "cc_window": 5
+    },
+    "coherence": {
+      "name": "GAMMA_cc_wave",
+      "window": [
+        5,
+        5
+      ],
+      "mode": 3
+    },
+    "processing_window": {
+      "global_range_offset": 3112,
+      "global_azimuth_offset": 1412,
+      "width": 5688,
+      "lines": 5500
+    }
+  },
+  {
+    "pair_index": 46,
+    "primary": "20240514",
+    "secondary": "20240525",
+    "perpendicular_baseline_m": -178.6118,
+    "temporal_baseline_days": 10.9999,
+    "pair_name": "20240514_20240525",
+    "status": "processed",
+    "building_island_pixel_count": 411725,
+    "finite_coherence_count": 411725,
+    "mean_building_island_coherence": 0.3638782203197479,
+    "filter": {
+      "name": "GAMMA_adf",
+      "alpha": 0.4,
+      "nfft": 32,
+      "cc_window": 5
+    },
+    "coherence": {
+      "name": "GAMMA_cc_wave",
+      "window": [
+        5,
+        5
+      ],
+      "mode": 3
+    },
+    "processing_window": {
+      "global_range_offset": 3112,
+      "global_azimuth_offset": 1412,
+      "width": 5688,
+      "lines": 5500
+    }
+  },
+  {
+    "pair_index": 48,
+    "primary": "20240525",
+    "secondary": "20240605",
+    "perpendicular_baseline_m": -67.3278,
+    "temporal_baseline_days": 10.9999,
+    "pair_name": "20240525_20240605",
+    "status": "processed",
+    "building_island_pixel_count": 411725,
+    "finite_coherence_count": 411725,
+    "mean_building_island_coherence": 0.38585641980171204,
+    "filter": {
+      "name": "GAMMA_adf",
+      "alpha": 0.4,
+      "nfft": 32,
+      "cc_window": 5
+    },
+    "coherence": {
+      "name": "GAMMA_cc_wave",
+      "window": [
+        5,
+        5
+      ],
+      "mode": 3
+    },
+    "processing_window": {
+      "global_range_offset": 3112,
+      "global_azimuth_offset": 1412,
+      "width": 5688,
+      "lines": 5500
+    }
+  }
+]

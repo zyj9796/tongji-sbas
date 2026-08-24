@@ -1,0 +1,264 @@
+{
+  "method": "closure-stable local ground circular reference",
+  "triangle_closure_count": 22,
+  "closure_rms_threshold_rad": 0.5,
+  "all_ground_point_count": 731,
+  "closure_stable_ground_point_count": 674,
+  "nearest_ground_count": 8,
+  "nearest_ground_distance_m_quantiles": {
+    "0.05": 138.5054061001059,
+    "0.5": 506.6326136698374,
+    "0.95": 1031.9431483407836,
+    "1.0": 1434.7836207627988
+  },
+  "local_reference_resultant_quantiles": {
+    "0.05": 0.2308439956466473,
+    "0.25": 0.4970732001726599,
+    "0.5": 0.6909782310775074,
+    "0.75": 0.8400707068338819,
+    "0.95": 0.9499195698615555
+  },
+  "pair_results": [
+    {
+      "pair_name": "20231007_20231029",
+      "local_reference_resultant_median": 0.884998594146009,
+      "local_reference_resultant_p05": 0.6682571237381354
+    },
+    {
+      "pair_name": "20231007_20231109",
+      "local_reference_resultant_median": 0.6281555460990893,
+      "local_reference_resultant_p05": 0.2953114959224988
+    },
+    {
+      "pair_name": "20231029_20231109",
+      "local_reference_resultant_median": 0.6099898800787805,
+      "local_reference_resultant_p05": 0.24481979033643192
+    },
+    {
+      "pair_name": "20231029_20231212",
+      "local_reference_resultant_median": 0.56773627347043,
+      "local_reference_resultant_p05": 0.1793352694361375
+    },
+    {
+      "pair_name": "20231109_20231120",
+      "local_reference_resultant_median": 0.8067563733421318,
+      "local_reference_resultant_p05": 0.3035239622937218
+    },
+    {
+      "pair_name": "20231109_20231201",
+      "local_reference_resultant_median": 0.8449959297919273,
+      "local_reference_resultant_p05": 0.30825098457036004
+    },
+    {
+      "pair_name": "20231109_20231223",
+      "local_reference_resultant_median": 0.5658969364858784,
+      "local_reference_resultant_p05": 0.20521951751148143
+    },
+    {
+      "pair_name": "20231120_20231212",
+      "local_reference_resultant_median": 0.765097511606908,
+      "local_reference_resultant_p05": 0.4680318984966788
+    },
+    {
+      "pair_name": "20231120_20231223",
+      "local_reference_resultant_median": 0.7210650583000463,
+      "local_reference_resultant_p05": 0.28917210466027465
+    },
+    {
+      "pair_name": "20231120_20240103",
+      "local_reference_resultant_median": 0.6257640034119183,
+      "local_reference_resultant_p05": 0.2619326525823912
+    },
+    {
+      "pair_name": "20231201_20231212",
+      "local_reference_resultant_median": 0.8172440101183109,
+      "local_reference_resultant_p05": 0.39632023319539655
+    },
+    {
+      "pair_name": "20231201_20231223",
+      "local_reference_resultant_median": 0.6352987863397983,
+      "local_reference_resultant_p05": 0.2841855037085128
+    },
+    {
+      "pair_name": "20231201_20240103",
+      "local_reference_resultant_median": 0.6717759868250394,
+      "local_reference_resultant_p05": 0.30904677981118295
+    },
+    {
+      "pair_name": "20231212_20231223",
+      "local_reference_resultant_median": 0.5678678554816277,
+      "local_reference_resultant_p05": 0.19231740642983658
+    },
+    {
+      "pair_name": "20231212_20240114",
+      "local_reference_resultant_median": 0.8410161279268267,
+      "local_reference_resultant_p05": 0.34336949142234663
+    },
+    {
+      "pair_name": "20231212_20240125",
+      "local_reference_resultant_median": 0.7422916389164064,
+      "local_reference_resultant_p05": 0.34744115076147875
+    },
+    {
+      "pair_name": "20231223_20240103",
+      "local_reference_resultant_median": 0.6126722561608547,
+      "local_reference_resultant_p05": 0.21502596057193163
+    },
+    {
+      "pair_name": "20231223_20240114",
+      "local_reference_resultant_median": 0.6433186651445579,
+      "local_reference_resultant_p05": 0.25055421081947493
+    },
+    {
+      "pair_name": "20231223_20240125",
+      "local_reference_resultant_median": 0.7658655220875527,
+      "local_reference_resultant_p05": 0.4659287090132995
+    },
+    {
+      "pair_name": "20240103_20240114",
+      "local_reference_resultant_median": 0.7041836771898579,
+      "local_reference_resultant_p05": 0.28955296929958485
+    },
+    {
+      "pair_name": "20240103_20240125",
+      "local_reference_resultant_median": 0.6733268255461081,
+      "local_reference_resultant_p05": 0.25789359314334803
+    },
+    {
+      "pair_name": "20240103_20240205",
+      "local_reference_resultant_median": 0.6084205173314559,
+      "local_reference_resultant_p05": 0.22058141742340232
+    },
+    {
+      "pair_name": "20240103_20240216",
+      "local_reference_resultant_median": 0.5940926947408687,
+      "local_reference_resultant_p05": 0.23775942317032767
+    },
+    {
+      "pair_name": "20240114_20240205",
+      "local_reference_resultant_median": 0.8009630112234964,
+      "local_reference_resultant_p05": 0.45726202112545733
+    },
+    {
+      "pair_name": "20240114_20240216",
+      "local_reference_resultant_median": 0.842275070720979,
+      "local_reference_resultant_p05": 0.44396823054765294
+    },
+    {
+      "pair_name": "20240125_20240227",
+      "local_reference_resultant_median": 0.8905047878618674,
+      "local_reference_resultant_p05": 0.4465240141436124
+    },
+    {
+      "pair_name": "20240125_20240309",
+      "local_reference_resultant_median": 0.7267171675996398,
+      "local_reference_resultant_p05": 0.26744927001698127
+    },
+    {
+      "pair_name": "20240205_20240227",
+      "local_reference_resultant_median": 0.7351788079331345,
+      "local_reference_resultant_p05": 0.33182536173712013
+    },
+    {
+      "pair_name": "20240205_20240331",
+      "local_reference_resultant_median": 0.8637662831817019,
+      "local_reference_resultant_p05": 0.44996230756783273
+    },
+    {
+      "pair_name": "20240216_20240227",
+      "local_reference_resultant_median": 0.7756386488595175,
+      "local_reference_resultant_p05": 0.255847021940827
+    },
+    {
+      "pair_name": "20240216_20240309",
+      "local_reference_resultant_median": 0.8822174184456011,
+      "local_reference_resultant_p05": 0.4408956354789689
+    },
+    {
+      "pair_name": "20240216_20240411",
+      "local_reference_resultant_median": 0.7352094383630662,
+      "local_reference_resultant_p05": 0.2040168056394809
+    },
+    {
+      "pair_name": "20240227_20240309",
+      "local_reference_resultant_median": 0.6551583516935888,
+      "local_reference_resultant_p05": 0.28583532910927717
+    },
+    {
+      "pair_name": "20240227_20240411",
+      "local_reference_resultant_median": 0.6154023625580716,
+      "local_reference_resultant_p05": 0.21197260553532257
+    },
+    {
+      "pair_name": "20240227_20240422",
+      "local_reference_resultant_median": 0.5886914351217136,
+      "local_reference_resultant_p05": 0.14397896951878894
+    },
+    {
+      "pair_name": "20240309_20240331",
+      "local_reference_resultant_median": 0.7658166127287384,
+      "local_reference_resultant_p05": 0.366372390905673
+    },
+    {
+      "pair_name": "20240331_20240411",
+      "local_reference_resultant_median": 0.6697339308646618,
+      "local_reference_resultant_p05": 0.21846501145855124
+    },
+    {
+      "pair_name": "20240331_20240422",
+      "local_reference_resultant_median": 0.6443706644010718,
+      "local_reference_resultant_p05": 0.31243979059592253
+    },
+    {
+      "pair_name": "20240331_20240503",
+      "local_reference_resultant_median": 0.5815596243071222,
+      "local_reference_resultant_p05": 0.21717452028881074
+    },
+    {
+      "pair_name": "20240331_20240514",
+      "local_reference_resultant_median": 0.6193724458898983,
+      "local_reference_resultant_p05": 0.1844869108556476
+    },
+    {
+      "pair_name": "20240411_20240514",
+      "local_reference_resultant_median": 0.6094745285461464,
+      "local_reference_resultant_p05": 0.180908080289089
+    },
+    {
+      "pair_name": "20240422_20240514",
+      "local_reference_resultant_median": 0.5826569547570889,
+      "local_reference_resultant_p05": 0.1568106324843514
+    },
+    {
+      "pair_name": "20240422_20240605",
+      "local_reference_resultant_median": 0.6066312636945193,
+      "local_reference_resultant_p05": 0.08652146251916264
+    },
+    {
+      "pair_name": "20240503_20240514",
+      "local_reference_resultant_median": 0.5304951911165864,
+      "local_reference_resultant_p05": 0.1867117591454618
+    },
+    {
+      "pair_name": "20240503_20240605",
+      "local_reference_resultant_median": 0.5392376510862343,
+      "local_reference_resultant_p05": 0.10008268373657919
+    },
+    {
+      "pair_name": "20240514_20240525",
+      "local_reference_resultant_median": 0.4345264715204712,
+      "local_reference_resultant_p05": 0.1427907587328581
+    },
+    {
+      "pair_name": "20240514_20240605",
+      "local_reference_resultant_median": 0.5199563041307103,
+      "local_reference_resultant_p05": 0.12227353205699573
+    },
+    {
+      "pair_name": "20240525_20240605",
+      "local_reference_resultant_median": 0.6828096632561979,
+      "local_reference_resultant_p05": 0.19934480515948622
+    }
+  ],
+  "policy": "ground phases define only local phase zero; ground points do not enter building-height aggregation"
+}

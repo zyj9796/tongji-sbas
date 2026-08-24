@@ -25,6 +25,13 @@ zjc/**/*.bmp
 zjc/**/*.zip
 zjc/my_study/DEM_seg
 zjc/my_study/my_muilt_hight/
+zjc/天津建筑轮廓数据.rar
+
+# Raw and rebuildable products for the isolated Tianjin strict reproduction.
+# Keep code/config/inventory/docs/final results and the unpacked source vector.
+zjc/strict_reproduction/work/
+zjc/strict_reproduction/dem/
+zjc/strict_reproduction/logs/
 
 # Heavy/rebuildable processing products
 work/*

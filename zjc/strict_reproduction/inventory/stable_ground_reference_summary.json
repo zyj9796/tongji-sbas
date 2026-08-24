@@ -1,0 +1,17 @@
+{
+  "purpose": "phase reference only; points never enter building height aggregation",
+  "mli_grid_step": 8,
+  "nonbuilding_candidate_count": 42115,
+  "amplitude_dispersion_max": 0.25,
+  "amplitude_mean_floor": 184.0484619140625,
+  "selected_reference_pixel_count": 731,
+  "selected_fraction": 0.017357236139142824,
+  "row_range": [
+    74,
+    6890
+  ],
+  "col_range": [
+    56,
+    9944
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "scene_count": 21,
+  "pair_count": 48,
+  "island_pixel_count": 411725,
+  "amplitude_dispersion_threshold_max": 0.4,
+  "mean_coherence_threshold_min": 0.75,
+  "selected_pixel_count": 17931,
+  "selected_pixel_fraction": 0.043550913838120105,
+  "total_island_count": 213,
+  "islands_with_at_least_one_selected_pixel": 169,
+  "amplitude_dispersion_quantiles": {
+    "0.05": 0.2276894599199295,
+    "0.25": 0.4077586531639099,
+    "0.5": 0.48768359422683716,
+    "0.75": 0.5590686202049255,
+    "0.95": 0.672400951385498
+  },
+  "mean_coherence_quantiles": {
+    "0.05": 0.2551668584346771,
+    "0.25": 0.2915060222148895,
+    "0.5": 0.3500462472438812,
+    "0.75": 0.5028900504112244,
+    "0.95": 0.7556048631668091
+  }
+}

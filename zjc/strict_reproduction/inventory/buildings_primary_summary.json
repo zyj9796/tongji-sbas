@@ -1,0 +1,20 @@
+{
+  "source": "zjc/天津建筑轮廓数据/天津.shp",
+  "output": "zjc/strict_reproduction/work/buildings/buildings_primary.gpkg",
+  "source_feature_count": 154051,
+  "source_valid_geometry_count": 153466,
+  "selected_feature_count": 126626,
+  "source_id_unique_count": 1,
+  "source_id_is_usable_unique_key": false,
+  "stable_key": "building_uid = source_fid + 1",
+  "map_extent_west_south_east_north": [
+    117.0411111,
+    39.055532375084,
+    117.31086419052,
+    39.2133333
+  ],
+  "floor_min": 1,
+  "floor_median": 3.0,
+  "floor_max": 114,
+  "policy": "Floor is transferred as a discrete mask attribute only; it is not used to fill, select, constrain, or correct InSAR-derived heights."
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "pair_index": 1,
+    "primary": "20231007",
+    "secondary": "20231029",
+    "perpendicular_baseline_m": -31.0296,
+    "temporal_baseline_days": 21.9997,
+    "pair_name": "20231007_20231029",
+    "status": "processed",
+    "building_island_pixel_count": 411725,
+    "finite_coherence_count": 411725,
+    "mean_building_island_coherence": 0.44963476061820984,
+    "filter": {
+      "name": "GAMMA_adf",
+      "alpha": 0.4,
+      "nfft": 32,
+      "cc_window": 5
+    },
+    "coherence": {
+      "name": "GAMMA_cc_wave",
+      "window": [
+        5,
+        5
+      ],
+      "mode": 3
+    },
+    "processing_window": {
+      "global_range_offset": 3115,
+      "global_azimuth_offset": 1412,
+      "width": 5684,
+      "lines": 5500
+    }
+  }
+]

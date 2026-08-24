@@ -1,0 +1,28 @@
+{
+  "product": "SRTM 1 Arc-Second Global",
+  "tile": "N39E117",
+  "download_url": "https://s3.amazonaws.com/elevation-tiles-prod/skadi/N39/N39E117.hgt.gz",
+  "download_date": "2026-08-24",
+  "official_product_doi": "10.5067/MEaSUREs/SRTM/SRTMGL1.003",
+  "compressed_sha256": "9a35af2495b43ff5bbd38e4f4980164a5d3f78978b0fc853f68b4f233f41bc07",
+  "hgt_sha256": "3390704ba52289442a0fc1240d6d0250f7521372709f4cddd3db19a7445bd5db",
+  "raster_size": [3601, 3601],
+  "sample_spacing_arcsec": 1,
+  "horizontal_crs": "WGS84 / EPSG:4326",
+  "vertical_datum": "EGM96 geoid",
+  "height_unit": "m",
+  "nodata": -32768,
+  "valid_percent": 100.0,
+  "minimum_m": -53.0,
+  "maximum_m": 435.0,
+  "mean_m": 8.4110599504077,
+  "gamma_import": {
+    "output": "dem/gamma/N39E117_ellipsoid.dem",
+    "output_sha256": "470227cbe3f26e1294bd2f1ef48cf07608af07c3baf2b5fe27e97e9fbdb72b90",
+    "parameter_sha256": "1f8cc1d232bbcb6d86a4a52b6affd95ff5c23e6f1bde5fc8171accadb76f0470",
+    "data_format": "REAL*4",
+    "vertical_reference": "WGS84 ellipsoid",
+    "conversion": "GAMMA dem_import with bundled EGM96 geoid grid"
+  },
+  "note": "The official LP DAAC endpoint requires Earthdata access and its legacy path returned 404; the public Skadi mirror was used. Raster identity, dimensions, naming, coverage and SRTM HGT conventions are audited here."
+}

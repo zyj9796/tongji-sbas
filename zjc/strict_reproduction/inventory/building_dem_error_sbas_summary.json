@@ -1,0 +1,58 @@
+{
+  "method": "wrapped circular initialization plus coherence-weighted Bisquare WLS SBAS",
+  "phase_source": "paper-differential",
+  "paper_quality_selected_pixel_count": 3924,
+  "minimum_valid_pair_count": 12,
+  "pixels_with_minimum_pairs": 3924,
+  "solved_pixel_count": 3924,
+  "solved_building_count": 96,
+  "height_search_m": [
+    -100.0,
+    400.0,
+    0.5
+  ],
+  "velocity_search_m_per_year": [
+    -0.2,
+    0.2,
+    0.002
+  ],
+  "height_m_quantiles": {
+    "0.05": -80.80248307319653,
+    "0.25": 185.53215018247442,
+    "0.5": 241.2376259960819,
+    "0.75": 341.8609236909404,
+    "0.95": 365.2672334103744
+  },
+  "velocity_m_per_year_quantiles": {
+    "0.05": -0.17833199476910996,
+    "0.25": -0.05667558727379475,
+    "0.5": -0.029622387417373407,
+    "0.75": 0.01891646211107624,
+    "0.95": 0.040527816884351094
+  },
+  "wrapped_phase_rms_rad_quantiles": {
+    "0.05": 1.2522642918029714,
+    "0.25": 1.3515471887144264,
+    "0.5": 1.4709009338573364,
+    "0.75": 1.5600472201141926,
+    "0.95": 1.645239657094239
+  },
+  "height_sigma_m_quantiles": {
+    "0.05": 4.181974119558891,
+    "0.25": 4.742171548852131,
+    "0.5": 5.1938102024023225,
+    "0.75": 5.664344764365785,
+    "0.95": 6.431882394286036
+  },
+  "building_height_m_quantiles": {
+    "0.05": -26.03421276488751,
+    "0.25": 203.75511324830995,
+    "0.5": 235.86950158472513,
+    "0.75": 331.1582203505028,
+    "0.95": 362.497054747678
+  },
+  "bisquare_tuning_constant": 4.685,
+  "height_prior_used": false,
+  "floor_attribute_read_by_inversion": false,
+  "ground_reference_use": "not used (paper mainline)"
+}

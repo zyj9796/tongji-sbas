@@ -1,0 +1,375 @@
+{
+  "method": "closure-stable local ground circular reference",
+  "triangle_closure_count": 22,
+  "closure_rms_threshold_rad": 0.5,
+  "all_ground_point_count": 11862,
+  "closure_stable_ground_point_count": 11033,
+  "nearest_ground_count": 32,
+  "ground_consistency_count": 16,
+  "nearest_ground_distance_m_quantiles": {
+    "0.05": 50.93881067579795,
+    "0.5": 213.58759751518372,
+    "0.95": 460.7717141038495,
+    "1.0": 665.1800347094112
+  },
+  "local_reference_resultant_quantiles": {
+    "0.05": 0.42245714176714827,
+    "0.25": 0.5840024574762014,
+    "0.5": 0.7064613870752979,
+    "0.75": 0.8224596861510189,
+    "0.95": 0.9113579644901778
+  },
+  "local_reference_raw_resultant_quantiles": {
+    "0.05": 0.17183622290824377,
+    "0.25": 0.4084607444681097,
+    "0.5": 0.6041518698805723,
+    "0.75": 0.7710704708973438,
+    "0.95": 0.888903475880875
+  },
+  "ground_local_reliability_quantiles": {
+    "0.05": 0.3500482305616304,
+    "0.25": 0.695713519045796,
+    "0.5": 0.8548068202842487,
+    "0.75": 0.9382954619597126,
+    "0.95": 0.9821322242629271
+  },
+  "pair_results": [
+    {
+      "pair_name": "20231007_20231029",
+      "local_reference_resultant_median": 0.8747113287665713,
+      "local_reference_resultant_p05": 0.5433087770610365,
+      "local_reference_raw_resultant_median": 0.8493302721045064,
+      "ground_local_reliability_median": 0.9553245938822545
+    },
+    {
+      "pair_name": "20231007_20231109",
+      "local_reference_resultant_median": 0.6859328323982707,
+      "local_reference_resultant_p05": 0.4695510676364546,
+      "local_reference_raw_resultant_median": 0.599618147641223,
+      "ground_local_reliability_median": 0.8722242844183031
+    },
+    {
+      "pair_name": "20231029_20231109",
+      "local_reference_resultant_median": 0.6487500651645586,
+      "local_reference_resultant_p05": 0.4367039167026886,
+      "local_reference_raw_resultant_median": 0.5049603001259901,
+      "ground_local_reliability_median": 0.8425505168035309
+    },
+    {
+      "pair_name": "20231029_20231212",
+      "local_reference_resultant_median": 0.6479989695702336,
+      "local_reference_resultant_p05": 0.41109220832200233,
+      "local_reference_raw_resultant_median": 0.5068688365106424,
+      "ground_local_reliability_median": 0.8028338922636507
+    },
+    {
+      "pair_name": "20231109_20231120",
+      "local_reference_resultant_median": 0.7952262907014285,
+      "local_reference_resultant_p05": 0.4826980792330122,
+      "local_reference_raw_resultant_median": 0.7232298328754148,
+      "ground_local_reliability_median": 0.9343002417637747
+    },
+    {
+      "pair_name": "20231109_20231201",
+      "local_reference_resultant_median": 0.7950352336523573,
+      "local_reference_resultant_p05": 0.5109665753303626,
+      "local_reference_raw_resultant_median": 0.7248581801807814,
+      "ground_local_reliability_median": 0.9297138888793802
+    },
+    {
+      "pair_name": "20231109_20231223",
+      "local_reference_resultant_median": 0.5861986150833767,
+      "local_reference_resultant_p05": 0.38518797173982317,
+      "local_reference_raw_resultant_median": 0.4197767829323514,
+      "ground_local_reliability_median": 0.6875695838303714
+    },
+    {
+      "pair_name": "20231120_20231212",
+      "local_reference_resultant_median": 0.7964006098580497,
+      "local_reference_resultant_p05": 0.41896311360850064,
+      "local_reference_raw_resultant_median": 0.7486674273046658,
+      "ground_local_reliability_median": 0.9196480063875438
+    },
+    {
+      "pair_name": "20231120_20231223",
+      "local_reference_resultant_median": 0.70764012303278,
+      "local_reference_resultant_p05": 0.45364653581315384,
+      "local_reference_raw_resultant_median": 0.6124825318469377,
+      "ground_local_reliability_median": 0.7688201252264315
+    },
+    {
+      "pair_name": "20231120_20240103",
+      "local_reference_resultant_median": 0.6874904383341449,
+      "local_reference_resultant_p05": 0.46488491803614596,
+      "local_reference_raw_resultant_median": 0.5763044638665797,
+      "ground_local_reliability_median": 0.8115574338585145
+    },
+    {
+      "pair_name": "20231201_20231212",
+      "local_reference_resultant_median": 0.8248002631612905,
+      "local_reference_resultant_p05": 0.4946506163766048,
+      "local_reference_raw_resultant_median": 0.7788510041034109,
+      "ground_local_reliability_median": 0.9478284035905004
+    },
+    {
+      "pair_name": "20231201_20231223",
+      "local_reference_resultant_median": 0.7185025773804432,
+      "local_reference_resultant_p05": 0.4315168147908799,
+      "local_reference_raw_resultant_median": 0.6237643460652125,
+      "ground_local_reliability_median": 0.7902796215897393
+    },
+    {
+      "pair_name": "20231201_20240103",
+      "local_reference_resultant_median": 0.6837452683441302,
+      "local_reference_resultant_p05": 0.45907205518762045,
+      "local_reference_raw_resultant_median": 0.5781344454436153,
+      "ground_local_reliability_median": 0.8361381974076394
+    },
+    {
+      "pair_name": "20231212_20231223",
+      "local_reference_resultant_median": 0.6093288583945417,
+      "local_reference_resultant_p05": 0.3766359829308942,
+      "local_reference_raw_resultant_median": 0.4352685666841177,
+      "ground_local_reliability_median": 0.7234484981032068
+    },
+    {
+      "pair_name": "20231212_20240114",
+      "local_reference_resultant_median": 0.8132648684441757,
+      "local_reference_resultant_p05": 0.5003792334076016,
+      "local_reference_raw_resultant_median": 0.7801470909630817,
+      "ground_local_reliability_median": 0.9233932725908226
+    },
+    {
+      "pair_name": "20231212_20240125",
+      "local_reference_resultant_median": 0.7427602534825911,
+      "local_reference_resultant_p05": 0.4337542582044942,
+      "local_reference_raw_resultant_median": 0.6728447046984635,
+      "ground_local_reliability_median": 0.875480019601144
+    },
+    {
+      "pair_name": "20231223_20240103",
+      "local_reference_resultant_median": 0.612751561007243,
+      "local_reference_resultant_p05": 0.3857892542454694,
+      "local_reference_raw_resultant_median": 0.43241109775665076,
+      "ground_local_reliability_median": 0.7543338899977252
+    },
+    {
+      "pair_name": "20231223_20240114",
+      "local_reference_resultant_median": 0.7165145681158537,
+      "local_reference_resultant_p05": 0.4394482815428106,
+      "local_reference_raw_resultant_median": 0.6089551000170859,
+      "ground_local_reliability_median": 0.8064299735473947
+    },
+    {
+      "pair_name": "20231223_20240125",
+      "local_reference_resultant_median": 0.7741922856447784,
+      "local_reference_resultant_p05": 0.4801294566462122,
+      "local_reference_raw_resultant_median": 0.7130295041445287,
+      "ground_local_reliability_median": 0.8496928493976414
+    },
+    {
+      "pair_name": "20240103_20240114",
+      "local_reference_resultant_median": 0.7085716910498601,
+      "local_reference_resultant_p05": 0.4722945556746645,
+      "local_reference_raw_resultant_median": 0.6216384398918197,
+      "ground_local_reliability_median": 0.888092006988117
+    },
+    {
+      "pair_name": "20240103_20240125",
+      "local_reference_resultant_median": 0.679877566534557,
+      "local_reference_resultant_p05": 0.411301120502762,
+      "local_reference_raw_resultant_median": 0.5664631429211584,
+      "ground_local_reliability_median": 0.8699714811231943
+    },
+    {
+      "pair_name": "20240103_20240205",
+      "local_reference_resultant_median": 0.6388052534603481,
+      "local_reference_resultant_p05": 0.4058385840255046,
+      "local_reference_raw_resultant_median": 0.4838697789553292,
+      "ground_local_reliability_median": 0.8070364784235724
+    },
+    {
+      "pair_name": "20240103_20240216",
+      "local_reference_resultant_median": 0.6346704730205778,
+      "local_reference_resultant_p05": 0.39784252521321184,
+      "local_reference_raw_resultant_median": 0.4854816170182202,
+      "ground_local_reliability_median": 0.7855319952455221
+    },
+    {
+      "pair_name": "20240114_20240205",
+      "local_reference_resultant_median": 0.7711176011520744,
+      "local_reference_resultant_p05": 0.44895800343515824,
+      "local_reference_raw_resultant_median": 0.7242385203287418,
+      "ground_local_reliability_median": 0.9293193804060614
+    },
+    {
+      "pair_name": "20240114_20240216",
+      "local_reference_resultant_median": 0.8245459140902772,
+      "local_reference_resultant_p05": 0.5594589471162656,
+      "local_reference_raw_resultant_median": 0.7873867013574963,
+      "ground_local_reliability_median": 0.9325629614283745
+    },
+    {
+      "pair_name": "20240125_20240227",
+      "local_reference_resultant_median": 0.8697117082270546,
+      "local_reference_resultant_p05": 0.5837402599494385,
+      "local_reference_raw_resultant_median": 0.8438547273331096,
+      "ground_local_reliability_median": 0.9387124112191491
+    },
+    {
+      "pair_name": "20240125_20240309",
+      "local_reference_resultant_median": 0.7198361494961699,
+      "local_reference_resultant_p05": 0.4544450133770934,
+      "local_reference_raw_resultant_median": 0.64469052569896,
+      "ground_local_reliability_median": 0.8722492815267351
+    },
+    {
+      "pair_name": "20240205_20240227",
+      "local_reference_resultant_median": 0.7260749569799853,
+      "local_reference_resultant_p05": 0.4404938293783781,
+      "local_reference_raw_resultant_median": 0.6541883767794857,
+      "ground_local_reliability_median": 0.8956141881267159
+    },
+    {
+      "pair_name": "20240205_20240331",
+      "local_reference_resultant_median": 0.8001885754219968,
+      "local_reference_resultant_p05": 0.5654172757899314,
+      "local_reference_raw_resultant_median": 0.7681166483446106,
+      "ground_local_reliability_median": 0.8954929863596154
+    },
+    {
+      "pair_name": "20240216_20240227",
+      "local_reference_resultant_median": 0.7801316720275544,
+      "local_reference_resultant_p05": 0.467038927635945,
+      "local_reference_raw_resultant_median": 0.7300611261883643,
+      "ground_local_reliability_median": 0.935360568402166
+    },
+    {
+      "pair_name": "20240216_20240309",
+      "local_reference_resultant_median": 0.843236343354979,
+      "local_reference_resultant_p05": 0.5678104096129303,
+      "local_reference_raw_resultant_median": 0.8276748799642492,
+      "ground_local_reliability_median": 0.9533898141470615
+    },
+    {
+      "pair_name": "20240216_20240411",
+      "local_reference_resultant_median": 0.7481692547187443,
+      "local_reference_resultant_p05": 0.47739731717007744,
+      "local_reference_raw_resultant_median": 0.6862853542764661,
+      "ground_local_reliability_median": 0.8929659957358007
+    },
+    {
+      "pair_name": "20240227_20240309",
+      "local_reference_resultant_median": 0.6804712362379906,
+      "local_reference_resultant_p05": 0.43524614985870247,
+      "local_reference_raw_resultant_median": 0.5526294391751304,
+      "ground_local_reliability_median": 0.8790860828129847
+    },
+    {
+      "pair_name": "20240227_20240411",
+      "local_reference_resultant_median": 0.6510369440697276,
+      "local_reference_resultant_p05": 0.4336792229165535,
+      "local_reference_raw_resultant_median": 0.49026935776816705,
+      "ground_local_reliability_median": 0.8125847429177853
+    },
+    {
+      "pair_name": "20240227_20240422",
+      "local_reference_resultant_median": 0.6239625341750468,
+      "local_reference_resultant_p05": 0.39660757506910316,
+      "local_reference_raw_resultant_median": 0.4728222885877278,
+      "ground_local_reliability_median": 0.7643903209650487
+    },
+    {
+      "pair_name": "20240309_20240331",
+      "local_reference_resultant_median": 0.7242752476579876,
+      "local_reference_resultant_p05": 0.43788085137284105,
+      "local_reference_raw_resultant_median": 0.6447312001998446,
+      "ground_local_reliability_median": 0.9182854828076906
+    },
+    {
+      "pair_name": "20240331_20240411",
+      "local_reference_resultant_median": 0.6724932750278199,
+      "local_reference_resultant_p05": 0.37733807584477863,
+      "local_reference_raw_resultant_median": 0.5509507916890296,
+      "ground_local_reliability_median": 0.8949412012680061
+    },
+    {
+      "pair_name": "20240331_20240422",
+      "local_reference_resultant_median": 0.6361422317278576,
+      "local_reference_resultant_p05": 0.4265983964507326,
+      "local_reference_raw_resultant_median": 0.5021802231243514,
+      "ground_local_reliability_median": 0.8469527985406146
+    },
+    {
+      "pair_name": "20240331_20240503",
+      "local_reference_resultant_median": 0.6666689672552109,
+      "local_reference_resultant_p05": 0.43338767605963885,
+      "local_reference_raw_resultant_median": 0.5386901320268879,
+      "ground_local_reliability_median": 0.8503625148150779
+    },
+    {
+      "pair_name": "20240331_20240514",
+      "local_reference_resultant_median": 0.6743006111871916,
+      "local_reference_resultant_p05": 0.47934615777083406,
+      "local_reference_raw_resultant_median": 0.5502671401065852,
+      "ground_local_reliability_median": 0.8249561242723018
+    },
+    {
+      "pair_name": "20240411_20240514",
+      "local_reference_resultant_median": 0.6115800720943954,
+      "local_reference_resultant_p05": 0.3917688152254489,
+      "local_reference_raw_resultant_median": 0.43638347135166056,
+      "ground_local_reliability_median": 0.7468301110810702
+    },
+    {
+      "pair_name": "20240422_20240514",
+      "local_reference_resultant_median": 0.6044332951078295,
+      "local_reference_resultant_p05": 0.37436077409922214,
+      "local_reference_raw_resultant_median": 0.42041898039867304,
+      "ground_local_reliability_median": 0.7295497293793747
+    },
+    {
+      "pair_name": "20240422_20240605",
+      "local_reference_resultant_median": 0.6590363469974975,
+      "local_reference_resultant_p05": 0.425105816164589,
+      "local_reference_raw_resultant_median": 0.5212299844189822,
+      "ground_local_reliability_median": 0.8461388571101817
+    },
+    {
+      "pair_name": "20240503_20240514",
+      "local_reference_resultant_median": 0.6256852503197886,
+      "local_reference_resultant_p05": 0.40535460553999003,
+      "local_reference_raw_resultant_median": 0.45697648638902094,
+      "ground_local_reliability_median": 0.7436742318325936
+    },
+    {
+      "pair_name": "20240503_20240605",
+      "local_reference_resultant_median": 0.64164233358074,
+      "local_reference_resultant_p05": 0.39770046753097876,
+      "local_reference_raw_resultant_median": 0.4756058475420094,
+      "ground_local_reliability_median": 0.8254002781608377
+    },
+    {
+      "pair_name": "20240514_20240525",
+      "local_reference_resultant_median": 0.6225570033700242,
+      "local_reference_resultant_p05": 0.3848330397155174,
+      "local_reference_raw_resultant_median": 0.45519882896394936,
+      "ground_local_reliability_median": 0.6842338574288312
+    },
+    {
+      "pair_name": "20240514_20240605",
+      "local_reference_resultant_median": 0.6004832372700148,
+      "local_reference_resultant_p05": 0.3438942902699291,
+      "local_reference_raw_resultant_median": 0.41744100356393077,
+      "ground_local_reliability_median": 0.6290630854202757
+    },
+    {
+      "pair_name": "20240525_20240605",
+      "local_reference_resultant_median": 0.6578749178711724,
+      "local_reference_resultant_p05": 0.4265023878190719,
+      "local_reference_raw_resultant_median": 0.553174737166589,
+      "ground_local_reliability_median": 0.8251455324786277
+    }
+  ],
+  "policy": "ground phases define only local phase zero; ground points do not enter building-height aggregation"
+}

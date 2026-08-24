@@ -1,0 +1,65 @@
+{
+  "all_pass": true,
+  "checks": [
+    {
+      "check": "21景配准复数栈（1主影像+20辅影像）",
+      "pass": true,
+      "detail": {
+        "reference": 1,
+        "secondary_rslc": 20
+      }
+    },
+    {
+      "check": "48对差分干涉观测",
+      "pass": true,
+      "detail": 48
+    },
+    {
+      "check": "48对GAMMA-MCF解缠",
+      "pass": true,
+      "detail": 48
+    },
+    {
+      "check": "独立建筑MCF无失败",
+      "pass": true,
+      "detail": {
+        "pair_count": 48,
+        "failure_sum": 0
+      }
+    },
+    {
+      "check": "候选建筑有解数",
+      "pass": true,
+      "detail": {
+        "csv": 198,
+        "gpkg": 198
+      }
+    },
+    {
+      "check": "无解保持空值",
+      "pass": true,
+      "detail": {
+        "all_buildings": 126626,
+        "null_height": 126428
+      }
+    },
+    {
+      "check": "正式高度未被先验替换",
+      "pass": true,
+      "detail": "recommended_building_height_m == robust_q95_q05_height_m"
+    },
+    {
+      "check": "仅输出六张独立SVG",
+      "pass": true,
+      "detail": [
+        "01_天津研究区单景雷达幅度.svg",
+        "02_全部建筑矢量投影至雷达坐标.svg",
+        "03_建筑独立搜索带与高质量像元.svg",
+        "04_GAMMA解缠与SBAS像元相对高差.svg",
+        "05_建筑高度反演图.svg",
+        "06_建筑高度解算状态.svg"
+      ]
+    }
+  ],
+  "prior_audit_policy": "Floor appears only in floor_prior_posthoc_audit.csv after inversion is frozen"
+}
