@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-08-25T12:48:46.215268</dc:date>
+    <dc:date>2026-08-25T14:38:43.860391</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -40,7 +40,7 @@ Q 30.047244 16.80378 30.047244 24.006614
 L 30.047244 55.218898 
 Q 30.047244 62.421732 35.319685 62.421732 
 z
-" clip-path="url(#p1e2914983b)" style="fill: #dce6f1; stroke: #222222; stroke-linejoin: miter"/>
+" clip-path="url(#ped71399518)" style="fill: #dce6f1; stroke: #222222; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
     <path d="M 211.067717 62.421732 
@@ -53,7 +53,7 @@ Q 205.795276 16.80378 205.795276 24.006614
 L 205.795276 55.218898 
 Q 205.795276 62.421732 211.067717 62.421732 
 z
-" clip-path="url(#p1e2914983b)" style="fill: #dce6f1; stroke: #222222; stroke-linejoin: miter"/>
+" clip-path="url(#ped71399518)" style="fill: #dce6f1; stroke: #222222; stroke-linejoin: miter"/>
    </g>
    <g id="patch_4">
     <path d="M 35.319685 115.24252 
@@ -66,7 +66,7 @@ Q 30.047244 69.624567 30.047244 76.827402
 L 30.047244 108.039685 
 Q 30.047244 115.24252 35.319685 115.24252 
 z
-" clip-path="url(#p1e2914983b)" style="fill: #f7f7f7; stroke: #222222; stroke-linejoin: miter"/>
+" clip-path="url(#ped71399518)" style="fill: #f7f7f7; stroke: #222222; stroke-linejoin: miter"/>
    </g>
    <g id="patch_5">
     <path d="M 211.067717 115.24252 
@@ -79,27 +79,27 @@ Q 205.795276 69.624567 205.795276 76.827402
 L 205.795276 108.039685 
 Q 205.795276 115.24252 211.067717 115.24252 
 z
-" clip-path="url(#p1e2914983b)" style="fill: #f7f7f7; stroke: #222222; stroke-linejoin: miter"/>
+" clip-path="url(#ped71399518)" style="fill: #f7f7f7; stroke: #222222; stroke-linejoin: miter"/>
    </g>
    <g id="patch_6">
     <path d="M 95.074016 57.220955 
 Q 95.074016 66.026145 95.074016 73.713301 
-" clip-path="url(#p1e2914983b)" style="fill: none; stroke: #222222; stroke-linecap: round"/>
+" clip-path="url(#ped71399518)" style="fill: none; stroke: #222222; stroke-linecap: round"/>
     <path d="M 96.874016 70.113301 
 L 95.074016 73.713301 
 L 93.274016 70.113301 
 z
-" clip-path="url(#p1e2914983b)" style="fill: #222222; stroke: #222222; stroke-linecap: round"/>
+" clip-path="url(#ped71399518)" style="fill: #222222; stroke: #222222; stroke-linecap: round"/>
    </g>
    <g id="patch_7">
     <path d="M 270.822047 57.220955 
 Q 270.822047 66.026145 270.822047 73.713301 
-" clip-path="url(#p1e2914983b)" style="fill: none; stroke: #222222; stroke-linecap: round"/>
+" clip-path="url(#ped71399518)" style="fill: none; stroke: #222222; stroke-linecap: round"/>
     <path d="M 272.622047 70.113301 
 L 270.822047 73.713301 
 L 269.022047 70.113301 
 z
-" clip-path="url(#p1e2914983b)" style="fill: #222222; stroke: #222222; stroke-linecap: round"/>
+" clip-path="url(#ped71399518)" style="fill: #222222; stroke: #222222; stroke-linecap: round"/>
    </g>
    <g id="patch_8">
     <path d="M 28.289764 273.704882 
@@ -112,7 +112,7 @@ Q 23.017323 124.846299 23.017323 132.049134
 L 23.017323 266.502047 
 Q 23.017323 273.704882 28.289764 273.704882 
 z
-" clip-path="url(#p1e2914983b)" style="fill: #ffffff; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #555555; stroke-linejoin: miter"/>
+" clip-path="url(#ped71399518)" style="fill: #ffffff; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #555555; stroke-linejoin: miter"/>
    </g>
    <g id="patch_9">
     <path d="M 70.469291 187.270866 
@@ -125,7 +125,7 @@ Q 65.19685 151.256693 65.19685 158.459528
 L 65.19685 180.068031 
 Q 65.19685 187.270866 70.469291 187.270866 
 z
-" clip-path="url(#p1e2914983b)" style="fill: #f6f6f6; stroke: #222222; stroke-linejoin: miter"/>
+" clip-path="url(#ped71399518)" style="fill: #f6f6f6; stroke: #222222; stroke-linejoin: miter"/>
    </g>
    <g id="patch_10">
     <path d="M 70.469291 220.884094 
@@ -138,7 +138,7 @@ Q 65.19685 184.869921 65.19685 192.072756
 L 65.19685 213.68126 
 Q 65.19685 220.884094 70.469291 220.884094 
 z
-" clip-path="url(#p1e2914983b)" style="fill: #f6f6f6; stroke: #222222; stroke-linejoin: miter"/>
+" clip-path="url(#ped71399518)" style="fill: #f6f6f6; stroke: #222222; stroke-linejoin: miter"/>
    </g>
    <g id="patch_11">
     <path d="M 70.469291 254.497323 
@@ -151,57 +151,57 @@ Q 65.19685 218.48315 65.19685 225.685984
 L 65.19685 247.294488 
 Q 65.19685 254.497323 70.469291 254.497323 
 z
-" clip-path="url(#p1e2914983b)" style="fill: #f6f6f6; stroke: #222222; stroke-linejoin: miter"/>
+" clip-path="url(#ped71399518)" style="fill: #f6f6f6; stroke: #222222; stroke-linejoin: miter"/>
    </g>
    <g id="patch_12">
     <path d="M 96.358658 109.575299 
 Q 116.163374 133.249122 135.250707 156.065412 
-" clip-path="url(#p1e2914983b)" style="fill: none; stroke: #222222; stroke-linecap: round"/>
+" clip-path="url(#ped71399518)" style="fill: none; stroke: #222222; stroke-linecap: round"/>
     <path d="M 134.321381 152.149246 
 L 135.250707 156.065412 
 L 131.560179 154.459174 
 z
-" clip-path="url(#p1e2914983b)" style="fill: #222222; stroke: #222222; stroke-linecap: round"/>
+" clip-path="url(#ped71399518)" style="fill: #222222; stroke: #222222; stroke-linecap: round"/>
    </g>
    <g id="patch_13">
     <path d="M 269.537405 109.575299 
 Q 249.732689 133.249122 230.645356 156.065412 
-" clip-path="url(#p1e2914983b)" style="fill: none; stroke: #222222; stroke-linecap: round"/>
+" clip-path="url(#ped71399518)" style="fill: none; stroke: #222222; stroke-linecap: round"/>
     <path d="M 234.335884 154.459174 
 L 230.645356 156.065412 
 L 231.574682 152.149246 
 z
-" clip-path="url(#p1e2914983b)" style="fill: #222222; stroke: #222222; stroke-linecap: round"/>
+" clip-path="url(#ped71399518)" style="fill: #222222; stroke: #222222; stroke-linecap: round"/>
    </g>
    <g id="patch_14">
     <path d="M 182.948031 182.069796 
 Q 182.948031 186.072445 182.948031 188.95706 
-" clip-path="url(#p1e2914983b)" style="fill: none; stroke: #222222; stroke-linecap: round"/>
+" clip-path="url(#ped71399518)" style="fill: none; stroke: #222222; stroke-linecap: round"/>
     <path d="M 184.748031 185.35706 
 L 182.948031 188.95706 
 L 181.148031 185.35706 
 z
-" clip-path="url(#p1e2914983b)" style="fill: #222222; stroke: #222222; stroke-linecap: round"/>
+" clip-path="url(#ped71399518)" style="fill: #222222; stroke: #222222; stroke-linecap: round"/>
    </g>
    <g id="patch_15">
     <path d="M 182.948031 215.683024 
 Q 182.948031 219.685673 182.948031 222.570289 
-" clip-path="url(#p1e2914983b)" style="fill: none; stroke: #222222; stroke-linecap: round"/>
+" clip-path="url(#ped71399518)" style="fill: none; stroke: #222222; stroke-linecap: round"/>
     <path d="M 184.748031 218.970289 
 L 182.948031 222.570289 
 L 181.148031 218.970289 
 z
-" clip-path="url(#p1e2914983b)" style="fill: #222222; stroke: #222222; stroke-linecap: round"/>
+" clip-path="url(#ped71399518)" style="fill: #222222; stroke: #222222; stroke-linecap: round"/>
    </g>
    <g id="patch_16">
     <path d="M 182.948031 249.292736 
 Q 182.948031 264.09875 182.948031 277.786731 
-" clip-path="url(#p1e2914983b)" style="fill: none; stroke: #222222; stroke-linecap: round"/>
+" clip-path="url(#ped71399518)" style="fill: none; stroke: #222222; stroke-linecap: round"/>
     <path d="M 184.748031 274.186731 
 L 182.948031 277.786731 
 L 181.148031 274.186731 
 z
-" clip-path="url(#p1e2914983b)" style="fill: #222222; stroke: #222222; stroke-linecap: round"/>
+" clip-path="url(#ped71399518)" style="fill: #222222; stroke: #222222; stroke-linecap: round"/>
    </g>
    <g id="patch_17">
     <path d="M 70.469291 316.92189 
@@ -214,17 +214,17 @@ Q 65.19685 276.105827 65.19685 283.308661
 L 65.19685 309.719055 
 Q 65.19685 316.92189 70.469291 316.92189 
 z
-" clip-path="url(#p1e2914983b)" style="fill: #fff2cc; stroke: #222222; stroke-linejoin: miter"/>
+" clip-path="url(#ped71399518)" style="fill: #fff2cc; stroke: #222222; stroke-linejoin: miter"/>
    </g>
    <g id="patch_18">
     <path d="M 182.948031 311.717302 
 Q 182.948031 318.121849 182.948031 323.408361 
-" clip-path="url(#p1e2914983b)" style="fill: none; stroke: #222222; stroke-linecap: round"/>
+" clip-path="url(#ped71399518)" style="fill: none; stroke: #222222; stroke-linecap: round"/>
     <path d="M 184.748031 319.808361 
 L 182.948031 323.408361 
 L 181.148031 319.808361 
 z
-" clip-path="url(#p1e2914983b)" style="fill: #222222; stroke: #222222; stroke-linecap: round"/>
+" clip-path="url(#ped71399518)" style="fill: #222222; stroke: #222222; stroke-linecap: round"/>
    </g>
    <g id="patch_19">
     <path d="M 70.469291 362.539843 
@@ -237,17 +237,17 @@ Q 65.19685 321.72378 65.19685 328.926614
 L 65.19685 355.337008 
 Q 65.19685 362.539843 70.469291 362.539843 
 z
-" clip-path="url(#p1e2914983b)" style="fill: #e2f0d9; stroke: #222222; stroke-linejoin: miter"/>
+" clip-path="url(#ped71399518)" style="fill: #e2f0d9; stroke: #222222; stroke-linejoin: miter"/>
    </g>
    <g id="patch_20">
     <path d="M 182.948031 357.335255 
 Q 182.948031 363.739802 182.948031 369.026314 
-" clip-path="url(#p1e2914983b)" style="fill: none; stroke: #222222; stroke-linecap: round"/>
+" clip-path="url(#ped71399518)" style="fill: none; stroke: #222222; stroke-linecap: round"/>
     <path d="M 184.748031 365.426314 
 L 182.948031 369.026314 
 L 181.148031 365.426314 
 z
-" clip-path="url(#p1e2914983b)" style="fill: #222222; stroke: #222222; stroke-linecap: round"/>
+" clip-path="url(#ped71399518)" style="fill: #222222; stroke: #222222; stroke-linecap: round"/>
    </g>
    <g id="patch_21">
     <path d="M 70.469291 408.157795 
@@ -260,17 +260,17 @@ Q 65.19685 367.341732 65.19685 374.544567
 L 65.19685 400.954961 
 Q 65.19685 408.157795 70.469291 408.157795 
 z
-" clip-path="url(#p1e2914983b)" style="fill: #e2f0d9; stroke: #222222; stroke-linejoin: miter"/>
+" clip-path="url(#ped71399518)" style="fill: #e2f0d9; stroke: #222222; stroke-linejoin: miter"/>
    </g>
    <g id="patch_22">
     <path d="M 182.948031 402.953208 
 Q 182.948031 409.357754 182.948031 414.644267 
-" clip-path="url(#p1e2914983b)" style="fill: none; stroke: #222222; stroke-linecap: round"/>
+" clip-path="url(#ped71399518)" style="fill: none; stroke: #222222; stroke-linecap: round"/>
     <path d="M 184.748031 411.044267 
 L 182.948031 414.644267 
 L 181.148031 411.044267 
 z
-" clip-path="url(#p1e2914983b)" style="fill: #222222; stroke: #222222; stroke-linecap: round"/>
+" clip-path="url(#ped71399518)" style="fill: #222222; stroke: #222222; stroke-linecap: round"/>
    </g>
    <g id="patch_23">
     <path d="M 70.469291 453.775748 
@@ -283,48 +283,48 @@ Q 65.19685 412.959685 65.19685 420.16252
 L 65.19685 446.572913 
 Q 65.19685 453.775748 70.469291 453.775748 
 z
-" clip-path="url(#p1e2914983b)" style="fill: #d9eaf7; stroke: #222222; stroke-linejoin: miter"/>
+" clip-path="url(#ped71399518)" style="fill: #d9eaf7; stroke: #222222; stroke-linejoin: miter"/>
    </g>
    <g id="text_1">
-    <text style="font-size: 8px; font-family: 'Noto Sans CJK SC', 'Source Han Sans CN', 'DejaVu Sans', sans-serif; text-anchor: middle" x="95.074016" y="42.652756" transform="rotate(-0 95.074016 42.652756)">时序 SAR 影像</text>
+    <text style="font-size: 8px; font-family: 'Noto Sans CJK SC'; text-anchor: middle" x="95.074016" y="42.652756" transform="rotate(-0 95.074016 42.652756)">时序 SAR 影像</text>
    </g>
    <g id="text_2">
-    <text style="font-size: 8px; font-family: 'Noto Sans CJK SC', 'Source Han Sans CN', 'DejaVu Sans', sans-serif; text-anchor: middle" x="270.822047" y="42.652756" transform="rotate(-0 270.822047 42.652756)">二维建筑轮廓矢量</text>
+    <text style="font-size: 8px; font-family: 'Noto Sans CJK SC'; text-anchor: middle" x="270.822047" y="42.652756" transform="rotate(-0 270.822047 42.652756)">二维建筑轮廓矢量</text>
    </g>
    <g id="text_3">
-    <text style="font-size: 8px; font-family: 'Noto Sans CJK SC', 'Source Han Sans CN', 'DejaVu Sans', sans-serif; text-anchor: middle" x="95.074016" y="95.473543" transform="rotate(-0 95.074016 95.473543)">影像配准与差分干涉处理</text>
+    <text style="font-size: 8px; font-family: 'Noto Sans CJK SC'; text-anchor: middle" x="95.074016" y="95.473543" transform="rotate(-0 95.074016 95.473543)">影像配准与差分干涉处理</text>
    </g>
    <g id="text_4">
-    <text style="font-size: 8px; font-family: 'Noto Sans CJK SC', 'Source Han Sans CN', 'DejaVu Sans', sans-serif; text-anchor: middle" x="270.822047" y="95.473543" transform="rotate(-0 270.822047 95.473543)">建筑属性筛选与坐标转换</text>
+    <text style="font-size: 8px; font-family: 'Noto Sans CJK SC'; text-anchor: middle" x="270.822047" y="95.473543" transform="rotate(-0 270.822047 95.473543)">建筑属性筛选与坐标转换</text>
    </g>
    <g id="text_5">
-    <text style="font-weight: 700; font-size: 9px; font-family: 'Noto Sans CJK SC', 'Source Han Sans CN', 'DejaVu Sans', sans-serif; text-anchor: start" x="37.077165" y="144.053858" transform="rotate(-0 37.077165 144.053858)">建筑物区域独立相位解缠</text>
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Noto Sans CJK SC'; text-anchor: start" x="37.077165" y="144.053858" transform="rotate(-0 37.077165 144.053858)">建筑物区域独立相位解缠</text>
    </g>
    <g id="text_6">
-    <text style="font-size: 8px; font-family: 'Noto Sans CJK SC', 'Source Han Sans CN', 'DejaVu Sans', sans-serif; text-anchor: middle" x="182.948031" y="172.30378" transform="rotate(-0 182.948031 172.30378)">建筑轮廓投影至雷达坐标</text>
+    <text style="font-size: 8px; font-family: 'Noto Sans CJK SC'; text-anchor: middle" x="182.948031" y="172.30378" transform="rotate(-0 182.948031 172.30378)">建筑轮廓投影至雷达坐标</text>
    </g>
    <g id="text_7">
-    <text style="font-size: 8px; font-family: 'Noto Sans CJK SC', 'Source Han Sans CN', 'DejaVu Sans', sans-serif; text-anchor: middle" x="182.948031" y="205.917008" transform="rotate(-0 182.948031 205.917008)">DBSCAN 提取独立建筑区域</text>
+    <text style="font-size: 8px; font-family: 'Noto Sans CJK SC'; text-anchor: middle" x="182.948031" y="205.917008" transform="rotate(-0 182.948031 205.917008)">DBSCAN 提取独立建筑区域</text>
    </g>
    <g id="text_8">
-    <text style="font-size: 8px; font-family: 'Noto Sans CJK SC', 'Source Han Sans CN', 'DejaVu Sans', sans-serif; text-anchor: middle" x="182.948031" y="239.530236" transform="rotate(-0 182.948031 239.530236)">振幅离差与相干性筛选</text>
+    <text style="font-size: 8px; font-family: 'Noto Sans CJK SC'; text-anchor: middle" x="182.948031" y="239.530236" transform="rotate(-0 182.948031 239.530236)">振幅离差与相干性筛选</text>
    </g>
    <g id="text_9">
-    <text style="font-size: 8px; font-family: 'Noto Sans CJK SC', 'Source Han Sans CN', 'DejaVu Sans', sans-serif; text-anchor: middle" x="182.948031" y="299.553858" transform="rotate(-0 182.948031 299.553858)">逐建筑 GAMMA-MCF 相位解缠</text>
+    <text style="font-size: 8px; font-family: 'Noto Sans CJK SC'; text-anchor: middle" x="182.948031" y="299.553858" transform="rotate(-0 182.948031 299.553858)">逐建筑 GAMMA-MCF 相位解缠</text>
    </g>
    <g id="text_10">
-    <text style="font-size: 8px; font-family: 'Noto Sans CJK SC', 'Source Han Sans CN', 'DejaVu Sans', sans-serif; text-anchor: middle" x="182.948031" y="345.171811" transform="rotate(-0 182.948031 345.171811)">SBAS 高程残差反演</text>
+    <text style="font-size: 8px; font-family: 'Noto Sans CJK SC'; text-anchor: middle" x="182.948031" y="345.171811" transform="rotate(-0 182.948031 345.171811)">SBAS 高程残差反演</text>
    </g>
    <g id="text_11">
-    <text style="font-size: 8px; font-family: 'Noto Sans CJK SC', 'Source Han Sans CN', 'DejaVu Sans', sans-serif; text-anchor: middle" x="182.948031" y="390.789764" transform="rotate(-0 182.948031 390.789764)">建筑级稳健聚合与质量控制</text>
+    <text style="font-size: 8px; font-family: 'Noto Sans CJK SC'; text-anchor: middle" x="182.948031" y="390.789764" transform="rotate(-0 182.948031 390.789764)">建筑级稳健聚合与质量控制</text>
    </g>
    <g id="text_12">
-    <text style="font-size: 8px; font-family: 'Noto Sans CJK SC', 'Source Han Sans CN', 'DejaVu Sans', sans-serif; text-anchor: middle" x="182.948031" y="436.407717" transform="rotate(-0 182.948031 436.407717)">城市建筑三维重建</text>
+    <text style="font-size: 8px; font-family: 'Noto Sans CJK SC'; text-anchor: middle" x="182.948031" y="436.407717" transform="rotate(-0 182.948031 436.407717)">城市建筑三维重建</text>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="p1e2914983b">
+  <clipPath id="ped71399518">
    <rect x="7.2" y="7.2" width="351.496063" height="480.188976"/>
   </clipPath>
  </defs>

@@ -27,9 +27,11 @@ RADAR_CROP = (4300, 7300, 3300, 5300)
 CM = 1 / 2.54
 
 mpl.rcParams.update({
-    "font.family": "sans-serif",
-    "font.sans-serif": ["Noto Sans CJK SC", "Source Han Sans CN", "DejaVu Sans"],
+    "font.family": "Noto Sans CJK SC",
+    "font.sans-serif": ["Noto Sans CJK SC"],
     "svg.fonttype": "none",
+    "axes.unicode_minus": False,
+    "mathtext.default": "regular",
     "image.composite_image": False,
     "axes.linewidth": 0.65,
     "font.size": 7.5,
@@ -69,7 +71,12 @@ def sar(ax, amp, crop=None, stride=2, labels=True):
 
 
 def panel(ax, text):
-    ax.text(0.5, -0.10, text, transform=ax.transAxes, ha="center", va="top", fontsize=8)
+    """Put panel text inside the axes so it never collides with axis labels."""
+    ax.text(
+        0.018, 0.975, text, transform=ax.transAxes, ha="left", va="top",
+        fontsize=7.2, fontweight="normal", zorder=20,
+        bbox={"facecolor": "white", "edgecolor": "none", "alpha": 0.82, "pad": 1.4},
+    )
 
 
 def box(ax, xy, wh, text, fc="#f7f7f7", ec="#222", fs=8, dashed=False):
@@ -120,7 +127,7 @@ def fig32(out):
 def fig33(out):
     rng=np.random.default_rng(12); c1=rng.normal((3.4,3.8),(.55,.45),(34,2)); c2=rng.normal((8.0,2.4),(.70,.55),(40,2)); noise=np.array([[1,1],[5.8,5.5],[10.4,5.1],[10.8,1.0]])
     fig,ax=plt.subplots(figsize=(15*CM,8*CM)); ax.scatter(*c1.T,s=23,c="#3182bd",edgecolor="white",lw=.3); ax.scatter(*c2.T,s=23,c="#31a354",edgecolor="white",lw=.3); ax.scatter(*noise.T,s=35,c="#d62728",marker="x")
-    ax.add_patch(Circle(c1[3],1.05,fill=False,ls="--",ec="#555")); ax.annotate(r"邻域半径 $\varepsilon$",c1[3],(1.3,6),arrowprops={"arrowstyle":"->"})
+    ax.add_patch(Circle(c1[3],1.05,fill=False,ls="--",ec="#555")); ax.annotate("邻域半径 ε",c1[3],(1.3,6),arrowprops={"arrowstyle":"->"})
     ax.scatter(*c1[3],s=65,facecolor="#ffdd55",edgecolor="#111",label="核心点"); ax.scatter(*c2[15],s=55,facecolor="white",edgecolor="#111",label="边界点"); ax.scatter([],[],marker="x",c="#d62728",label="噪声点")
     ax.set_xlim(0,12);ax.set_ylim(0,7);ax.set_aspect("equal");ax.set_xlabel("距离向");ax.set_ylabel("方位向");ax.legend(frameon=False,ncol=3,loc="upper right"); save(fig,out)
 
@@ -147,7 +154,7 @@ def baseline(path,out):
     fig,ax=plt.subplots(figsize=(16*CM,8*CM))
     for a,b in edges: ax.plot([x[a],x[b]],[nodes[a],nodes[b]],c="#222",lw=.55,zorder=1)
     ax.scatter([x[d] for d in dates],[nodes[d] for d in dates],c="#d7191c",s=22,zorder=2)
-    ax.set_xticks(range(len(dates)),[d[4:6]+"-"+d[6:] for d in dates],rotation=55,ha="right");ax.set_ylabel("垂直基线（m）");ax.set_xlabel("日期（2023—2024年）");ax.grid(ls="--",lw=.35,alpha=.55);save(fig,out)
+    ax.set_xticks(range(len(dates)),[d[4:6]+"-"+d[6:] for d in dates],rotation=72,ha="right",fontsize=5.5);ax.set_ylabel("垂直基线（m）");ax.set_xlabel("日期（2023—2024年）",labelpad=7);ax.grid(ls="--",lw=.35,alpha=.55);fig.subplots_adjust(left=.13,right=.98,top=.96,bottom=.25);save(fig,out)
 
 
 def add_north_scale(ax):

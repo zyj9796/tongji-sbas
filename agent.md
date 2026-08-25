@@ -10,6 +10,7 @@ Last updated: 2026-08-25
 - Figure 4.8 does not fabricate the unavailable GBA/CNBH-10m source products: the first two rows are explicitly marked as unavailable layout placeholders; the third row is the actual reproduction result.
 - Figure 4.9 uses a uniform 10 m low-rise white-model height only for background visualization and the actual solved SBAS heights for orange buildings. It does not fill any inversion result from `Floor` or another prior.
 - All 14 SVGs passed XML parsing and CairoSVG 1200-pixel render QA. Detailed provenance: `zjc/strict_reproduction/docs/02_论文原图版式复现说明.md`.
+- Font/layout repair on 2026-08-25: every SVG now uses only `Noto Sans CJK SC`; the DBSCAN epsilon label no longer invokes mathtext; panel captions were moved inside the upper-left of each axes; baseline dates use 72-degree ticks with extra bottom clearance. All 14 outputs passed a second 1400-pixel-wide visual QA.
 
 ## Latest checkpoint — Tianjin paper strict reproduction from raw BC3 SLC
 

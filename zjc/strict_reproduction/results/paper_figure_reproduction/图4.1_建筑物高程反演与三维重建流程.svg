@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-08-25T12:49:00.791190</dc:date>
+    <dc:date>2026-08-25T14:38:57.456745</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -40,7 +40,7 @@ Q 30.266929 24.879685 30.266929 30.772913
 L 30.266929 70.061102 
 Q 30.266929 75.954331 33.562205 75.954331 
 z
-" clip-path="url(#pa275a68868)" style="fill: #d9eaf7; stroke: #222222; stroke-linejoin: miter"/>
+" clip-path="url(#pbd1b7bcb29)" style="fill: #d9eaf7; stroke: #222222; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
     <path d="M 33.562205 146.673071 
@@ -53,7 +53,7 @@ Q 30.266929 95.598425 30.266929 101.491654
 L 30.266929 140.779843 
 Q 30.266929 146.673071 33.562205 146.673071 
 z
-" clip-path="url(#pa275a68868)" style="fill: #fff2cc; stroke: #222222; stroke-linejoin: miter"/>
+" clip-path="url(#pbd1b7bcb29)" style="fill: #fff2cc; stroke: #222222; stroke-linejoin: miter"/>
    </g>
    <g id="patch_4">
     <path d="M 33.562205 217.391811 
@@ -66,7 +66,7 @@ Q 30.266929 166.317165 30.266929 172.210394
 L 30.266929 211.498583 
 Q 30.266929 217.391811 33.562205 217.391811 
 z
-" clip-path="url(#pa275a68868)" style="fill: #e2f0d9; stroke: #222222; stroke-linejoin: miter"/>
+" clip-path="url(#pbd1b7bcb29)" style="fill: #e2f0d9; stroke: #222222; stroke-linejoin: miter"/>
    </g>
    <g id="patch_5">
     <path d="M 33.562205 288.110551 
@@ -79,7 +79,7 @@ Q 30.266929 237.035906 30.266929 242.929134
 L 30.266929 282.217323 
 Q 30.266929 288.110551 33.562205 288.110551 
 z
-" clip-path="url(#pa275a68868)" style="fill: #eadcf8; stroke: #222222; stroke-linejoin: miter"/>
+" clip-path="url(#pbd1b7bcb29)" style="fill: #eadcf8; stroke: #222222; stroke-linejoin: miter"/>
    </g>
    <g id="patch_6">
     <path d="M 33.562205 358.829291 
@@ -92,67 +92,67 @@ Q 30.266929 307.754646 30.266929 313.647874
 L 30.266929 352.936063 
 Q 30.266929 358.829291 33.562205 358.829291 
 z
-" clip-path="url(#pa275a68868)" style="fill: #f7d9c4; stroke: #222222; stroke-linejoin: miter"/>
+" clip-path="url(#pbd1b7bcb29)" style="fill: #f7d9c4; stroke: #222222; stroke-linejoin: miter"/>
    </g>
    <g id="patch_7">
     <path d="M 117.04252 72.058604 
 Q 117.04252 83.80979 117.04252 94.442943 
-" clip-path="url(#pa275a68868)" style="fill: none; stroke: #222222; stroke-linecap: round"/>
+" clip-path="url(#pbd1b7bcb29)" style="fill: none; stroke: #222222; stroke-linecap: round"/>
     <path d="M 118.84252 90.842943 
 L 117.04252 94.442943 
 L 115.24252 90.842943 
 z
-" clip-path="url(#pa275a68868)" style="fill: #222222; stroke: #222222; stroke-linecap: round"/>
+" clip-path="url(#pbd1b7bcb29)" style="fill: #222222; stroke: #222222; stroke-linecap: round"/>
    </g>
    <g id="patch_8">
     <path d="M 117.04252 142.777344 
 Q 117.04252 154.52853 117.04252 165.161683 
-" clip-path="url(#pa275a68868)" style="fill: none; stroke: #222222; stroke-linecap: round"/>
+" clip-path="url(#pbd1b7bcb29)" style="fill: none; stroke: #222222; stroke-linecap: round"/>
     <path d="M 118.84252 161.561683 
 L 117.04252 165.161683 
 L 115.24252 161.561683 
 z
-" clip-path="url(#pa275a68868)" style="fill: #222222; stroke: #222222; stroke-linecap: round"/>
+" clip-path="url(#pbd1b7bcb29)" style="fill: #222222; stroke: #222222; stroke-linecap: round"/>
    </g>
    <g id="patch_9">
     <path d="M 117.04252 213.496084 
 Q 117.04252 225.24727 117.04252 235.880423 
-" clip-path="url(#pa275a68868)" style="fill: none; stroke: #222222; stroke-linecap: round"/>
+" clip-path="url(#pbd1b7bcb29)" style="fill: none; stroke: #222222; stroke-linecap: round"/>
     <path d="M 118.84252 232.280423 
 L 117.04252 235.880423 
 L 115.24252 232.280423 
 z
-" clip-path="url(#pa275a68868)" style="fill: #222222; stroke: #222222; stroke-linecap: round"/>
+" clip-path="url(#pbd1b7bcb29)" style="fill: #222222; stroke: #222222; stroke-linecap: round"/>
    </g>
    <g id="patch_10">
     <path d="M 117.04252 284.214824 
 Q 117.04252 295.966011 117.04252 306.599163 
-" clip-path="url(#pa275a68868)" style="fill: none; stroke: #222222; stroke-linecap: round"/>
+" clip-path="url(#pbd1b7bcb29)" style="fill: none; stroke: #222222; stroke-linecap: round"/>
     <path d="M 118.84252 302.999163 
 L 117.04252 306.599163 
 L 115.24252 302.999163 
 z
-" clip-path="url(#pa275a68868)" style="fill: #222222; stroke: #222222; stroke-linecap: round"/>
+" clip-path="url(#pbd1b7bcb29)" style="fill: #222222; stroke: #222222; stroke-linecap: round"/>
    </g>
    <g id="text_1">
-    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Source Han Sans CN', 'DejaVu Sans', sans-serif; text-anchor: middle" x="117.04252" y="53.837008" transform="rotate(-0 117.04252 53.837008)">建筑区域独立解缠相位</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC'; text-anchor: middle" x="117.04252" y="53.837008" transform="rotate(-0 117.04252 53.837008)">建筑区域独立解缠相位</text>
    </g>
    <g id="text_2">
-    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Source Han Sans CN', 'DejaVu Sans', sans-serif; text-anchor: middle" x="117.04252" y="124.555748" transform="rotate(-0 117.04252 124.555748)">干涉图质量筛选与基线网络</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC'; text-anchor: middle" x="117.04252" y="124.555748" transform="rotate(-0 117.04252 124.555748)">干涉图质量筛选与基线网络</text>
    </g>
    <g id="text_3">
-    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Source Han Sans CN', 'DejaVu Sans', sans-serif; text-anchor: middle" x="117.04252" y="195.274488" transform="rotate(-0 117.04252 195.274488)">单体建筑 SBAS 高程反演</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC'; text-anchor: middle" x="117.04252" y="195.274488" transform="rotate(-0 117.04252 195.274488)">单体建筑 SBAS 高程反演</text>
    </g>
    <g id="text_4">
-    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Source Han Sans CN', 'DejaVu Sans', sans-serif; text-anchor: middle" x="117.04252" y="265.993228" transform="rotate(-0 117.04252 265.993228)">建筑矢量拉伸为三维白模</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC'; text-anchor: middle" x="117.04252" y="265.993228" transform="rotate(-0 117.04252 265.993228)">建筑矢量拉伸为三维白模</text>
    </g>
    <g id="text_5">
-    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Source Han Sans CN', 'DejaVu Sans', sans-serif; text-anchor: middle" x="117.04252" y="336.711969" transform="rotate(-0 117.04252 336.711969)">天津中心城区三维模型</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC'; text-anchor: middle" x="117.04252" y="336.711969" transform="rotate(-0 117.04252 336.711969)">天津中心城区三维模型</text>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="pa275a68868">
+  <clipPath id="pbd1b7bcb29">
    <rect x="7.2" y="7.2" width="219.685039" height="392.88189"/>
   </clipPath>
  </defs>

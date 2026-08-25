@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-08-25T12:48:46.261011</dc:date>
+    <dc:date>2026-08-25T14:38:43.904728</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -35,7 +35,7 @@ L 77.499213 154.374803
 L 88.483465 111.968504 
 L 33.562205 104.485039 
 z
-" clip-path="url(#p3834d7a77a)" style="fill: #f4a261; opacity: 0.75; stroke: #333333; stroke-linejoin: miter"/>
+" clip-path="url(#p8ca634a478)" style="fill: #f4a261; opacity: 0.75; stroke: #333333; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
     <path d="M 40.152756 82.034646 
@@ -43,7 +43,7 @@ L 86.286614 89.51811
 L 97.270866 49.606299 
 L 53.333858 32.144882 
 z
-" clip-path="url(#p3834d7a77a)" style="fill: #2a9d8f; opacity: 0.75; stroke: #333333; stroke-linejoin: miter"/>
+" clip-path="url(#p8ca634a478)" style="fill: #2a9d8f; opacity: 0.75; stroke: #333333; stroke-linejoin: miter"/>
    </g>
    <g id="patch_4">
     <path d="M 99.467717 151.880315 
@@ -51,17 +51,17 @@ L 139.011024 136.913386
 L 128.026772 97.001575 
 L 95.074016 109.474016 
 z
-" clip-path="url(#p3834d7a77a)" style="fill: #457b9d; opacity: 0.75; stroke: #333333; stroke-linejoin: miter"/>
+" clip-path="url(#p8ca634a478)" style="fill: #457b9d; opacity: 0.75; stroke: #333333; stroke-linejoin: miter"/>
    </g>
    <g id="patch_5">
     <path d="M 147.600918 94.507087 
 Q 179.653862 94.507087 210.029755 94.507087 
-" clip-path="url(#p3834d7a77a)" style="fill: none; stroke: #222222; stroke-width: 1.5; stroke-linecap: round"/>
+" clip-path="url(#p8ca634a478)" style="fill: none; stroke: #222222; stroke-width: 1.5; stroke-linecap: round"/>
     <path d="M 206.429755 92.707087 
 L 210.029755 94.507087 
 L 206.429755 96.307087 
 z
-" clip-path="url(#p3834d7a77a)" style="fill: #222222; stroke: #222222; stroke-width: 1.5; stroke-linecap: round"/>
+" clip-path="url(#p8ca634a478)" style="fill: #222222; stroke: #222222; stroke-width: 1.5; stroke-linecap: round"/>
    </g>
    <g id="patch_6">
     <path d="M 218.976378 152.379213 
@@ -69,7 +69,7 @@ L 261.155906 150.258898
 L 269.943307 114.213543 
 L 226.006299 107.852598 
 z
-" clip-path="url(#p3834d7a77a)" style="fill: #f4a261; opacity: 0.75; stroke: #333333; stroke-linejoin: miter"/>
+" clip-path="url(#p8ca634a478)" style="fill: #f4a261; opacity: 0.75; stroke: #333333; stroke-linejoin: miter"/>
    </g>
    <g id="patch_7">
     <path d="M 231.27874 88.769764 
@@ -77,7 +77,7 @@ L 268.185827 95.130709
 L 276.973228 61.205669 
 L 241.823622 46.363465 
 z
-" clip-path="url(#p3834d7a77a)" style="fill: #2a9d8f; opacity: 0.75; stroke: #333333; stroke-linejoin: miter"/>
+" clip-path="url(#p8ca634a478)" style="fill: #2a9d8f; opacity: 0.75; stroke: #333333; stroke-linejoin: miter"/>
    </g>
    <g id="patch_8">
     <path d="M 278.730709 148.138583 
@@ -85,16 +85,16 @@ L 310.365354 135.416693
 L 301.577953 101.491654 
 L 275.215748 112.093228 
 z
-" clip-path="url(#p3834d7a77a)" style="fill: #457b9d; opacity: 0.75; stroke: #333333; stroke-linejoin: miter"/>
+" clip-path="url(#p8ca634a478)" style="fill: #457b9d; opacity: 0.75; stroke: #333333; stroke-linejoin: miter"/>
    </g>
    <g id="text_1">
-    <text style="font-size: 7.5px; font-family: 'Noto Sans CJK SC', 'Source Han Sans CN', 'DejaVu Sans', sans-serif; text-anchor: middle" x="75.302362" y="175.577953" transform="rotate(-0 75.302362 175.577953)">地理坐标系建筑轮廓</text>
+    <text style="font-size: 7.5px; font-family: 'Noto Sans CJK SC'; text-anchor: middle" x="75.302362" y="175.577953" transform="rotate(-0 75.302362 175.577953)">地理坐标系建筑轮廓</text>
    </g>
    <g id="text_2">
-    <text style="font-size: 7.5px; font-family: 'Noto Sans CJK SC', 'Source Han Sans CN', 'DejaVu Sans', sans-serif; text-anchor: middle" x="179.652756" y="85.776378" transform="rotate(-0 179.652756 85.776378)">二维查找表</text>
+    <text style="font-size: 7.5px; font-family: 'Noto Sans CJK SC'; text-anchor: middle" x="179.652756" y="85.776378" transform="rotate(-0 179.652756 85.776378)">二维查找表</text>
    </g>
    <g id="text_3">
-    <text style="font-size: 7px; font-family: 'Noto Sans CJK SC', 'Source Han Sans CN', 'DejaVu Sans', sans-serif; text-anchor: middle" x="179.652756" y="104.485039" transform="rotate(-0 179.652756 104.485039)">地理坐标 → 雷达坐标</text>
+    <text style="font-size: 7px; font-family: 'Noto Sans CJK SC'; text-anchor: middle" x="179.652756" y="104.485039" transform="rotate(-0 179.652756 104.485039)">地理坐标 → 雷达坐标</text>
    </g>
    <g id="patch_9">
     <path d="M 299.250643 166.035718 
@@ -106,7 +106,7 @@ L 332.73402 169.275272
 " style="fill: none; stroke: #000000; stroke-linecap: round"/>
    </g>
    <g id="text_4">
-    <text style="font-size: 7.5px; font-family: 'Noto Sans CJK SC', 'Source Han Sans CN', 'DejaVu Sans', sans-serif; text-anchor: middle" x="284.00315" y="168.094488" transform="rotate(-0 284.00315 168.094488)">距离向</text>
+    <text style="font-size: 7.5px; font-family: 'Noto Sans CJK SC'; text-anchor: middle" x="284.00315" y="168.094488" transform="rotate(-0 284.00315 168.094488)">距离向</text>
    </g>
    <g id="patch_10">
     <path d="M 273.018898 41.470377 
@@ -118,15 +118,15 @@ L 274.518898 28.287884
 " style="fill: none; stroke: #000000; stroke-linecap: round"/>
    </g>
    <g id="text_5">
-    <text style="font-size: 7.5px; font-family: 'Noto Sans CJK SC', 'Source Han Sans CN', 'DejaVu Sans', sans-serif" transform="translate(275.868898 67.967717) rotate(-90)">方位向</text>
+    <text style="font-size: 7.5px; font-family: 'Noto Sans CJK SC'" transform="translate(275.868898 67.967717) rotate(-90)">方位向</text>
    </g>
    <g id="text_6">
-    <text style="font-size: 7.5px; font-family: 'Noto Sans CJK SC', 'Source Han Sans CN', 'DejaVu Sans', sans-serif; text-anchor: middle" x="277.412598" y="175.577953" transform="rotate(-0 277.412598 175.577953)">雷达距离—方位坐标系</text>
+    <text style="font-size: 7.5px; font-family: 'Noto Sans CJK SC'; text-anchor: middle" x="277.412598" y="175.577953" transform="rotate(-0 277.412598 175.577953)">雷达距离—方位坐标系</text>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="p3834d7a77a">
+  <clipPath id="p8ca634a478">
    <rect x="7.2" y="7.2" width="351.496063" height="174.614173"/>
   </clipPath>
  </defs>
