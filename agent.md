@@ -2,6 +2,14 @@
 
 Last updated: 2026-08-25
 
+## Latest checkpoint — Footprint-Constrained paper Fig. 4
+
+- Reproduced Fig. 4 (“Examples of building overlap mask”) as one standalone Chinese SVG: `zjc/strict_reproduction/results/footprint_constrained_paper/图4_建筑投影重叠掩膜示例.svg`.
+- The 2-column x 3-row layout follows the paper: raw SAR amplitude, colored radar-coordinate building supports with hatched overlap, and mutually disjoint supports after removing overlap pixels from every involved building.
+- Both examples use real `independent_expanded_search_points.npz` hypotheses rather than schematic polygons. Case 1 uses UIDs 67652/67653/67654 (1873 overlap pixels); case 2 uses UIDs 94855/97340 (1464 overlap pixels).
+- Generator: `zjc/strict_reproduction/code/make_footprint_paper_fig4.py`. The SVG has eight editable Chinese text nodes, one installed font family, valid XML, and passed a Python/CairoSVG 1800-pixel visual QA.
+- Detailed record: `zjc/strict_reproduction/docs/03_FootprintConstrained论文Fig4复现说明.md`.
+
 ## Latest checkpoint — paper-layout figure reproduction
 
 - Added `zjc/strict_reproduction/code/make_paper_layout_figures.py` and generated 14 separate Chinese SVGs under `zjc/strict_reproduction/results/paper_figure_reproduction/`.
