@@ -10,6 +10,15 @@ Last updated: 2026-08-25
 - Generator: `zjc/strict_reproduction/code/make_footprint_paper_fig4.py`. The SVG has eight editable Chinese text nodes, one installed font family, valid XML, and passed a Python/CairoSVG 1800-pixel visual QA.
 - Detailed record: `zjc/strict_reproduction/docs/03_FootprintConstrained论文Fig4复现说明.md`.
 
+## Latest checkpoint — remaining non-statistical figures of the Footprint-Constrained paper
+
+- Added `zjc/strict_reproduction/code/make_footprint_paper_other_figures.py` and completed Figures 1, 2, 3, 5, 6, 7 and 13. Together with Fig. 4, `results/footprint_constrained_paper/` now contains eight separate Chinese SVGs.
+- Figures 8-12 remain excluded because they are error-statistics figures, consistent with the user's earlier instruction.
+- Real inputs are used for SAR amplitude, 48-pair baselines, building supports, paper-quality pixels, wrapped phase, independent/coverage MCF-SBAS pixels, final building solutions and 3-D solved heights.
+- Missing inputs are disclosed rather than fabricated: optical basemap for Fig. 2, full-scene global-MCF elevation raster for Fig. 6, and CNBH/GBA rasters for Fig. 13.
+- Figure 6 therefore labels the available comparison as coverage-style MCF and explicitly says it is not the missing full-scene global MCF. Figure 7 uses a uniform 10 m background white-model height only for visualization; it never fills a result.
+- All eight SVGs passed XML, single-font and Python/CairoSVG visual QA; no PNG/PDF was added to the formal output directory. Detailed record: `zjc/strict_reproduction/docs/04_FootprintConstrained论文非统计图复现说明.md`.
+
 ## Latest checkpoint — paper-layout figure reproduction
 
 - Added `zjc/strict_reproduction/code/make_paper_layout_figures.py` and generated 14 separate Chinese SVGs under `zjc/strict_reproduction/results/paper_figure_reproduction/`.
