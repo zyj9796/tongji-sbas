@@ -34,13 +34,17 @@ mpl.rcParams.update({
     "mathtext.default": "regular",
     "image.composite_image": False,
     "axes.linewidth": 0.65,
+    "axes.spines.top": False,
+    "axes.spines.right": False,
+    "legend.frameon": False,
     "font.size": 7.5,
 })
 
 
 def save(fig: plt.Figure, out: Path) -> None:
     out.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(out, format="svg", bbox_inches="tight", facecolor="white", dpi=300)
+    fig.savefig(out, format="svg", bbox_inches="tight", pad_inches=0.035,
+                facecolor="white", dpi=300)
     plt.close(fig)
 
 
@@ -74,7 +78,7 @@ def panel(ax, text):
     """Put panel text inside the axes so it never collides with axis labels."""
     ax.text(
         0.018, 0.975, text, transform=ax.transAxes, ha="left", va="top",
-        fontsize=7.2, fontweight="normal", zorder=20,
+        fontsize=7.4, fontweight="bold", zorder=20,
         bbox={"facecolor": "white", "edgecolor": "none", "alpha": 0.82, "pad": 1.4},
     )
 
@@ -163,11 +167,19 @@ def add_north_scale(ax):
 
 
 def fig36(gdf,floor_rdc,out):
-    x0,y0,x1,y1=PAPER_BBOX; sub=gdf.cx[x0:x1,y0:y1].copy(); bins=[0,6,11,16,21,1000]; colors=mpl.colormaps["jet"](np.linspace(.08,.92,5)); sub["bin"]=np.digitize(sub["Floor"].fillna(0),bins)-1
-    fig,(a,b)=plt.subplots(2,1,figsize=(14*CM,17*CM),gridspec_kw={"hspace":.30})
-    sub.plot(ax=a,column="bin",cmap=mpl.colors.ListedColormap(colors),vmin=0,vmax=4,edgecolor="none",rasterized=True);a.set_xlim(x0,x1);a.set_ylim(y0,y1);a.set_aspect(1/np.cos(np.deg2rad((y0+y1)/2)));a.set_xlabel("经度");a.set_ylabel("纬度");add_north_scale(a);panel(a,"（a）地理坐标系")
-    r=np.memmap(floor_rdc,dtype=">f4",mode="r",shape=(H,W))[3300:5700,4300:8100]; m=np.ma.masked_where(r<=0,r); b.imshow(m,cmap="jet",vmin=0,vmax=30,extent=(0,3800,2400,0),interpolation="nearest",rasterized=True);b.set_aspect("equal");b.set_xlabel("距离向像元");b.set_ylabel("方位向像元");panel(b,"（b）雷达坐标系")
-    sm=mpl.cm.ScalarMappable(norm=Normalize(0,30),cmap="jet");cb=fig.colorbar(sm,ax=[a,b],fraction=.025,pad=.02);cb.set_label("楼层数（仅用于候选建筑几何复现）");save(fig,out)
+    x0,y0,x1,y1=PAPER_BBOX; sub=gdf.cx[x0:x1,y0:y1].copy()
+    bounds=[.5,5.5,10.5,15.5,20.5,30.5]; colors=mpl.colormaps["turbo"](np.linspace(.08,.92,5))
+    cmap=mpl.colors.ListedColormap(colors); norm=mpl.colors.BoundaryNorm(bounds,cmap.N)
+    fig=plt.figure(figsize=(15*CM,18*CM));gs=fig.add_gridspec(2,2,width_ratios=[1,.045],hspace=.27,wspace=.06)
+    a=fig.add_subplot(gs[0,0]);b=fig.add_subplot(gs[1,0]);cax=fig.add_subplot(gs[:,1])
+    sub.plot(ax=a,column="Floor",cmap=cmap,norm=norm,edgecolor="none",rasterized=True)
+    a.set_xlim(x0,x1);a.set_ylim(y0,y1);a.set_aspect(1/np.cos(np.deg2rad((y0+y1)/2)));a.set_xlabel("经度");a.set_ylabel("纬度");add_north_scale(a);panel(a,"（a）地理坐标系")
+    r=np.memmap(floor_rdc,dtype=">f4",mode="r",shape=(H,W))[3300:5700,4300:8100];m=np.ma.masked_where(r<=0,r)
+    b.imshow(m,cmap=cmap,norm=norm,extent=(0,3800,2400,0),interpolation="nearest",rasterized=True)
+    b.set_aspect("equal");b.set_xlabel("距离向像元");b.set_ylabel("方位向像元");panel(b,"（b）雷达坐标系")
+    sm=mpl.cm.ScalarMappable(norm=norm,cmap=cmap);cb=fig.colorbar(sm,cax=cax,ticks=[3,8,13,18,25])
+    cb.ax.set_yticklabels(["1—5","6—10","11—15","16—20","21—30"]);cb.set_label("楼层数（仅用于候选建筑几何复现）")
+    save(fig,out)
 
 
 def scatter_mask(ax,d,color,size=.25,alpha=.7,key=None,crop=None):
@@ -181,20 +193,31 @@ def scatter_mask(ax,d,color,size=.25,alpha=.7,key=None,crop=None):
 def fig37(amp,search,quality,out):
     fig=plt.figure(figsize=(18*CM,10*CM));gs=fig.add_gridspec(1,2,width_ratios=[1,1.12],wspace=.04);a=fig.add_subplot(gs[0]);b=fig.add_subplot(gs[1]);sar(a,amp,labels=False);scatter_mask(a,search,"#ef2b2d",.08,.55);a.add_patch(Rectangle((4300,3300),3000,2000,fill=False,ec="#51c46b",lw=1.4));sar(b,amp,RADAR_CROP,labels=False);scatter_mask(b,search,"#ef2b2d",.35,.65,crop=RADAR_CROP);scatter_mask(b,quality,"#00e5ff",.55,.85,"paper_quality_selected",RADAR_CROP)
     for yy in (.35,.65): fig.add_artist(mpl.lines.Line2D([.46,.515],[yy,yy],transform=fig.transFigure,c="#51c46b",lw=.8))
-    b.legend(handles=[mpl.lines.Line2D([],[],marker="o",ls="",c="#ef2b2d",label="独立建筑区域"),mpl.lines.Line2D([],[],marker="o",ls="",c="#00e5ff",label="论文阈值像元")],loc="lower right",fontsize=6);save(fig,out)
+    b.legend(handles=[mpl.lines.Line2D([],[],marker="o",ls="",c="#ef2b2d",label="独立建筑区域"),mpl.lines.Line2D([],[],marker="o",ls="",c="#00e5ff",label="论文阈值像元")],loc="lower right",fontsize=6,facecolor="white",framealpha=.85);save(fig,out)
 
 
 def grid_points(d,value,crop):
     x0,x1,y0,y1=crop; arr=np.full((y1-y0,x1-x0),np.nan,np.float32);m=(d["col"]>=x0)&(d["col"]<x1)&(d["row"]>=y0)&(d["row"]<y1);arr[d["row"][m]-y0,d["col"][m]-x0]=value[m];return arr
 
 
+def robust_phase_norm(*arrays):
+    """Return one robust colour scale for genuinely comparable phase panels."""
+    values=np.concatenate([z[np.isfinite(z)] for z in arrays if np.any(np.isfinite(z))])
+    lo,hi=np.quantile(values,(.015,.985))
+    if not np.isfinite(lo+hi) or hi<=lo: lo,hi=float(np.nanmin(values)),float(np.nanmax(values))
+    return Normalize(float(lo),float(hi))
+
+
 def fig38(amp,obs,old,ind,out):
     crop=RADAR_CROP; wrap=grid_points(obs,obs["filtered_wrapped_phase_rad"],crop); u0=grid_points(old,old["unwrapped_phase_far_ground_zero_rad"],crop);u1=grid_points(ind,ind["unwrapped_phase_far_ground_zero_rad"],crop)
-    fig,axs=plt.subplots(2,2,figsize=(17*CM,11.5*CM),gridspec_kw={"hspace":.20,"wspace":.10})
+    phase_norm=robust_phase_norm(u0,u1)
+    fig,axs=plt.subplots(2,2,figsize=(17*CM,11.8*CM),gridspec_kw={"hspace":.10,"wspace":.06})
     sar(axs[0,0],amp,crop,labels=False);panel(axs[0,0],"（a）雷达幅度")
-    axs[0,1].imshow(wrap,cmap="jet",vmin=-np.pi,vmax=np.pi,extent=(crop[0],crop[1],crop[3],crop[2]),interpolation="nearest",rasterized=True);axs[0,1].set_axis_off();panel(axs[0,1],"（b）滤波缠绕相位")
+    sar(axs[0,1],amp,crop,labels=False);iw=axs[0,1].imshow(wrap,cmap="twilight",vmin=-np.pi,vmax=np.pi,extent=(crop[0],crop[1],crop[3],crop[2]),interpolation="nearest",alpha=.96,rasterized=True);panel(axs[0,1],"（b）建筑支持域内滤波缠绕相位")
     for ax,z,t in [(axs[1,0],u0,"（c）覆盖式 MCF 对照"),(axs[1,1],u1,"（d）建筑区域独立 MCF")]:
-        sar(ax,amp,crop,labels=False);ax.imshow(z,cmap="jet",extent=(crop[0],crop[1],crop[3],crop[2]),interpolation="nearest",alpha=.93,rasterized=True);panel(ax,t)
+        sar(ax,amp,crop,labels=False);ip=ax.imshow(z,cmap="turbo",norm=phase_norm,extent=(crop[0],crop[1],crop[3],crop[2]),interpolation="nearest",alpha=.96,rasterized=True);panel(ax,t)
+    cbw=fig.colorbar(iw,ax=axs[0,1],fraction=.032,pad=.018);cbw.set_label("缠绕相位（rad）")
+    cbp=fig.colorbar(ip,ax=axs[1,:],fraction=.020,pad=.018);cbp.set_label("解缠相位（rad）")
     save(fig,out)
 
 
@@ -214,12 +237,13 @@ def choose_uids(obs):
 
 def local_case(obs,old,ind,uids,out,title):
     m=np.isin(obs["building_uid"],uids);x=obs["col"][m];y=obs["row"][m];pad=15;crop=(int(x.min()-pad),int(x.max()+pad+1),int(y.min()-pad),int(y.max()+pad+1));w=grid_points(obs,obs["filtered_wrapped_phase_rad"],crop);u0=grid_points(old,old["unwrapped_phase_far_ground_zero_rad"],crop);u1=grid_points(ind,ind["unwrapped_phase_far_ground_zero_rad"],crop)
-    fig,axs=plt.subplots(2,2,figsize=(14*CM,10*CM));extent=(crop[0],crop[1],crop[3],crop[2]);
-    for ax,z,t in [(axs[0,0],w,"（a）缠绕相位"),(axs[0,1],u0,"（b）覆盖式 MCF 对照"),(axs[1,0],u1,"（c）建筑区域独立 MCF")]:ax.imshow(z,cmap="jet",extent=extent,interpolation="nearest",rasterized=True);ax.set_aspect("equal");ax.set_xlabel("距离向");ax.set_ylabel("方位向");panel(ax,t)
+    phase_norm=robust_phase_norm(u0,u1)
+    fig,axs=plt.subplots(2,2,figsize=(15*CM,10.5*CM),gridspec_kw={"hspace":.26,"wspace":.22});extent=(crop[0],crop[1],crop[3],crop[2]);
+    for ax,z,t,cmap,norm in [(axs[0,0],w,"（a）缠绕相位","twilight",Normalize(-np.pi,np.pi)),(axs[0,1],u0,"（b）覆盖式 MCF 对照","turbo",phase_norm),(axs[1,0],u1,"（c）建筑区域独立 MCF","turbo",phase_norm)]:ax.imshow(z,cmap=cmap,norm=norm,extent=extent,interpolation="nearest",rasterized=True);ax.set_aspect("equal");ax.set_xlabel("距离向像元");ax.set_ylabel("方位向像元");panel(ax,t)
     mi=np.isin(ind["building_uid"],uids); mo=np.isin(old["building_uid"],uids)
     vals1=ind["unwrapped_phase_far_ground_zero_rad"][mi]; vals0=old["unwrapped_phase_far_ground_zero_rad"][mo]
     ord1=np.argsort(ind["col"][mi]); ord0=np.argsort(old["col"][mo])
-    axs[1,1].plot(np.linspace(0,1,len(vals1)),vals1[ord1],c="#d7191c",lw=1.1,label="独立区域 MCF");axs[1,1].plot(np.linspace(0,1,len(vals0)),vals0[ord0],c="#2c7bb6",lw=.9,ls="--",label="覆盖式对照");axs[1,1].set_xlabel("归一化距离向位置");axs[1,1].set_ylabel("解缠相位（rad）");axs[1,1].grid(ls="--",lw=.35);axs[1,1].legend(fontsize=6);panel(axs[1,1],"（d）相位剖面对比");fig.suptitle(title,fontsize=10);save(fig,out)
+    axs[1,1].plot(np.linspace(0,1,len(vals1)),vals1[ord1],c="#d7191c",lw=1.1,label="独立区域 MCF");axs[1,1].plot(np.linspace(0,1,len(vals0)),vals0[ord0],c="#2c7bb6",lw=.9,ls="--",label="覆盖式对照");axs[1,1].set_xlabel("归一化距离向位置");axs[1,1].set_ylabel("解缠相位（rad）");axs[1,1].grid(ls="--",lw=.35,alpha=.6);axs[1,1].legend(fontsize=6,loc="best");panel(axs[1,1],"（d）相位剖面对比");fig.suptitle(title,fontsize=10,y=.995);save(fig,out)
 
 
 def fig41(out):
@@ -241,13 +265,36 @@ def geo_height(ax,gdf,col,vmax,title):
     x0,y0,x1,y1=PAPER_BBOX;sub=gdf.cx[x0:x1,y0:y1];base=sub[sub[col].isna()];sol=sub[sub[col].notna()];base.plot(ax=ax,facecolor="#eef3f7",edgecolor="#bdd2e5",lw=.08,rasterized=True);sol.plot(ax=ax,column=col,cmap="Spectral_r",vmin=0,vmax=vmax,edgecolor="none",rasterized=True);ax.set_xlim(x0,x1);ax.set_ylim(y0,y1);ax.set_aspect(1/np.cos(np.deg2rad(39.13)));ax.set_title(title,fontsize=8);ax.set_xlabel("经度");ax.set_ylabel("纬度");add_north_scale(ax)
 
 
+def neutral_footprints(ax,gdf,bbox,title,missing=False):
+    """Draw geometry only; never imply unavailable external height values."""
+    x0,y0,x1,y1=bbox;sub=gdf.cx[x0:x1,y0:y1]
+    sub.plot(ax=ax,facecolor="#e9edf1",edgecolor="#9aa9b6",lw=.10,rasterized=True)
+    ax.set_xlim(x0,x1);ax.set_ylim(y0,y1);ax.set_aspect(1/np.cos(np.deg2rad(39.13)))
+    ax.set_title(title,fontsize=8);ax.set_xlabel("经度");ax.set_ylabel("纬度");add_north_scale(ax)
+    if missing:
+        ax.text(.5,.5,"原始数据未提供\n本图不绘制高度值",transform=ax.transAxes,
+                ha="center",va="center",fontsize=8,color="#7d1f1f",
+                bbox={"fc":"white","alpha":.94,"ec":"#b65c5c","pad":4})
+
+
 def fig48(gdf,out):
-    fig,axs=plt.subplots(3,2,figsize=(16*CM,21*CM),gridspec_kw={"width_ratios":[1.45,.65],"hspace":.28,"wspace":.08});col="recommended_building_height_m";vmax=150
-    for r,title in enumerate(["（a）GBA 参考产品（原始数据未提供）","（b）CNBH-10 m 参考产品（原始数据未提供）","（c）本文 GAMMA-MCF + SBAS 结果"]):
-        geo_height(axs[r,0],gdf,col,vmax,title)
-        if r<2: axs[r,0].text(.5,.5,"版式占位：未使用缺失的外部高度数据",transform=axs[r,0].transAxes,ha="center",va="center",fontsize=8,bbox={"fc":"white","alpha":.9,"ec":"#c44"})
-        x0,y0,x1,y1=117.195,39.118,117.215,39.137;sub=gdf.cx[x0:x1,y0:y1];base=sub[sub[col].isna()];sol=sub[sub[col].notna()];base.plot(ax=axs[r,1],facecolor="#e8edf2",edgecolor="#6d8dad",lw=.15,rasterized=True);sol.plot(ax=axs[r,1],column=col,cmap="Spectral_r",vmin=0,vmax=vmax,edgecolor="#333",lw=.12);axs[r,1].set_xlim(x0,x1);axs[r,1].set_ylim(y0,y1);axs[r,1].set_axis_off()
-    sm=mpl.cm.ScalarMappable(norm=Normalize(0,vmax),cmap="Spectral_r");cb=fig.colorbar(sm,ax=axs,fraction=.018,pad=.01);cb.set_label("建筑高度（m）");save(fig,out)
+    fig,axs=plt.subplots(3,2,figsize=(17*CM,22*CM),gridspec_kw={"width_ratios":[1.55,.65],"hspace":.26,"wspace":.08});col="recommended_building_height_m";vmax=150
+    detail=(117.195,39.118,117.215,39.137)
+    missing_titles=["（a）GBA 参考产品（数据未提供）","（b）CNBH-10 m 参考产品（数据未提供）"]
+    for r,title in enumerate(missing_titles):
+        neutral_footprints(axs[r,0],gdf,PAPER_BBOX,title,missing=True)
+        axs[r,0].set_xlabel("")
+        neutral_footprints(axs[r,1],gdf,detail,"局部放大",missing=False);axs[r,1].set_axis_off()
+        axs[r,1].text(.5,.5,"无高度数据",transform=axs[r,1].transAxes,ha="center",va="center",
+                      color="#7d1f1f",bbox={"fc":"white","alpha":.92,"ec":"#b65c5c"})
+    geo_height(axs[2,0],gdf,col,vmax,"（c）本文 GAMMA-MCF + SBAS 结果")
+    x0,y0,x1,y1=detail;sub=gdf.cx[x0:x1,y0:y1];base=sub[sub[col].isna()];sol=sub[sub[col].notna()]
+    base.plot(ax=axs[2,1],facecolor="#e8edf2",edgecolor="#6d8dad",lw=.15,rasterized=True)
+    sol.plot(ax=axs[2,1],column=col,cmap="Spectral_r",vmin=0,vmax=vmax,edgecolor="#333",lw=.12,rasterized=True)
+    axs[2,1].set_xlim(x0,x1);axs[2,1].set_ylim(y0,y1);axs[2,1].set_axis_off();axs[2,1].set_title("局部放大",fontsize=8)
+    sm=mpl.cm.ScalarMappable(norm=Normalize(0,vmax),cmap="Spectral_r")
+    cb=fig.colorbar(sm,ax=axs[2,:],fraction=.027,pad=.018);cb.set_label("建筑高度（m）")
+    save(fig,out)
 
 
 def fig49(gdf,out):
