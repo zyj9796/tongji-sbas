@@ -2,6 +2,15 @@
 
 Last updated: 2026-08-25
 
+## Latest checkpoint — paper-layout figure reproduction
+
+- Added `zjc/strict_reproduction/code/make_paper_layout_figures.py` and generated 14 separate Chinese SVGs under `zjc/strict_reproduction/results/paper_figure_reproduction/`.
+- The set follows the source-paper layouts for Figures 3.1–3.10, 4.1, 4.2, 4.8, and 4.9. Error-statistics Figures 3.11 and 4.3–4.7 remain excluded per user instruction.
+- SAR plates use the real 2023-10-07 10000x7000 amplitude, actual independent-search pixels, the representative 2024-05-14/2024-06-05 wrapped/MCF products, the frozen 48-pair baseline graph, and the final GAMMA-MCF+SBAS vector/pixel results.
+- Figure 4.8 does not fabricate the unavailable GBA/CNBH-10m source products: the first two rows are explicitly marked as unavailable layout placeholders; the third row is the actual reproduction result.
+- Figure 4.9 uses a uniform 10 m low-rise white-model height only for background visualization and the actual solved SBAS heights for orange buildings. It does not fill any inversion result from `Floor` or another prior.
+- All 14 SVGs passed XML parsing and CairoSVG 1200-pixel render QA. Detailed provenance: `zjc/strict_reproduction/docs/02_论文原图版式复现说明.md`.
+
 ## Latest checkpoint — Tianjin paper strict reproduction from raw BC3 SLC
 
 - Isolated root: `zjc/strict_reproduction/`. This branch starts from `/home/u/Downloads/中国天津市点位2`, `zjc/天津建筑轮廓数据/天津.shp`, SRTMGL1 `N39E117`, the paper, and its MATLAB; it does not reuse the Tongji-campus products described below.
