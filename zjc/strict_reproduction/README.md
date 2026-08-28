@@ -27,6 +27,7 @@
 - 像元级 SBAS 解：`results/paper_strict/pixel_height_independent_mcf_fixed_far_48.npz`
 - 后验楼层对照（不回写结果）：`results/paper_strict/floor_prior_posthoc_audit.csv`
 - 六张独立中文 SVG：`results/figures/`
+- 通俗版 Word 报告：`results/report/天津建筑三维重建论文复现总结报告_通俗版.docx`
 - 最终机器检查：`inventory/final_reproduction_validation.json`
 
 完整复现总结见 [`docs/05_天津建筑三维重建论文复现总结报告.md`](docs/05_天津建筑三维重建论文复现总结报告.md)。详细冻结方案见 [`docs/00_论文与数据审计及冻结方案.md`](docs/00_论文与数据审计及冻结方案.md)，执行结果、论文/代码差异和限制见 [`docs/01_严格复现执行结果与审计.md`](docs/01_严格复现执行结果与审计.md)。
